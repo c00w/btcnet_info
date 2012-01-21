@@ -26,13 +26,19 @@ class Objects(object):
             FD_DIR = os.curdir
         
         for file_name in os.listdir(os.path.join(FD_DIR,'coins')):
-            self.coins.add(coins.Coin(file_name))
+            self.coins.add(coins.Coin(
+                reduce(os.path.join, [FD_DIR, 'coins', file_name])
+            ))
             
         for file_name in os.listdir(os.path.join(FD_DIR,'exchanges')):
-            self.exchanges.add(exchanges.Exchange(file_name))
+            self.exchanges.add(exchanges.Exchange(
+                reduce(os.path.join, [FD_DIR, 'exchanges', file_name])
+            ))
         
         for file_name in os.listdir(os.path.join(FD_DIR,'pools')):
-            self.pools.add(pools.Pool(file_name))
+            self.pools.add(pools.Pool(
+                reduce(os.path.join, [FD_DIR, 'pools', file_name])
+            ))
         
         
 if __name__ == "__main__":

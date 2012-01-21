@@ -1,0 +1,28 @@
+[general]
+coin:btc
+name: Bitcoin.cz
+url: http://mining.bitcoin.cz/accounts/profile/
+
+[mine]
+mine_address: api2.bitcoin.cz:8332
+payment_scheme: Score
+mine_c: 300
+merged_mining: nmc
+
+[shares]
+address: http://mining.bitcoin.cz/stats/json/
+method: json
+key: shares
+
+[hashrate]
+address: http://mining.bitcoin.cz/stats/json/
+method: json
+key: ghashes_ps
+
+[duration]
+address: http://mining.bitcoin.cz/stats/json/
+method: json
+key: round_duration
+hour_mine_method: re
+hour_min_key: (\d+):(\d+):
+
