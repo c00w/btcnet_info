@@ -1,0 +1,39 @@
+import os, os.path, gevent, pools, exchanges, coins
+try:
+    import ConfigParser
+except:
+    import configparser as ConfigParser
+
+class Objects(object):
+    def __init__(self):
+        self.pools = set()
+        self.exchanges = set()
+        self.coins = set()
+        self._setup()
+    
+    def _setup(self):
+        """
+        Sets up all of our objects correctly
+        """
+        #Ugly hack to figure out where we are
+        try:
+            # determine if application is a script file or frozen exe
+            if hasattr(sys, 'frozen'):
+                FD_DIR = os.path.dirname(sys.executable)
+            else:
+                FD_DIR = os.path.dirname(os.path.abspath(__file__))
+        except:
+            FD_DIR = os.curdir
+        
+        for file_name in os.listdir(os.path.join(FD_DIR,'coins')):
+            self.coins.add(coins.Coin(file_name))
+            
+        for file_name in os.listdir(os.path.join(FD_DIR,'exchanges')):
+            self.exchanges.add(exchanges.Exchange(file_name))
+        
+        for file_name in os.listdir(os.path.join(FD_DIR,'pools')):
+            self.pools.add(pools.Pool(file_name))
+        
+        
+if __name__ == "__main__":
+    Objects()
