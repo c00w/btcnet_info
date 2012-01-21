@@ -16,10 +16,13 @@ class Pool(baseobject.Base_Object):
     def _setup_mine(self, section):
         self.mine_info = section
         
+    def _setup_api(self, section):
+        self.api_info = section
+        
     def _setup_shares(self, section):
         self.shares_info = section
         
-    def _setup_hashrate(self, section):
+    def _setup_ghash(self, section):
         self.hashrate_info = section
         
     def _setup_duration(self, section):

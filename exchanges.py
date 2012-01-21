@@ -31,3 +31,6 @@ class Exchange(baseobject.Base_Object):
         )
         for k,v in values.items():
             setattr(self, k.split('_')[0], float(v))
+            
+    def __repr__(self):
+        return '<Exchange Site %s, %s>' % (self.name, str(self.coins))

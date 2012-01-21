@@ -21,3 +21,6 @@ class Coin(baseobject.Base_Object):
         Overriding this because we do no polling
         """
         pass
+    
+    def __repr__(self):
+        return '<Coin %s, %s>' % (self.name, self.long_name)
