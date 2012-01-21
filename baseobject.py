@@ -27,6 +27,34 @@ class Base_Object(object):
                 #todo, use python logging for this
                 traceback.print_exc()
             gevent.sleep(self._poll_rate)
+            
+    def _poll_json(self, info, resp):
+        """
+        Handles json method of polling
+        """
+        if 'key' not in info:
+            raise ValueError('No key in section')
+            
+        item = json.loads(resp)
+        if 'key' in info:
+            item = item[info['key']]
+        
+        return item
+        
+    def _poll_re(self, info, resp):
+        """
+        Handles re method of polling
+        """
+        if 'key' not in info:
+            raise ValueError('No key in section')
+            
+        result = re.search( info['key'], info)
+        group = info[group] if 'group' in info else 1
+        result = result.group(group)
+        
+        if 'strip' in info:
+            result.replace(info['strip'][1:-2], '')
+        return result
         
     def _setup(self):
         #List all sections

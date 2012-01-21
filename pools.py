@@ -62,34 +62,6 @@ class Pool(baseobject.Base_Object):
             if getattr(self, '_poll_' + info['method'], None):
                 value = getattr(self, '_poll_' + info['method'])(info, resp)
                 setattr( self, item.split('_')[0], value)
-                    
-    def _poll_json(self, info, resp):
-        """
-        Handles json method of polling
-        """
-        if 'key' not in info:
-            raise ValueError('No key in section')
-            
-        item = json.loads(resp)
-        if 'key' in info:
-            item = item[info['key']]
-        
-        return item
-        
-    def _poll_re(self, info, resp):
-        """
-        Handles re method of polling
-        """
-        if 'key' not in info:
-            raise ValueError('No key in section')
-            
-        result = re.search( info['key'], info)
-        group = info[group] if 'group' in info else 1
-        result = result.group(group)
-        
-        if 'strip' in info:
-            result.replace(info['strip'][1:-2], '')
-        return result
             
                 
         
