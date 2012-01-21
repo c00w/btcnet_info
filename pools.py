@@ -31,16 +31,31 @@ class Pool(baseobject.Base_Object):
     def __repr__(self):
         return '<Pool %s, %s, %s>' % (self.name, self.coin, self.url)
         
+    def _handle_shares(self):
+        method = self.shares_info.get('method', None)
+        if not method:
+            return
+        
+        if method == 'direct':
+            return int(self.api)
+            
+        if method == '':
+            return
+            
+        return
+        
     def _poll(self):
         """
         Updates a couple of statistics. Has special handling for duration
         """
         values = self._helper_poll(
-            ['shares_info', 'hashrate_info', 'duration_info']
+            ['api_info', 'ghash_info', 'duration_info']
         )
         
         for k,v in values.items():
                 setattr( self, k.split('_')[0], v)
             
+        self.shares = self._handle_shares()
+           
                 
         
