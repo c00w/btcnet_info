@@ -1,0 +1,20 @@
+[general]
+coin = btc
+name = bclc
+
+[mine]
+address = bitcoins.lc:8080
+
+[api]
+method = re_rate
+key = "hash_rate":([ 0-9]+).
+address = http://www.bitcoins.lc/stats.json
+
+[duration]
+
+[ghash]
+method = re_rate
+
+[shares]
+method = rate
+

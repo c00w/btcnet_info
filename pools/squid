@@ -1,0 +1,20 @@
+[general]
+coin = scc
+name = squid
+
+[mine]
+address = pool.squidnet.org:8341
+
+[api]
+method = json
+address = http://pool.squidnet.org/api
+key = shares_this_round
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

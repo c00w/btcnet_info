@@ -1,0 +1,22 @@
+[general]
+coin = btc
+name = mtred
+
+[mine]
+address = mtred.com:8337
+
+[api]
+method = json
+key_ghashrate = hashrate
+address = https://mtred.com/api/stats
+key = roundshares
+
+[duration]
+
+[ghash]
+key = hashrate
+method = json
+
+[shares]
+method = direct
+

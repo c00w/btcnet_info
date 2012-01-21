@@ -1,0 +1,25 @@
+[general]
+coin = btc
+name = rfc
+
+[mine]
+address = pool.rfcpool.com:8332
+
+[api]
+method = json
+key_ghashrate = poolstats,hashrate
+address = https://www.rfcpool.com/api/pool/stats
+key = poolstats,round_shares
+
+[duration]
+key_sec = (\d+)
+method = json
+key = poolstats,round_time
+
+[ghash]
+key = poolstats,hashrate
+method = json
+
+[shares]
+method = direct
+

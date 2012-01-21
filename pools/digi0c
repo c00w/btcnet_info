@@ -1,0 +1,20 @@
+[general]
+coin = i0c
+name = digi0c
+
+[mine]
+address = i0.digbtc.net:8382
+
+[api]
+method = json
+address = http://i0.digbtc.net/papi.php
+key = shares_this_round
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

@@ -1,0 +1,23 @@
+[general]
+coin = btc
+name = nofeemining
+
+[mine]
+address = nofeemining.appspot.com:80
+
+[api]
+method = json
+nofeemining_user_apikey = 4140cbc6405f4425cf91ca74e1450b66
+key_ghashrate = poolspeed
+address = https://nofeemining.appspot.com/api.php
+key = poolRoundShares
+
+[duration]
+
+[ghash]
+key = poolspeed
+method = json
+
+[shares]
+method = direct
+

@@ -1,0 +1,21 @@
+[general]
+coin = btc
+name = deepbit
+
+[mine]
+address = pit.deepbit.net:8332
+
+[api]
+method = re_rate
+address = http://deepbit.net/
+strip = ''
+key = [rate:&nbsp;]+([0-9]+)+&nbsp;Gh/s
+
+[duration]
+
+[ghash]
+method = re_rate
+
+[shares]
+method = rate
+

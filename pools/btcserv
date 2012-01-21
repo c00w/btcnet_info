@@ -1,0 +1,20 @@
+[general]
+coin = btc
+name = btcserv
+
+[mine]
+address = btcserv.net:8335
+
+[api]
+method = json
+address = http://btcserv.net/json/pool/
+key = shares
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

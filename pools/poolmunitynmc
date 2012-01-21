@@ -1,0 +1,20 @@
+[general]
+coin = nmc
+name = poolmunitynmc
+
+[mine]
+address = poolmunity.com:18332
+
+[api]
+method = json
+address = https://poolmunity.com/api.php?server
+key = totalShares
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

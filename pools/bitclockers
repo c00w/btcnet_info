@@ -1,0 +1,23 @@
+[general]
+coin = btc
+name = bitclockers
+
+[mine]
+address = pool.bitclockers.com:8332
+
+[api]
+method = json
+user_address = http://bitclockers.com/api/%(bitclockers_user_apikey)s
+bitclockers_user_apikey = 965469e512aa0de5a37b83ccfd5e849e
+address = http://bitclockers.com/api
+key_mhashrate = hashrate
+key = roundshares
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

@@ -1,0 +1,21 @@
+[general]
+coin = scc
+name = scguild
+
+[mine]
+address = sc.btcguild.com:8332
+
+[api]
+method = re_rate
+address = http://sc.btcguild.com/
+strip = ''
+key = _stat">([0-9]+).
+
+[duration]
+
+[ghash]
+method = re_rate
+
+[shares]
+method = rate
+

@@ -1,28 +1,25 @@
 [general]
-coin:btc
-name: Bitcoin.cz
-url: http://mining.bitcoin.cz/accounts/profile/
+coin = btc
+name = slush
 
 [mine]
-mine_address: api2.bitcoin.cz:8332
-payment_scheme: Score
-mine_c: 300
-merged_mining: nmc
+address = api2.bitcoin.cz:8332
 
-[shares]
-address: http://mining.bitcoin.cz/stats/json/
-method: json
-key: shares
-
-[hashrate]
-address: http://mining.bitcoin.cz/stats/json/
-method: json
-key: ghashes_ps
+[api]
+method = json
+key_ghashrate = ghashes_ps
+address = http://mining.bitcoin.cz/stats/json/
+key = shares
 
 [duration]
-address: http://mining.bitcoin.cz/stats/json/
-method: json
-key: round_duration
-hour_mine_method: re
-hour_min_key: (\d+):(\d+):
+key_hour_min = (\d+):(\d+):
+method = json
+key = round_duration
+
+[ghash]
+key = ghashes_ps
+method = json
+
+[shares]
+method = direct
 

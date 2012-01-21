@@ -1,0 +1,21 @@
+[general]
+coin = btc
+name = unitedminers
+
+[mine]
+address = pool.unitedminers.com:8332
+
+[api]
+method = json
+address = http://www.unitedminers.com/?action=api
+key_mhashrate = hashrate
+key = validcurrentshares
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

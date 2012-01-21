@@ -1,0 +1,25 @@
+[general]
+coin = btc
+name = swepool
+
+[mine]
+address = swepool.net:8337
+
+[api]
+method = json
+swepool_user_apikey = xxxxxx
+address = http://swepool.net/json?key=%(swepool_user_apikey)s
+key = round_shares
+key_hashrate = pool_speed
+
+[duration]
+key_sec = (\d+)
+method = json
+key = round_time
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

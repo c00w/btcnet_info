@@ -1,0 +1,20 @@
+[general]
+coin = btc
+name = donation
+
+[mine]
+address = btcproxy.net:80
+
+[api]
+method = json
+key = currentroundshares
+address = https://www.arsbitcoin.com/api.php
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

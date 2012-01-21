@@ -1,0 +1,20 @@
+[general]
+coin = scc
+name = sodigbtc
+
+[mine]
+address = sobtc.digbtc.net:8332
+
+[api]
+method = json
+address = http://sobtc.digbtc.net/papi.php
+key = shares_this_round
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

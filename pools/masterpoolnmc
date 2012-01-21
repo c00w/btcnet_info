@@ -1,0 +1,24 @@
+[general]
+coin = nmc
+name = masterpoolnmc
+
+[mine]
+address = US01.masterpool.eu:8888
+
+[api]
+method = json
+key_ghashrate = hashrate
+address = https://masterpool.eu/jsonstats
+key = blockchains,NMC,shares
+
+[duration]
+key = blockchains,NMC,roundduration
+method = json
+
+[ghash]
+key = hashrate
+method = json
+
+[shares]
+method = direct
+

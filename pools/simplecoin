@@ -1,0 +1,25 @@
+[general]
+coin = btc
+name = simplecoin
+
+[mine]
+address = pool.simplecoin.us:8337
+
+[api]
+method = re
+key_ghashrate = Pool Hash Rate</td><td>([.0-9]+) Ghashes/s
+address = http://simplecoin.us/stats.php?pool_id=3
+strip = ','
+key = Current BTC Round Shares</td><td>([,0-9]+)</td>
+
+[duration]
+key_hour_min = Time Since Last Block</td><td><span class="green">([0-9]+) Hours ([0-9]+) Minutes
+method = re
+
+[ghash]
+key = Pool Hash Rate</td><td>([.0-9]+) Ghashes/s
+method = re
+
+[shares]
+method = direct
+

@@ -1,0 +1,22 @@
+[general]
+coin = btc
+name = bitpenny
+
+[mine]
+address = bitpenny.dyndns.biz:8338
+
+[api]
+method = re_rateduration
+address = http://www.bitpenny.com
+key = ([0-9]+).[0-9]+ Mh/s &nbsp
+
+[duration]
+key_hour_min = time since last block: ([0-9]+):([0-9]+):
+method = re_rateduration
+
+[ghash]
+method = re_rateduration
+
+[shares]
+method = rateduration
+

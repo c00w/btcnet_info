@@ -1,0 +1,20 @@
+[general]
+coin = btc
+name = p2pool
+
+[mine]
+address = localhost:8332
+
+[api]
+method = disable
+address = http://localhost:8332
+key = code
+
+[duration]
+
+[ghash]
+method = disable
+
+[shares]
+method = disable
+

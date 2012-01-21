@@ -1,0 +1,21 @@
+[general]
+coin = ixc
+name = ixparking
+
+[mine]
+address = ixpool.bitparking.com:10098
+
+[api]
+method = re
+address = http://ixpool.bitparking.com/pool
+strip = ' '
+key = block</td><td>([ 0-9]+)</td>
+
+[duration]
+
+[ghash]
+method = re
+
+[shares]
+method = direct
+

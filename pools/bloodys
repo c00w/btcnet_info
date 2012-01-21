@@ -1,0 +1,25 @@
+[general]
+coin = btc
+name = bloodys
+
+[mine]
+address = pool.bloodys.com:8332
+
+[api]
+method = re
+key_ghashrate = ([,0-9.]+) Ghash/s
+address = http://pool.bloodys.com/?action=statistics
+strip = ','
+key = ([0-9]+(,[0-9]+)*) Shares
+
+[duration]
+key_hour_min = Current Round: ([0-9]+):([0-9]+) hours
+method = re
+
+[ghash]
+key = ([,0-9.]+) Ghash/s
+method = re
+
+[shares]
+method = direct
+

@@ -1,0 +1,23 @@
+[general]
+coin = btc
+name = a1
+
+[mine]
+address = a1bitcoinpool.com:8999
+
+[api]
+method = re_rateduration
+key_ghashrate = Pool Hash Rate</td><td>([0-9.]+) Ghashes/s
+address = http://www.a1bitcoinpool.com/stats.php
+
+[duration]
+key_hour_min = Time Since Last Block</td><td><span class="green">([0-9]+) Hours ([0-9]+) Minutes
+method = re_rateduration
+
+[ghash]
+key = Pool Hash Rate</td><td>([0-9.]+) Ghashes/s
+method = re_rateduration
+
+[shares]
+method = rateduration
+

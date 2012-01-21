@@ -1,0 +1,21 @@
+[general]
+coin = scc
+name = mine4us
+
+[mine]
+address = go.mine-for.us:16101
+
+[api]
+method = re
+address = http://solid.mine-for.us/index.php?page=round
+strip = ' '
+key = <td>Valid shares this round: </td><td>([0-9]+)</td>
+
+[duration]
+
+[ghash]
+method = re
+
+[shares]
+method = direct
+

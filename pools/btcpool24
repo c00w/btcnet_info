@@ -1,0 +1,21 @@
+[general]
+coin = btc
+name = btcpool24
+
+[mine]
+address = min.btcpool24.com:8338
+
+[api]
+method = re
+address = http://www.btcpool24.com/stat.php
+strip = ' '
+key = <br/>Round Shares:([ 0-9]+)<br/><br/></span>
+
+[duration]
+
+[ghash]
+method = re
+
+[shares]
+method = direct
+

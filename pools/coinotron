@@ -1,0 +1,24 @@
+[general]
+coin = btc
+name = coinotron
+
+[mine]
+address = coinotron.com:8322
+
+[api]
+method = re_rateduration
+key_ghashrate = ([0-9]+(?:\.[0-9]*)?) GH</td>
+address = http://coinotron.com/coinotron/AccountServlet?action=home
+strip = ''
+
+[duration]
+key_hour_min = (\d+) h ?(\d+)? ?m?
+method = re_rateduration
+
+[ghash]
+key = ([0-9]+(?:\.[0-9]*)?) GH</td>
+method = re_rateduration
+
+[shares]
+method = rateduration
+

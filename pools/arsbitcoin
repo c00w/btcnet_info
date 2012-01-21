@@ -1,0 +1,21 @@
+[general]
+coin = btc
+name = arsbitcoin
+
+[mine]
+address = arsbitcoin.com:8344
+
+[api]
+method = json
+address = https://www.arsbitcoin.com/api.php
+key_mhashrate = hashrate
+key = currentroundshares
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

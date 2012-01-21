@@ -1,0 +1,21 @@
+[general]
+coin = i0c
+name = i0parking
+
+[mine]
+address = i0pool.bitparking.com:11098
+
+[api]
+method = re
+address = http://i0pool.bitparking.com/pool
+strip = ' '
+key = block</td><td>([ 0-9]+)</td>
+
+[duration]
+
+[ghash]
+method = re
+
+[shares]
+method = direct
+

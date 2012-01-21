@@ -1,0 +1,9 @@
+[general]
+coin = scc
+name = sccallchains
+
+[scc]
+address = http://allchains.info/calc.html
+method = re
+key = id='sc_diff' maxlength='[0-9]+' size='[0-9]+' value='([.0-9]+)'
+

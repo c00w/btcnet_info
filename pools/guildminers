@@ -1,0 +1,21 @@
+[general]
+coin = btc
+name = guildminers
+
+[mine]
+address = pit.guildminers.com:8332
+
+[api]
+method = re
+address = http://guildminers.com/
+strip = ','
+key = ([,0-9]+) shares
+
+[duration]
+
+[ghash]
+method = re
+
+[shares]
+method = direct
+

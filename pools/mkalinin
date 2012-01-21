@@ -1,0 +1,21 @@
+[general]
+coin = btc
+name = mkalinin
+
+[mine]
+address = pool.mkalinin.ru:8344
+
+[api]
+method = json
+address = http://pool.mkalinin.ru/api.php
+key_mhashrate = hashrate
+key = shares
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

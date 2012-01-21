@@ -1,0 +1,22 @@
+[general]
+coin = btc
+name = asspenny
+
+[mine]
+address = asspennypool.com:8443
+
+[api]
+method = json
+asspenny_user_apikey = xxxxxx
+address = http://asspennypool.com/api.php?api_key=%(asspenny_user_apikey)s
+key_mhashrate = poolhash
+key = shares
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

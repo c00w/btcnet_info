@@ -1,0 +1,25 @@
+[general]
+coin = btc
+name = kiwipool
+
+[mine]
+address = pool2.kiwipool.me:8332
+
+[api]
+method = re
+key_ghashrate = current\s+hash\s+rate\W+([0-9]+)
+address = http://kiwipool.me
+strip = ''
+key = [:0-9]+[,]([0-9]+)
+
+[duration]
+key_hour_min = ([0-9]+):([0-9]+):
+method = re
+
+[ghash]
+key = current\s+hash\s+rate\W+([0-9]+)
+method = re
+
+[shares]
+method = direct
+

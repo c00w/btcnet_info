@@ -1,0 +1,21 @@
+[general]
+coin = btc
+name = ninjac
+
+[mine]
+address = mine.ninjacoin.com:8332
+
+[api]
+method = re_rate
+address = https://www.ninjacoin.com/
+strip = ' '
+key = Hashrate:([ 0-9]+).
+
+[duration]
+
+[ghash]
+method = re_rate
+
+[shares]
+method = rate
+

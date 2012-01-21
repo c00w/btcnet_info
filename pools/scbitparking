@@ -1,0 +1,21 @@
+[general]
+coin = scc
+name = scbitparking
+
+[mine]
+address = scpool.bitparking.com:12098
+
+[api]
+method = re
+address = http://scpool.bitparking.com/user
+strip = ' '
+key = Total Pool Shares</td><td>([0-9]+)
+
+[duration]
+
+[ghash]
+method = re
+
+[shares]
+method = direct
+

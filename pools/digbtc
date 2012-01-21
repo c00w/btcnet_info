@@ -1,0 +1,24 @@
+[general]
+coin = btc
+name = digbtc
+
+[mine]
+address = btc.digbtc.net:8332
+
+[lp]
+address = INVALID
+
+[api]
+method = json
+key = shares_this_round
+address = http://digbtc.net/papi.php
+key_mhashrate = pool_total_mhash
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

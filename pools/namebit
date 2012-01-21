@@ -1,0 +1,21 @@
+[general]
+coin = nmc
+name = namebit
+
+[mine]
+address = pool.namebit.org:10000
+
+[api]
+method = re
+address = http://www.namebit.org/
+strip = ' '
+key = <td id="current_share_count">([0-9]+)</td>
+
+[duration]
+
+[ghash]
+method = re
+
+[shares]
+method = direct
+

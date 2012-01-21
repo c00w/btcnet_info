@@ -1,0 +1,21 @@
+[general]
+coin = btc
+name = btcmonkey
+
+[mine]
+address = www.bitcoinmonkey.com:8332
+
+[api]
+method = json
+address = https://www.bitcoinmonkey.com/json/api.php
+key_mhashrate = pool_total_mhash
+key = shares_this_round
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

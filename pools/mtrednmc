@@ -1,0 +1,23 @@
+[general]
+coin = nmc
+name = mtrednmc
+
+[mine]
+address = mtred.com:8337
+
+[api]
+method = json
+key_ghashrate = hashrate
+address = https://mtred.com/api/stats
+strip = ','
+key = NMCroundshares
+
+[duration]
+
+[ghash]
+key = hashrate
+method = json
+
+[shares]
+method = direct
+

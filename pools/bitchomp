@@ -1,0 +1,21 @@
+[general]
+coin = nmc
+name = bitchomp
+
+[mine]
+address = bitchomp.info:8332
+
+[api]
+method = re
+address = http://www.bitchomp.info/api
+strip = ''
+key = "shares": (\d+)
+
+[duration]
+
+[ghash]
+method = re
+
+[shares]
+method = direct
+

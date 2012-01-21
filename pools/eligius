@@ -1,0 +1,25 @@
+[general]
+coin = btc
+name = eligius
+
+[mine]
+address = ra.mining.eligius.st:8337
+
+[api]
+method = re
+key_ghashrate = ([0-9.]+) GH/s
+address = http://eligius.st/~artefact2/
+strip = ','
+key = id="instant_scount_7">([,0-9]+)</td>
+
+[duration]
+key_hour_min = "instant_durationh_7">([,0-9]+)h</td><td class="ralign" id="instant_durationm_7">([,0-9]+)m
+method = re
+
+[ghash]
+key = ([0-9.]+) GH/s
+method = re
+
+[shares]
+method = direct
+

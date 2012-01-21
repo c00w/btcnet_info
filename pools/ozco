@@ -1,0 +1,23 @@
+[general]
+coin = btc
+name = ozco
+
+[mine]
+address = us.ozco.in:8999
+
+[api]
+method = json
+address = http://ozco.in/api.php
+key_mhashrate = pool,hashrate_raw
+key = pool,round_shares
+
+[duration]
+key_day_hour_min = (\d+)d (\d+)h (\d+)m
+method = json
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

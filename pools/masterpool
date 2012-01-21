@@ -1,0 +1,25 @@
+[general]
+coin = btc
+name = masterpool
+
+[mine]
+address = US01.masterpool.eu:8888
+
+[api]
+method = json
+key_ghashrate = hashrate
+address = https://masterpool.eu/jsonstats
+key = blockchains,BTC,shares
+
+[duration]
+key_sec = (\d+)
+method = json
+key = blockchains,BTC,roundduration
+
+[ghash]
+key = hashrate
+method = json
+
+[shares]
+method = direct
+

@@ -1,0 +1,20 @@
+[general]
+coin = btc
+name = triple
+
+[mine]
+address = eu1.triplemining.com:8344
+
+[api]
+method = json
+address = http://api.triplemining.com/json/stats
+key = solved
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

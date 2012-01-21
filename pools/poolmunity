@@ -1,0 +1,21 @@
+[general]
+coin = btc
+name = poolmunity
+
+[mine]
+address = poolmunity.com:8332
+
+[api]
+method = json
+address = https://poolmunity.com/api.php?server
+key_mhashrate = speed
+key = totalShares
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+

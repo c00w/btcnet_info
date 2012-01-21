@@ -1,0 +1,21 @@
+[general]
+coin = btc
+name = eclipsemc
+
+[mine]
+address = pacrim.eclipsemc.com:8337
+
+[api]
+method = json_ec
+eclipsemc_apikey = bd0eded7e35b1b5fc48f8d10214d98
+address = https://eclipsemc.com/api.php?key=%(eclipsemc_apikey)s&action=poolstats
+key = round_shares
+
+[duration]
+
+[ghash]
+method = json_ec
+
+[shares]
+method = direct
+

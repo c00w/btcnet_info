@@ -1,0 +1,23 @@
+[general]
+coin = nmc
+name = nmcbit
+
+[mine]
+address = nmcbit.com:8332
+
+[api]
+method = re
+key_ghashrate = ([,0-9.]+) Ghash/s
+address = http://www.nmcbit.com/statistics
+strip = ','
+key = Valid\s+shares\s+for\s+current\s+round:</th><td>([,0-9]+)</td>
+
+[duration]
+
+[ghash]
+key = ([,0-9.]+) Ghash/s
+method = re
+
+[shares]
+method = direct
+

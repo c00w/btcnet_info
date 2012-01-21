@@ -1,0 +1,20 @@
+[general]
+coin = btc
+name = x8s
+
+[mine]
+address = pit.x8s.de:8337
+
+[api]
+method = json
+address = http://btc.x8s.de/api/global.json
+key = round_shares
+
+[duration]
+
+[ghash]
+method = json
+
+[shares]
+method = direct
+
