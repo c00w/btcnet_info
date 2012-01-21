@@ -69,4 +69,4 @@ class Objects(object):
         
 if __name__ == "__main__":
     Objects()
-    gevent.sleep()
+    gevent.sleep(1)

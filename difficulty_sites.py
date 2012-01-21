@@ -25,4 +25,8 @@ class Site(baseobject.Base_Object):
         setattr(self, coin + '_info', section)
         
     def _poll(self):
-        pass
+        values = self._helper_poll(
+            x + '_info' for x in self.objects.coins_dict
+        )
+        for k,v in values.items():
+            setattr(self, k.split('_')[0], float(v))
