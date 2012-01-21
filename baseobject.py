@@ -3,7 +3,7 @@ try:
 except:
     import configparser as ConfigParser
     
-import gevent
+import gevent, traceback, httplib2
 
 class Base_Object(object):
     def __init__(self, config_file):
@@ -13,6 +13,8 @@ class Base_Object(object):
         self._setup()
         self._poll_rate = 30
         self._alive = True
+        self._urls =  None
+        self._http = None
         gevent.spawn(self._poll_wrap)
         
     def _poll_wrap(self):
@@ -46,7 +48,7 @@ class Base_Object(object):
             
         #Get the bodies
         self._resp = {}
-        for item in self.urls:
+        for item in self._urls:
             self._resp[item] = self._http.request(item, 'GET')
             
         self.values = {}

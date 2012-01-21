@@ -38,10 +38,14 @@ class Objects(object):
         except:
             FD_DIR = os.curdir
         
+        #Parse config files and create objects
+        
         for file_name in os.listdir(os.path.join(FD_DIR,'coins')):
             self.coins.add(coins.Coin(
                 reduce(os.path.join, [FD_DIR, 'coins', file_name])
             ))
+            
+        #Some files need to know about the coins
             
         self._mapping_setup()
         
@@ -65,3 +69,4 @@ class Objects(object):
         
 if __name__ == "__main__":
     Objects()
+    gevent.sleep()
