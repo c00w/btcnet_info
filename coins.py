@@ -11,6 +11,7 @@ class Coin(baseobject.Base_Object):
         self.general_info = section
         self.name = section.get('short_name', 'Unknown')
         self.long_name = section.get('long_name', 'Unknown')
+        self.difficulty = section.get('recent_difficulty', 1)
         
     def _poll(self):
         pass
