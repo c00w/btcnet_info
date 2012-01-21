@@ -44,6 +44,11 @@ class Objects(object):
             ))
             
         self._mapping_setup()
+        
+        for file_name in os.listdir(os.path.join(FD_DIR,'difficulty_sites')):
+            self.coins.add(difficulty_sites.Site(
+                reduce(os.path.join, [FD_DIR, 'difficulty_sites', file_name])
+            ))
             
         for file_name in os.listdir(os.path.join(FD_DIR,'exchanges')):
             self.exchanges.add(exchanges.Exchange(
