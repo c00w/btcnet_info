@@ -5,7 +5,7 @@ except:
     
 import gevent, baseobject
 
-class Coins(baseobject.Base_Object):
+class Coin(baseobject.Base_Object):
     
     def _setup(self):
         pass
