@@ -18,3 +18,22 @@ for item in parse.sections():
         config.set('general', k, v)
     with open('./coins/%s' % coin_info['short_name'], 'wb') as configfile:
         config.write(configfile)
+      
+parse = ConfigParser.RawConfigParser()  
+parse.read('../bitHopper/diffwebs.cfg')
+for item in parse.sections():
+    coin_info = dict(parse.items(item))
+    if coin_info['get_method'] == 'regexp':
+        coin_info['get_method'] = 're'
+    config = ConfigParser.RawConfigParser()
+    config.add_section('general')
+    config.set('general', 'coin', coin_info['coin'])
+    config.set('general', 'name', item)
+    coin = coin_info['coin']
+    config.add_section(coin)
+    config.set(coin, 'address', coin_info['url'])
+    config.set(coin, 'method', coin_info['get_method'])
+    if 'pattern' in coin_info:
+        config.set(coin, 'key', coin_info['pattern'])
+    with open('./coins/%s' % item, 'wb') as configfile:
+        config.write(configfile)

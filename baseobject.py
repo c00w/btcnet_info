@@ -8,7 +8,7 @@ import gevent
 class Base_Object(object):
     def __init__(self, config_file):
     
-        self.config = ConfigParser.SafeConfigParser()
+        self.config = ConfigParser.RawConfigParser()
         self.config.read(config_file)
         self._setup()
         self._poll_rate = 30
@@ -63,6 +63,9 @@ class Base_Object(object):
             if getattr(self, '_poll_' + info['method'], None):
                 value = getattr(self, '_poll_' + info['method'])(info, resp)
                 self.values[item] =  value
+                
+    def _poll_direct(self, info, resp):
+        return resp
             
     def _poll_json(self, info, resp):
         """
