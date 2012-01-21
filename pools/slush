@@ -7,7 +7,6 @@ address = api2.bitcoin.cz:8332
 
 [api]
 method = json
-key_ghashrate = ghashes_ps
 address = http://mining.bitcoin.cz/stats/json/
 key = shares
 

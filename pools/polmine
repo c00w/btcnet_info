@@ -7,7 +7,6 @@ address = polmine.pl:8347
 
 [api]
 method = re_rateduration
-key_ghashrate = <b> ([\.0-9]+)</b> Ghash
 address = https://polmine.pl/?action=statistics
 
 [duration]

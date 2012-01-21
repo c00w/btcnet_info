@@ -7,7 +7,6 @@ address = coinotron.com:8322
 
 [api]
 method = re_rateduration
-key_ghashrate = ([0-9]+(?:\.[0-9]*)?) GH</td>
 address = http://coinotron.com/coinotron/AccountServlet?action=home
 strip = ''
 

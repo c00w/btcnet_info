@@ -57,7 +57,7 @@ for item in parse.sections():
         config.set('lp', 'address', pool_info['lp_address'])
     config.add_section('api')
     for k,v in pool_info.items():
-        if 'api' in k and 'duration' not in k:
+        if 'api' in k and 'duration' not in k and 'ghashrate' not in k:
             k = k.replace('api_','')
             config.set('api', k, v)
             

@@ -7,7 +7,6 @@ address = pool.schaetter.us:8337
 
 [api]
 method = re_rateduration
-key_ghashrate = Pool Hash Rate</td><td>([0-9.]+) Ghashes/s
 address = http://pool.schaetter.us/stats.php
 
 [duration]

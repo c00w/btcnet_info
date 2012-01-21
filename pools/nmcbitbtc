@@ -7,7 +7,6 @@ address = nmcbit.com:8332
 
 [api]
 method = re
-key_ghashrate = ([,0-9.]+) Ghash/s
 address = http://www.nmcbit.com/statistics
 strip = ','
 key = BTC\s+Current\s+round\s+duration:</th><td>[0-9]+:[0-9]+:[0-9]+\s+hours</td></tr><tr><th\W+align="right">Valid\s+shares\s+for\s+current\s+round:</th><td>([,0-9]+)

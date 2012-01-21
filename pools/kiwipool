@@ -7,7 +7,6 @@ address = pool2.kiwipool.me:8332
 
 [api]
 method = re
-key_ghashrate = current\s+hash\s+rate\W+([0-9]+)
 address = http://kiwipool.me
 strip = ''
 key = [:0-9]+[,]([0-9]+)

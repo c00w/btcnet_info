@@ -7,7 +7,6 @@ address = pool.bloodys.com:8332
 
 [api]
 method = re
-key_ghashrate = ([,0-9.]+) Ghash/s
 address = http://pool.bloodys.com/?action=statistics
 strip = ','
 key = ([0-9]+(,[0-9]+)*) Shares
