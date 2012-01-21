@@ -1,0 +1,9 @@
+[general]
+coin = nmc
+name = namecoinpool
+
+[nmc]
+address = http://namecoinpool.com/
+method = re
+key = Current difficulty:</td><td>([.0-9]+)</td>
+

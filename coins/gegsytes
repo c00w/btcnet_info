@@ -1,0 +1,9 @@
+[general]
+coin = geg
+name = gegsytes
+
+[geg]
+address = http://blockexplorer.sytes.net/chain/GeistGeld?count=1
+method = re
+key = <td>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}</td><td>\d{1,}</td><td>[.0-9]+</td><td>([.0-9]+)</td>
+

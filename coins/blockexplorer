@@ -1,0 +1,8 @@
+[general]
+coin = btc
+name = blockexplorer
+
+[btc]
+address = http://blockexplorer.com/q/getdifficulty
+method = direct
+

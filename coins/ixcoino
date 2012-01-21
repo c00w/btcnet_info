@@ -1,0 +1,9 @@
+[general]
+coin = ixc
+name = ixcoino
+
+[ixc]
+address = http://coinotron.com/coinotron/AccountServlet?action=home
+method = re
+key = <td style="text-align: left;">IXC</td>\r\n<td style="text-align: right;">\s+[.0-9]+ [GM]H</td>\r\n<td style="text-align: right;">[0-9]+</td>\r\n<td style="text-align: right;">[\shm0-9]+</td>\r\n<td style="text-align: center;">[\s.0-9-]+</td>\r\n<td style="text-align: right;">\s+([0-9]+)</td>
+
