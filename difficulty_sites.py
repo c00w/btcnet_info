@@ -12,7 +12,7 @@ class Site(baseobject.Base_Object):
     
     def __init__(self, configfile, objects):
         for coin in self.objects.coins_dict:
-            setattr(self, '_setup_%s' % coin, 
+            setattr(self, '_setup_%s' % coin,
                 lambda section: self._setup_coin(section, coin))
         self.coins = set()
         baseobject.Base_Object.__init__(self, configfile)
@@ -27,7 +27,7 @@ class Site(baseobject.Base_Object):
         
     def _poll(self):
         values = self._helper_poll(
-            x + '_info' for x in self.objects.coins_dict
+            x['name'] + '_info' for x in self.coins
         )
         for k,v in values.items():
             setattr(self, k.split('_')[0], float(v))
