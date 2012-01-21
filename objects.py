@@ -12,7 +12,17 @@ class Objects(object):
         self.pools = set()
         self.exchanges = set()
         self.coins = set()
+        self.coins_dict = {}
         self._setup()
+        self._mapping_setup()
+        
+    def _mapping_setup(self):
+        """
+        Set up a mapping such that we can access coins by name
+        for the exchanges
+        """
+        for coin in self.coins:
+            self.coins_dict[coin.name] = coin
     
     def _setup(self):
         """
