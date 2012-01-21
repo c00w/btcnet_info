@@ -9,7 +9,6 @@ class Base_Object(object):
     def __init__(self, config_file):
     
         self.config = ConfigParser.SafeConfigParser()
-        print config_file
         self.config.read(config_file)
         self._setup()
         self._poll_rate = 30
