@@ -14,7 +14,7 @@ class Objects(object):
         self.coins = set()
         self.coins_dict = {}
         self._setup()
-        self._mapping_setup()
+        
         
     def _mapping_setup(self):
         """
@@ -43,9 +43,12 @@ class Objects(object):
                 reduce(os.path.join, [FD_DIR, 'coins', file_name])
             ))
             
+        self._mapping_setup()
+            
         for file_name in os.listdir(os.path.join(FD_DIR,'exchanges')):
             self.exchanges.add(exchanges.Exchange(
-                reduce(os.path.join, [FD_DIR, 'exchanges', file_name])
+                reduce(os.path.join, [FD_DIR, 'exchanges', file_name]),
+                self ,
             ))
         
         for file_name in os.listdir(os.path.join(FD_DIR,'pools')):

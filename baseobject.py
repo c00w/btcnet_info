@@ -27,6 +27,43 @@ class Base_Object(object):
                 traceback.print_exc()
             gevent.sleep(self._poll_rate)
             
+    def _helper_poll(self, sections):
+        """
+        Makes a list of urls we should pull
+        Pulls them
+        Calls appropriate handler function
+        """
+        #Get a list of urls we have to pull
+        if not self._urls:
+            self._urls = set()
+            for item in sections:
+                if getattr(self, item, None):
+                    self._urls.add(getattr(self, item).get('address'))
+                    
+        #Set up our http object
+        if not self._http:
+            self._http = httplib2.Http(disable_ssl_certificate_validation=True, timeout=10)
+            
+        #Get the bodies
+        self._resp = {}
+        for item in self.urls:
+            self._resp[item] = self._http.request(item, 'GET')
+            
+        self.values = {}
+        
+        #handle_stuff
+        for item in sections:
+            if not getattr(self, item, None):
+                continue
+                
+            info = getattr(self, item)
+            resp = self._resp[item['address']]
+            
+            #Call the correct methods
+            if getattr(self, '_poll_' + info['method'], None):
+                value = getattr(self, '_poll_' + info['method'])(info, resp)
+                self.values[item] =  value
+            
     def _poll_json(self, info, resp):
         """
         Handles json method of polling

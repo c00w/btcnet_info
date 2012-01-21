@@ -30,38 +30,14 @@ class Pool(baseobject.Base_Object):
         
     def _poll(self):
         """
-        Makes a list of urls we should pull
-        Pulls them
-        Calls appropriate handler function
+        Updates a couple of statistics. Has special handling for duration
         """
-        #Get a list of urls we have to pull
-        if not self._urls:
-            self._urls = set()
-            for item in ['shares_info', 'hashrate_info', 'duration_info']:
-                if getattr(self, item, None):
-                    self._urls.add(getattr(self, item).get('address'))
-                    
-        #Set up our http object
-        if not self._http:
-            self._http = httplib2.Http(disable_ssl_certificate_validation=True, timeout=10)
-            
-        #Get the bodies
-        self._resp = {}
-        for item in self.urls:
-            self._resp[item] = self._http.request(item, 'GET')
-            
-        #handle_stuff
-        for item in ['shares_info', 'hashrate_info', 'duration_info']:
-            if not getattr(self, item, None):
-                continue
-                
-            info = getattr(self, item)
-            resp = self._resp[item['address']]
-            
-            #Call the correct methods
-            if getattr(self, '_poll_' + info['method'], None):
-                value = getattr(self, '_poll_' + info['method'])(info, resp)
-                setattr( self, item.split('_')[0], value)
+        values = self._helper_poll(
+            ['shares_info', 'hashrate_info', 'duration_info']
+        )
+        
+        for k,v in values.items():
+                setattr( self, k.split('_')[0], v)
             
                 
         
