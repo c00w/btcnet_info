@@ -19,6 +19,7 @@ method = re_rate
 
 [payout]
 scheme = pps
+merged_mining = true
 
 [shares]
 method = rate

@@ -17,6 +17,7 @@ key = Pool Rate:([ 0-9]+).
 method = re_rate
 
 [payout]
+scheme = pps
 
 [shares]
 method = rate

@@ -17,6 +17,7 @@ key = Total Pool Shares</td><td>([0-9]+)
 method = re
 
 [payout]
+scheme = prop
 
 [shares]
 method = direct

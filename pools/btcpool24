@@ -17,6 +17,7 @@ key = <br/>Round Shares:([ 0-9]+)<br/><br/></span>
 method = re
 
 [payout]
+scheme = prop
 
 [shares]
 method = direct

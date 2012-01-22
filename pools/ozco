@@ -19,7 +19,8 @@ method = json
 method = json
 
 [payout]
-scheme = prop
+scheme = dgm
+merged_mining = true
 
 [shares]
 method = direct

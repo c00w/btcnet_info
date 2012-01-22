@@ -18,7 +18,7 @@ key = poolspeed
 method = json
 
 [payout]
-scheme = rsmpps
+scheme = smpps
 
 [shares]
 method = direct

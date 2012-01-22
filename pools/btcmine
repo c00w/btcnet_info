@@ -21,6 +21,7 @@ method = re
 
 [payout]
 scheme = score
+c = 1
 
 [shares]
 method = direct

@@ -17,6 +17,7 @@ key = block</td><td>([ 0-9]+)</td>
 method = re
 
 [payout]
+scheme = prop
 
 [shares]
 method = direct

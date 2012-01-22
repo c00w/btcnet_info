@@ -16,6 +16,7 @@ key = Shares this round:([0-9]+)<br/>
 method = re
 
 [payout]
+scheme = prop
 
 [shares]
 method = direct

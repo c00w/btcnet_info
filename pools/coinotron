@@ -19,7 +19,8 @@ key = ([0-9]+(?:\.[0-9]*)?) GH</td>
 method = re_rateduration
 
 [payout]
-scheme = prop
+scheme = score
+c = 1
 
 [shares]
 method = rateduration

@@ -18,6 +18,7 @@ key = shares
 method = json
 
 [payout]
+scheme = smpps
 
 [shares]
 method = direct

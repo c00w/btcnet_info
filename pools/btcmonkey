@@ -17,6 +17,7 @@ key = shares_this_round
 method = json
 
 [payout]
+scheme = prop
 
 [shares]
 method = direct

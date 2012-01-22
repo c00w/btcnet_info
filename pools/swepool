@@ -21,6 +21,7 @@ key = round_time
 method = json
 
 [payout]
+scheme = prop
 
 [shares]
 method = direct

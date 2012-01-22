@@ -17,6 +17,7 @@ key = totalShares
 method = json
 
 [payout]
+scheme = prop
 
 [shares]
 method = direct

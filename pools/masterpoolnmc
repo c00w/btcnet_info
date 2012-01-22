@@ -19,6 +19,8 @@ key = hashrate
 method = json
 
 [payout]
+scheme = prop
+merged_mining = true
 
 [shares]
 method = direct

@@ -17,6 +17,7 @@ key = validcurrentshares
 method = json
 
 [payout]
+scheme = pplns
 
 [shares]
 method = direct

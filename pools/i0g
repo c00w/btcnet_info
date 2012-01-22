@@ -17,6 +17,7 @@ key = "hash_rate":([ 0-9]+).
 method = re_rate
 
 [payout]
+scheme = prop
 
 [shares]
 method = rate

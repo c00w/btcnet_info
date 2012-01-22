@@ -20,6 +20,7 @@ key_mhashrate = pool_total_mhash
 method = json
 
 [payout]
+scheme = prop
 
 [shares]
 method = direct

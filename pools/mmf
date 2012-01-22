@@ -16,6 +16,7 @@ key = shares_this_round
 method = json
 
 [payout]
+scheme = pplns
 
 [shares]
 method = direct

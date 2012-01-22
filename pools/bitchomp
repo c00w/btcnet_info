@@ -17,6 +17,8 @@ key = "shares": (\d+)
 method = re
 
 [payout]
+scheme = smpps
+merged_mining = true
 
 [shares]
 method = direct
