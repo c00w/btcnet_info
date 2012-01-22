@@ -15,6 +15,7 @@ class Base_Object(object):
         self._alive = True
         self._urls =  None
         self._http = None
+        self.poll_hook = None
         gevent.spawn(self._poll_wrap)
         
     def _poll_wrap(self):
@@ -24,6 +25,8 @@ class Base_Object(object):
         while self._alive:
             try:
                 self._poll()
+                if self.poll_hook:
+                    self.poll_hook()
             except Exception as e:
                 #todo, use python logging for this
                 traceback.print_exc()
