@@ -3,7 +3,7 @@ try:
 except:
     import configparser as ConfigParser
     
-import gevent, traceback, httplib2, socket
+import gevent, traceback, httplib2, socket, logging
 
 class Base_Object(object):
     def __init__(self, config_file):
@@ -27,8 +27,8 @@ class Base_Object(object):
                 self._poll()
                 if self.poll_hook:
                     self.poll_hook()
-            except socket.error:
-                pass
+            except socket.error as e:
+                logging.error('%s Network Error: %s' % (self.name, str(e)))
             except Exception as e:
                 #todo, use python logging for this
                 traceback.print_exc()
