@@ -76,6 +76,12 @@ for item in parse.sections():
             k = k.replace('_ghashrate', '')
             config.set('ghash', k, v)
     config.set('ghash', 'method', pool_info['api_method'])
+    
+    config.add_section('payout')
+    for k,v in pool_info.items():
+        if 'payout' in k:
+            k = k.replace('payout_','')
+            config.set('payout', k, v)
             
             
     config.add_section('shares')
