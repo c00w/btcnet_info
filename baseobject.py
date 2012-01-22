@@ -3,7 +3,7 @@ try:
 except:
     import configparser as ConfigParser
     
-import gevent, traceback, httplib2
+import gevent, traceback, httplib2, socket
 
 class Base_Object(object):
     def __init__(self, config_file):
@@ -27,6 +27,8 @@ class Base_Object(object):
                 self._poll()
                 if self.poll_hook:
                     self.poll_hook()
+            except socket.error:
+                pass
             except Exception as e:
                 #todo, use python logging for this
                 traceback.print_exc()
@@ -52,6 +54,8 @@ class Base_Object(object):
         #Get the bodies
         self._resp = {}
         for item in self._urls:
+            if not item:
+                continue
             self._resp[item] = self._http.request(item, 'GET')
             
         self.values = {}

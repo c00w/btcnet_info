@@ -1,7 +1,7 @@
 import gevent.monkey
 gevent.monkey.patch_all()
 
-import os, os.path, gevent, pools, exchanges, coins
+import os, os.path, gevent, pools, exchanges, coins, difficulty_sites
 try:
     import ConfigParser
 except:
