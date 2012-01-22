@@ -17,6 +17,8 @@ method = re_rateduration
 key = Pool Hash Rate</td><td>([0-9.]+) Ghashes/s
 method = re_rateduration
 
+[payout]
+
 [shares]
 method = rateduration
 

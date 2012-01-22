@@ -19,6 +19,10 @@ method = re
 key = ([,0-9.]+) Ghash/s
 method = re
 
+[payout]
+scheme = prop
+merged_mining = true
+
 [shares]
 method = direct
 

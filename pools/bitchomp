@@ -16,6 +16,8 @@ key = "shares": (\d+)
 [ghash]
 method = re
 
+[payout]
+
 [shares]
 method = direct
 

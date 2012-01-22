@@ -16,6 +16,9 @@ key = Hashrate:([ 0-9]+).
 [ghash]
 method = re_rate
 
+[payout]
+scheme = pps
+
 [shares]
 method = rate
 

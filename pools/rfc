@@ -19,6 +19,8 @@ key = poolstats,round_time
 key = poolstats,hashrate
 method = json
 
+[payout]
+
 [shares]
 method = direct
 

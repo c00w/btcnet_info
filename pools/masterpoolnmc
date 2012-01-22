@@ -18,6 +18,8 @@ method = json
 key = hashrate
 method = json
 
+[payout]
+
 [shares]
 method = direct
 

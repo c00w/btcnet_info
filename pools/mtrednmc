@@ -17,6 +17,10 @@ key = NMCroundshares
 key = hashrate
 method = json
 
+[payout]
+scheme = pps
+merged_mining = true
+
 [shares]
 method = direct
 

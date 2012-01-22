@@ -18,6 +18,9 @@ method = re
 key = Hash Rate</td><td>([,0-9.]+)
 method = re
 
+[payout]
+scheme = prop
+
 [shares]
 method = direct
 

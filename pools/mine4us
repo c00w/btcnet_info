@@ -16,6 +16,8 @@ key = <td>Valid shares this round: </td><td>([0-9]+)</td>
 [ghash]
 method = re
 
+[payout]
+
 [shares]
 method = direct
 

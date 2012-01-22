@@ -16,6 +16,8 @@ key = validcurrentshares
 [ghash]
 method = json
 
+[payout]
+
 [shares]
 method = direct
 

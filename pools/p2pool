@@ -15,6 +15,9 @@ key = code
 [ghash]
 method = disable
 
+[payout]
+scheme = pplns
+
 [shares]
 method = disable
 

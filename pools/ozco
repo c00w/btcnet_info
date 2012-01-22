@@ -3,7 +3,7 @@ coin = btc
 name = ozco
 
 [mine]
-address = us.ozco.in:8999
+address = us.ozco.in:8332
 
 [api]
 method = json
@@ -17,6 +17,9 @@ method = json
 
 [ghash]
 method = json
+
+[payout]
+scheme = prop
 
 [shares]
 method = direct

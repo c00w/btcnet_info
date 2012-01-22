@@ -17,6 +17,8 @@ key = shares
 [ghash]
 method = json
 
+[payout]
+
 [shares]
 method = direct
 

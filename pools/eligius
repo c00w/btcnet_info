@@ -19,6 +19,10 @@ method = re
 key = ([0-9.]+) GH/s
 method = re
 
+[payout]
+scheme = smpps
+merged_mining = true
+
 [shares]
 method = direct
 

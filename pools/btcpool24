@@ -16,6 +16,8 @@ key = <br/>Round Shares:([ 0-9]+)<br/><br/></span>
 [ghash]
 method = re
 
+[payout]
+
 [shares]
 method = direct
 

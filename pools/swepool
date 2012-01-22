@@ -20,6 +20,8 @@ key = round_time
 [ghash]
 method = json
 
+[payout]
+
 [shares]
 method = direct
 

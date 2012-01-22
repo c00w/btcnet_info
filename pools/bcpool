@@ -16,6 +16,9 @@ key_shares = <td width="80"> (\d+)</td>
 [ghash]
 method = re_shareestimate
 
+[payout]
+scheme = prop
+
 [shares]
 method = shareestimate
 

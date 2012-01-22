@@ -17,6 +17,9 @@ strip = ''
 [ghash]
 method = re_rate
 
+[payout]
+scheme = pps
+
 [shares]
 method = rate
 

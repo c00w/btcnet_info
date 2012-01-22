@@ -17,6 +17,9 @@ key = poolRoundShares
 key = poolspeed
 method = json
 
+[payout]
+scheme = rsmpps
+
 [shares]
 method = direct
 

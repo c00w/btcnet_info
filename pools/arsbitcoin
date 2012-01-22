@@ -16,6 +16,9 @@ key = currentroundshares
 [ghash]
 method = json
 
+[payout]
+scheme = pps
+
 [shares]
 method = direct
 

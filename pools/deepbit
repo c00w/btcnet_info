@@ -16,6 +16,9 @@ key = [rate:&nbsp;]+([0-9]+)+&nbsp;Gh/s
 [ghash]
 method = re_rate
 
+[payout]
+scheme = prop
+
 [shares]
 method = rate
 

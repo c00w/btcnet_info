@@ -17,6 +17,9 @@ method = re_rateduration
 [ghash]
 method = re_rateduration
 
+[payout]
+scheme = pps
+
 [shares]
 method = rateduration
 

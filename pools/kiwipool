@@ -19,6 +19,9 @@ method = re
 key = current\s+hash\s+rate\W+([0-9]+)
 method = re
 
+[payout]
+scheme = prop
+
 [shares]
 method = direct
 

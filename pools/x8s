@@ -15,6 +15,8 @@ key = round_shares
 [ghash]
 method = json
 
+[payout]
+
 [shares]
 method = direct
 

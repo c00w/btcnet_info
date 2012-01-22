@@ -16,6 +16,9 @@ key = round_shares
 [ghash]
 method = json_ec
 
+[payout]
+scheme = dgm
+
 [shares]
 method = direct
 

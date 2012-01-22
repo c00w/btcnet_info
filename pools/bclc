@@ -15,6 +15,9 @@ address = http://www.bitcoins.lc/stats.json
 [ghash]
 method = re_rate
 
+[payout]
+scheme = prop
+
 [shares]
 method = rate
 

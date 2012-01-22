@@ -19,6 +19,10 @@ key = blockchains,BTC,roundduration
 key = hashrate
 method = json
 
+[payout]
+scheme = pplns
+merged_mining = true
+
 [shares]
 method = direct
 

@@ -17,6 +17,9 @@ key = <span class="stat">([0-9]+) GH/s</span>
 [ghash]
 method = re_rate
 
+[payout]
+scheme = pps
+
 [shares]
 method = rate
 

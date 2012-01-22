@@ -16,6 +16,8 @@ key = block</td><td>([ 0-9]+)</td>
 [ghash]
 method = re
 
+[payout]
+
 [shares]
 method = direct
 

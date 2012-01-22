@@ -19,6 +19,8 @@ key_mhashrate = pool_total_mhash
 [ghash]
 method = json
 
+[payout]
+
 [shares]
 method = direct
 

@@ -16,6 +16,8 @@ key = Pool Rate:([ 0-9]+).
 [ghash]
 method = re_rate
 
+[payout]
+
 [shares]
 method = rate
 

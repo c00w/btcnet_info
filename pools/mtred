@@ -16,6 +16,8 @@ key = roundshares
 key = hashrate
 method = json
 
+[payout]
+
 [shares]
 method = direct
 

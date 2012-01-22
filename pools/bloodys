@@ -19,6 +19,9 @@ method = re
 key = ([,0-9.]+) Ghash/s
 method = re
 
+[payout]
+scheme = prop
+
 [shares]
 method = direct
 

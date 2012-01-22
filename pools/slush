@@ -19,6 +19,11 @@ key = round_duration
 key = ghashes_ps
 method = json
 
+[payout]
+scheme = score
+merged_mining = true
+c = 300
+
 [shares]
 method = direct
 

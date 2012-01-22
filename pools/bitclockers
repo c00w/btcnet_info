@@ -18,6 +18,9 @@ key = roundshares
 [ghash]
 method = json
 
+[payout]
+scheme = prop
+
 [shares]
 method = direct
 

@@ -19,6 +19,9 @@ method = re
 [ghash]
 method = re
 
+[payout]
+scheme = score
+
 [shares]
 method = direct
 

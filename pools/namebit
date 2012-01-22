@@ -16,6 +16,8 @@ key = <td id="current_share_count">([0-9]+)</td>
 [ghash]
 method = re
 
+[payout]
+
 [shares]
 method = direct
 

@@ -15,6 +15,9 @@ key = pool,round_shares
 [ghash]
 method = json
 
+[payout]
+scheme = dgm
+
 [shares]
 method = direct
 
