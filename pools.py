@@ -25,6 +25,9 @@ class Pool(baseobject.Base_Object):
     def _setup_ghash(self, section):
         self.hashrate_info = section
         
+    def _setup_payout(self, section):
+        self.payout_info = section
+        
     def _setup_duration(self, section):
         self.duration_info = section
         
