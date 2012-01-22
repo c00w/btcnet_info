@@ -20,7 +20,7 @@ class Site(baseobject.Base_Object):
     
     def _setup_general(self, section):
         self.general_info = section
-        self.name = section.get('short_name', 'Unknown')
+        self.name = section.get('name', 'Unknown')
             
     def _setup_coin(self, section, coin):
         setattr(self, coin + '_info', section)

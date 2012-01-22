@@ -1,7 +1,7 @@
 import gevent.monkey
 gevent.monkey.patch_all()
 
-import os, os.path, gevent, pools, exchanges, coins, difficulty_sites
+import os, os.path, gevent, pools, exchanges, coins, difficulty_sites, sys
 try:
     import ConfigParser
 except:
@@ -11,10 +11,10 @@ class Objects(object):
     def __init__(self):
         self.pools = set()
         self.exchanges = set()
+        self.difficulty_sites = set()
         self.coins = set()
         self.coins_dict = {}
         self._setup()
-        
         
     def _mapping_setup(self):
         """
@@ -39,7 +39,6 @@ class Objects(object):
             FD_DIR = os.curdir
         
         #Parse config files and create objects
-        
         for file_name in os.listdir(os.path.join(FD_DIR,'coins')):
             self.coins.add(coins.Coin(
                 reduce(os.path.join, [FD_DIR, 'coins', file_name])
@@ -50,7 +49,7 @@ class Objects(object):
         self._mapping_setup()
         
         for file_name in os.listdir(os.path.join(FD_DIR,'difficulty_sites')):
-            self.coins.add(difficulty_sites.Site(
+            self.difficulty_sites.add(difficulty_sites.Site(
                 reduce(os.path.join, [FD_DIR, 'difficulty_sites', file_name]),
                 self,
             ))

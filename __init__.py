@@ -1,4 +1,4 @@
-import api
+import api, os
 
 local_api = api.API()
 
@@ -9,3 +9,4 @@ def get_pools():
     return local_api.get_pools()
 
 __all__ = ['get_coins', 'get_pools']
+
