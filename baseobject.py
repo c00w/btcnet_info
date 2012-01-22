@@ -7,7 +7,7 @@ import gevent, traceback, httplib2, socket, logging
 
 class Base_Object(object):
     def __init__(self, config_file):
-    
+        
         self.config = ConfigParser.RawConfigParser()
         self.config.read(config_file)
         self._setup()
@@ -16,6 +16,8 @@ class Base_Object(object):
         self._urls =  None
         self._http = None
         self.poll_hook = None
+        self.api_down = False
+        self.fields = set(['api_down', 'poll_hook'])
         gevent.spawn(self._poll_wrap)
         
     def _poll_wrap(self):
@@ -27,10 +29,13 @@ class Base_Object(object):
                 self._poll()
                 if self.poll_hook:
                     self.poll_hook()
-            except socket.error as e:
+                self.api_down = False
+            except (socket.error, httplib2.ServerNotFoundError) as e:
                 logging.error('%s Network Error: %s' % (self.name, str(e)))
+                self.api_down = True
             except Exception as e:
                 #todo, use python logging for this
+                self.api_down = True
                 traceback.print_exc()
             gevent.sleep(self._poll_rate)
             
