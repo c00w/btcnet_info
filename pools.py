@@ -12,6 +12,9 @@ class Pool(baseobject.Base_Object):
         self.name = section.get('name', 'Unknown')
         self.coin = section.get('coin', 'btc')
         self.url = section.get('url', '')
+        self.fields.add('name')
+        self.fields.add('coin')
+        self.fields.add('url')
         
     def _setup_mine(self, section):
         self.mine_info = section
@@ -57,8 +60,10 @@ class Pool(baseobject.Base_Object):
         
         for k,v in values.items():
                 setattr( self, k.split('_')[0], v)
+                self.fields.add(k.split('_')[0])
             
         self.shares = self._handle_shares()
+        self.fields.add('shares')
            
                 
         
