@@ -3,14 +3,13 @@ try:
 except:
     import configparser as ConfigParser
     
-import gevent, traceback, httplib2, socket, logging
+import gevent, traceback, httplib2, socket, logging, re, json
 
 class Base_Object(object):
     def __init__(self, config_file):
         
         self.config = ConfigParser.RawConfigParser()
         self.config.read(config_file)
-        self._setup()
         self._poll_rate = 30
         self._alive = True
         self._urls =  None
@@ -18,6 +17,7 @@ class Base_Object(object):
         self.poll_hook = None
         self.api_down = False
         self.fields = set(['api_down', 'poll_hook'])
+        self._setup()
         gevent.spawn(self._poll_wrap)
         
     def _poll_wrap(self):
@@ -61,7 +61,7 @@ class Base_Object(object):
         for item in self._urls:
             if not item:
                 continue
-            self._resp[item] = self._http.request(item, 'GET')
+            headers, self._resp[item] = self._http.request(item, 'GET')
             
         self.values = {}
         
@@ -71,12 +71,15 @@ class Base_Object(object):
                 continue
                 
             info = getattr(self, item)
-            resp = self._resp[item['address']]
+            if 'address' not in info:
+                print info
+            resp = self._resp[info['address']]
             
             #Call the correct methods
             if getattr(self, '_poll_' + info['method'], None):
                 value = getattr(self, '_poll_' + info['method'])(info, resp)
                 self.values[item] =  value
+        return self.values
                 
     def _poll_direct(self, info, resp):
         return resp
@@ -89,8 +92,9 @@ class Base_Object(object):
             raise ValueError('No key in section')
             
         item = json.loads(resp)
-        if 'key' in info:
-            item = item[info['key']]
+        
+        for key in info['key'].split(','):
+            item = item[key]
         
         return item
         
@@ -99,9 +103,9 @@ class Base_Object(object):
         Handles re method of polling
         """
         if 'key' not in info:
-            raise ValueError('No key in section')
-            
-        result = re.search( info['key'], info)
+            raise ValueError('No key in section') 
+       
+        result = re.search( info['key'], resp)
         group = info[group] if 'group' in info else 1
         result = result.group(group)
         

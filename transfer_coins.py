@@ -61,27 +61,40 @@ for item in parse.sections():
             k = k.replace('api_','')
             config.set('api', k, v)
             
-    config.add_section('duration')
+    added = False
     for k,v in pool_info.items():
         if 'api' in k and 'duration' in k:
+            if not added:
+                config.add_section('duration')
+                added = True
             k = k.replace('api_', '')
             k = k.replace('_duration', '')
             config.set('duration', k, v)
             config.set('duration', 'method', pool_info['api_method'])
             
-    config.add_section('ghash')
+    added = False
     for k,v in pool_info.items():
         if 'api' in k and 'ghashrate' in k:
+            if not added:
+                config.add_section('ghash')
+                added = True
             k = k.replace('api_', '')
             k = k.replace('_ghashrate', '')
             config.set('ghash', k, v)
-    config.set('ghash', 'method', pool_info['api_method'])
+    if added:
+        config.set('ghash', 'method', pool_info['api_method'])
     
     config.add_section('payout')
     for k,v in pool_info.items():
         if 'payout' in k:
             k = k.replace('payout_','')
             config.set('payout', k, v)
+            
+    for section in ['duration','ghash']:
+        if section not in config.sections():
+            continue
+        if 'address' not in config.items(section):
+            config.set(section, 'address', config.get('api','address'))
             
             
     config.add_section('shares')

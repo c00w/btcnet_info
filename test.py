@@ -6,12 +6,12 @@ import gevent
 
 class TestStore(unittest.TestCase):
     def testCoins(self):
-        gevent.sleep()
+        gevent.sleep(30)
         for item in __init__.get_coins():
             self.assertTrue(type(item) is coins.Coin )
             
     def testPools(self):
-        gevent.sleep()
+        gevent.sleep(30)
         for item in __init__.get_pools():
             self.assertTrue(type(item) is pools.Pool )
 

@@ -54,9 +54,11 @@ class Pool(baseobject.Base_Object):
         """
         Updates a couple of statistics. Has special handling for duration
         """
+        print '_pool'
         values = self._helper_poll(
             ['api_info', 'ghash_info', 'duration_info']
         )
+        print '_helper_poll: results %s' % str(values)
         
         for k,v in values.items():
                 setattr( self, k.split('_')[0], v)

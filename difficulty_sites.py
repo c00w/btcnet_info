@@ -3,7 +3,7 @@ try:
 except:
     import configparser as ConfigParser
     
-import baseobject
+import baseobject, re, json
 
 class Site(baseobject.Base_Object):
     """
