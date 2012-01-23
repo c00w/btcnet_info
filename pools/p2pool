@@ -10,11 +10,6 @@ method = disable
 address = http://localhost:8332
 key = code
 
-[duration]
-
-[ghash]
-method = disable
-
 [payout]
 scheme = pplns
 

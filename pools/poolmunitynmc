@@ -10,11 +10,6 @@ method = json
 address = https://poolmunity.com/api.php?server
 key = totalShares
 
-[duration]
-
-[ghash]
-method = json
-
 [payout]
 scheme = prop
 

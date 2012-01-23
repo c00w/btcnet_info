@@ -10,11 +10,10 @@ method = json
 address = https://mtred.com/api/stats
 key = roundshares
 
-[duration]
-
 [ghash]
 key = hashrate
 method = json
+address = https://mtred.com/api/stats
 
 [payout]
 scheme = pps

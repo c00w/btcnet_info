@@ -11,11 +11,6 @@ address = http://pool.mkalinin.ru/api.php
 key_mhashrate = hashrate
 key = shares
 
-[duration]
-
-[ghash]
-method = json
-
 [payout]
 scheme = pplns
 

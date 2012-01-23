@@ -11,11 +11,6 @@ address = https://mineco.in/stats.json
 key = shares_this_round
 key_hashrate = hashrate
 
-[duration]
-
-[ghash]
-method = json
-
 [payout]
 scheme = pplns
 

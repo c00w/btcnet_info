@@ -14,10 +14,12 @@ key = shares
 key_hour_min = (\d+):(\d+):
 method = json
 key = round_duration
+address = http://mining.bitcoin.cz/stats/json/
 
 [ghash]
 key = ghashes_ps
 method = json
+address = http://mining.bitcoin.cz/stats/json/
 
 [payout]
 scheme = score

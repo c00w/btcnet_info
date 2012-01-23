@@ -11,11 +11,6 @@ address = https://www.arsbitcoin.com/api.php
 key_mhashrate = hashrate
 key = currentroundshares
 
-[duration]
-
-[ghash]
-method = json
-
 [payout]
 scheme = pps
 

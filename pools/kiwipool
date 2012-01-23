@@ -14,10 +14,12 @@ key = [:0-9]+[,]([0-9]+)
 [duration]
 key_hour_min = ([0-9]+):([0-9]+):
 method = re
+address = http://kiwipool.me
 
 [ghash]
 key = current\s+hash\s+rate\W+([0-9]+)
 method = re
+address = http://kiwipool.me
 
 [payout]
 scheme = prop

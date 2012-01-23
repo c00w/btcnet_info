@@ -10,11 +10,6 @@ method = json
 address = http://btc.x8s.de/api/global.json
 key = round_shares
 
-[duration]
-
-[ghash]
-method = json
-
 [payout]
 scheme = prop
 

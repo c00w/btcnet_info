@@ -14,10 +14,12 @@ key = blockchains,BTC,shares
 key_sec = (\d+)
 method = json
 key = blockchains,BTC,roundduration
+address = https://masterpool.eu/jsonstats
 
 [ghash]
 key = hashrate
 method = json
+address = https://masterpool.eu/jsonstats
 
 [payout]
 scheme = pplns

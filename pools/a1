@@ -12,10 +12,12 @@ address = http://www.a1bitcoinpool.com/stats.php
 [duration]
 key_hour_min = Time Since Last Block</td><td><span class="green">([0-9]+) Hours ([0-9]+) Minutes
 method = re_rateduration
+address = http://www.a1bitcoinpool.com/stats.php
 
 [ghash]
 key = Pool Hash Rate</td><td>([0-9.]+) Ghashes/s
 method = re_rateduration
+address = http://www.a1bitcoinpool.com/stats.php
 
 [payout]
 scheme = prop

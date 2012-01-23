@@ -11,11 +11,6 @@ address = https://polmine.pl/?action=statistics
 strip = ' '
 key = poprawnych wszystkich: &nbsp; </b> <br/>([ 0-9]+)<br/>
 
-[duration]
-
-[ghash]
-method = re
-
 [payout]
 scheme = pps
 

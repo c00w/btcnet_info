@@ -11,11 +11,6 @@ address = http://sc.btcguild.com/
 strip = ''
 key = _stat">([0-9]+).
 
-[duration]
-
-[ghash]
-method = re_rate
-
 [payout]
 scheme = prop
 

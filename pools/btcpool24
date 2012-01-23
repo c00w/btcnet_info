@@ -11,11 +11,6 @@ address = http://www.btcpool24.com/stat.php
 strip = ' '
 key = <br/>Round Shares:([ 0-9]+)<br/><br/></span>
 
-[duration]
-
-[ghash]
-method = re
-
 [payout]
 scheme = prop
 

@@ -12,10 +12,12 @@ address = https://polmine.pl/?action=statistics
 [duration]
 key_day_hour_min = </b> <br/>([ 0-9]+)dni([ 0-9]+)godzin([ 0-9]+)minut
 method = re_rateduration
+address = https://polmine.pl/?action=statistics
 
 [ghash]
 key = <b> ([\.0-9]+)</b> Ghash
 method = re_rateduration
+address = https://polmine.pl/?action=statistics
 
 [payout]
 scheme = pps

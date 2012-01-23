@@ -13,9 +13,7 @@ key = ([0-9]+).[0-9]+ Mh/s &nbsp
 [duration]
 key_hour_min = time since last block: ([0-9]+):([0-9]+):
 method = re_rateduration
-
-[ghash]
-method = re_rateduration
+address = http://www.bitpenny.com
 
 [payout]
 scheme = pps

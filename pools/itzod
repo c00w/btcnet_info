@@ -10,11 +10,6 @@ method = json
 address = https://pool.itzod.ru/api.php
 key = total_shares_count
 
-[duration]
-
-[ghash]
-method = json
-
 [payout]
 scheme = smpps
 

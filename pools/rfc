@@ -14,10 +14,12 @@ key = poolstats,round_shares
 key_sec = (\d+)
 method = json
 key = poolstats,round_time
+address = https://www.rfcpool.com/api/pool/stats
 
 [ghash]
 key = poolstats,hashrate
 method = json
+address = https://www.rfcpool.com/api/pool/stats
 
 [payout]
 scheme = pplns

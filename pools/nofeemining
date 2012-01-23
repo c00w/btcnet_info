@@ -11,11 +11,10 @@ nofeemining_user_apikey = 4140cbc6405f4425cf91ca74e1450b66
 address = https://nofeemining.appspot.com/api.php
 key = poolRoundShares
 
-[duration]
-
 [ghash]
 key = poolspeed
 method = json
+address = https://nofeemining.appspot.com/api.php
 
 [payout]
 scheme = smpps

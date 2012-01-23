@@ -14,9 +14,7 @@ key = pool,round_shares
 [duration]
 key_day_hour_min = (\d+)d (\d+)h (\d+)m
 method = json
-
-[ghash]
-method = json
+address = http://ozco.in/api.php
 
 [payout]
 scheme = dgm

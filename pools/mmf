@@ -10,11 +10,6 @@ method = json
 address = http://mining.mainframe.nl/api
 key = shares_this_round
 
-[duration]
-
-[ghash]
-method = json
-
 [payout]
 scheme = pplns
 

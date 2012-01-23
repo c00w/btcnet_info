@@ -10,11 +10,6 @@ method = json
 address = http://btcserv.net/json/pool/
 key = shares
 
-[duration]
-
-[ghash]
-method = json
-
 [payout]
 scheme = pps
 

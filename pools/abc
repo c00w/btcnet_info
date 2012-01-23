@@ -12,11 +12,6 @@ address = http://www.abcpool.co/stats.php
 strip = ''
 key = <span class="stat">([0-9]+) GH/s</span>
 
-[duration]
-
-[ghash]
-method = re_rate
-
 [payout]
 scheme = pps
 

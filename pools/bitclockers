@@ -13,11 +13,6 @@ address = http://bitclockers.com/api
 key_mhashrate = hashrate
 key = roundshares
 
-[duration]
-
-[ghash]
-method = json
-
 [payout]
 scheme = prop
 

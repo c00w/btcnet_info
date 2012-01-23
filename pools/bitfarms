@@ -11,11 +11,6 @@ address = http://bitfarms.ca/
 strip = ' '
 key = Pool Rate:([ 0-9]+).
 
-[duration]
-
-[ghash]
-method = re_rate
-
 [payout]
 scheme = pps
 

@@ -11,11 +11,6 @@ address = https://www.ninjacoin.com/
 strip = ' '
 key = Hashrate:([ 0-9]+).
 
-[duration]
-
-[ghash]
-method = re_rate
-
 [payout]
 scheme = pps
 

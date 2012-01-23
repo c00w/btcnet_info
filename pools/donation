@@ -10,11 +10,6 @@ method = json
 key = currentroundshares
 address = https://www.arsbitcoin.com/api.php
 
-[duration]
-
-[ghash]
-method = json
-
 [payout]
 
 [shares]

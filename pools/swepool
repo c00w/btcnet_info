@@ -16,9 +16,7 @@ key_hashrate = pool_speed
 key_sec = (\d+)
 method = json
 key = round_time
-
-[ghash]
-method = json
+address = http://swepool.net/json?key=%(swepool_user_apikey)s
 
 [payout]
 scheme = prop

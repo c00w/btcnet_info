@@ -13,10 +13,12 @@ key = blockchains,NMC,shares
 [duration]
 key = blockchains,NMC,roundduration
 method = json
+address = https://masterpool.eu/jsonstats
 
 [ghash]
 key = hashrate
 method = json
+address = https://masterpool.eu/jsonstats
 
 [payout]
 scheme = prop

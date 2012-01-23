@@ -10,11 +10,6 @@ method = re
 address = http://pool.bitminersunion.org/stats.php
 key = Shares this round:([0-9]+)<br/>
 
-[duration]
-
-[ghash]
-method = re
-
 [payout]
 scheme = prop
 

@@ -11,11 +11,6 @@ address = http://i0.btcguild.com/
 strip = ' '
 key = "hash_rate":([ 0-9]+).
 
-[duration]
-
-[ghash]
-method = re_rate
-
 [payout]
 scheme = prop
 

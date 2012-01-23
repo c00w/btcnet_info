@@ -11,11 +11,6 @@ address = http://scpool.bitparking.com/user
 strip = ' '
 key = Total Pool Shares</td><td>([0-9]+)
 
-[duration]
-
-[ghash]
-method = re
-
 [payout]
 scheme = prop
 

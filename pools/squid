@@ -10,11 +10,6 @@ method = json
 address = http://pool.squidnet.org/api
 key = shares_this_round
 
-[duration]
-
-[ghash]
-method = json
-
 [payout]
 scheme = prop
 

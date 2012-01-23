@@ -10,11 +10,6 @@ method = json
 address = http://api.triplemining.com/json/stats
 key = solved
 
-[duration]
-
-[ghash]
-method = json
-
 [payout]
 scheme = pplns
 

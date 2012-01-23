@@ -14,10 +14,12 @@ key = id="instant_scount_7">([,0-9]+)</td>
 [duration]
 key_hour_min = "instant_durationh_7">([,0-9]+)h</td><td class="ralign" id="instant_durationm_7">([,0-9]+)m
 method = re
+address = http://eligius.st/~artefact2/
 
 [ghash]
 key = ([0-9.]+) GH/s
 method = re
+address = http://eligius.st/~artefact2/
 
 [payout]
 scheme = smpps
