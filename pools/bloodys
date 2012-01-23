@@ -12,7 +12,9 @@ strip = ','
 key = ([0-9]+(,[0-9]+)*) Shares
 
 [duration]
-key_hour_min = Current Round: ([0-9]+):([0-9]+) hours
+hour_group = 1
+min_group = 2
+key = Current Round: ([0-9]+):([0-9]+) hours
 method = re
 address = http://pool.bloodys.com/?action=statistics
 

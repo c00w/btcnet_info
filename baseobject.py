@@ -37,6 +37,7 @@ class Base_Object(object):
                 #todo, use python logging for this
                 self.api_down = True
                 traceback.print_exc()
+                print self.name + "^^^"
             gevent.sleep(self._poll_rate)
             
     def _helper_poll(self, sections):
@@ -89,12 +90,15 @@ class Base_Object(object):
         Handles json method of polling
         """
         if 'key' not in info:
-            raise ValueError('No key in section')
+            raise ValueError('%s: No key in section' % self.name)
             
         item = json.loads(resp)
         
         for key in info['key'].split(','):
             item = item[key]
+            
+        if 'strip' in info:
+            item.replace(info['strip'][1:-1], '')
         
         return item
         
@@ -103,14 +107,16 @@ class Base_Object(object):
         Handles re method of polling
         """
         if 'key' not in info:
-            raise ValueError('No key in section') 
+            raise ValueError('%s: No key in section' % self.name) 
        
         result = re.search( info['key'], resp)
+        if not result:
+            return
         group = info[group] if 'group' in info else 1
         result = result.group(group)
         
         if 'strip' in info:
-            result.replace(info['strip'][1:-2], '')
+            result.replace(info['strip'][1:-1], '')
         return result
         
     def _setup(self):

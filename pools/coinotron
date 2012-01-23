@@ -11,7 +11,9 @@ address = http://coinotron.com/coinotron/AccountServlet?action=home
 strip = ''
 
 [duration]
-key_hour_min = (\d+) h ?(\d+)? ?m?
+hour_group = 1
+min_group = 2
+key = (\d+) h ?(\d+)? ?m?
 method = re_rateduration
 address = http://coinotron.com/coinotron/AccountServlet?action=home
 

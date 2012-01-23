@@ -69,6 +69,11 @@ for item in parse.sections():
                 added = True
             k = k.replace('api_', '')
             k = k.replace('_duration', '')
+            if k == 'key_hour_min':
+                k = 'key'
+                config.set('duration', 'hour_group', 1)
+                config.set('duration', 'min_group', 2)
+            
             config.set('duration', k, v)
             config.set('duration', 'method', pool_info['api_method'])
             
@@ -95,6 +100,8 @@ for item in parse.sections():
             continue
         if 'address' not in config.items(section):
             config.set(section, 'address', config.get('api','address'))
+        if 'strip' not in config.items(section) and 'strip' in config.items('api'):
+            config.set(section, 'strip', config.get('api','strip'))
             
             
     config.add_section('shares')

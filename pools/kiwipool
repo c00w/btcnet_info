@@ -12,7 +12,9 @@ strip = ''
 key = [:0-9]+[,]([0-9]+)
 
 [duration]
-key_hour_min = ([0-9]+):([0-9]+):
+hour_group = 1
+min_group = 2
+key = ([0-9]+):([0-9]+):
 method = re
 address = http://kiwipool.me
 

@@ -12,7 +12,9 @@ strip = ','
 key = id="instant_scount_7">([,0-9]+)</td>
 
 [duration]
-key_hour_min = "instant_durationh_7">([,0-9]+)h</td><td class="ralign" id="instant_durationm_7">([,0-9]+)m
+hour_group = 1
+min_group = 2
+key = "instant_durationh_7">([,0-9]+)h</td><td class="ralign" id="instant_durationm_7">([,0-9]+)m
 method = re
 address = http://eligius.st/~artefact2/
 

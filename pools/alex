@@ -10,7 +10,9 @@ method = re_rateduration
 address = http://pool.schaetter.us/stats.php
 
 [duration]
-key_hour_min = Time Since Last Block</td><td><span\W+class="red">([0-9]+) Hours ([0-9]+) Minutes
+hour_group = 1
+min_group = 2
+key = Time Since Last Block</td><td><span\W+class="red">([0-9]+) Hours ([0-9]+) Minutes
 method = re_rateduration
 address = http://pool.schaetter.us/stats.php
 

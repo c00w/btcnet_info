@@ -11,9 +11,10 @@ address = http://mining.bitcoin.cz/stats/json/
 key = shares
 
 [duration]
-key_hour_min = (\d+):(\d+):
-method = json
+hour_group = 1
+min_group = 2
 key = round_duration
+method = json
 address = http://mining.bitcoin.cz/stats/json/
 
 [ghash]

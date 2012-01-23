@@ -43,7 +43,9 @@ class Pool(baseobject.Base_Object):
             return
         
         if method == 'direct':
-            return int(self.api)
+            if 'api' in self.fields:
+                return int(self.api)
+            return
             
         if method == '':
             return
@@ -54,18 +56,21 @@ class Pool(baseobject.Base_Object):
         """
         Updates a couple of statistics. Has special handling for duration
         """
-        print '_pool'
+        
         values = self._helper_poll(
             ['api_info', 'ghash_info', 'duration_info']
         )
-        print '_helper_poll: results %s' % str(values)
+        
         
         for k,v in values.items():
+            if v:
                 setattr( self, k.split('_')[0], v)
                 self.fields.add(k.split('_')[0])
             
-        self.shares = self._handle_shares()
-        self.fields.add('shares')
+        shares = self._handle_shares()
+        if shares:
+            self.shares = shares
+            self.fields.add('shares')
            
                 
         
