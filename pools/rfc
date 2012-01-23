@@ -12,8 +12,9 @@ key = poolstats,round_shares
 
 [duration]
 key_sec = (\d+)
-method = json
+method = re_duration
 key = poolstats,round_time
+key_method = json
 address = https://www.rfcpool.com/api/pool/stats
 
 [ghash]

@@ -12,8 +12,9 @@ address = http://pool.schaetter.us/stats.php
 [duration]
 hour_group = 1
 min_group = 2
-key = Time Since Last Block</td><td><span\W+class="red">([0-9]+) Hours ([0-9]+) Minutes
-method = re_rateduration
+key_duration = Time Since Last Block</td><td><span\W+class="red">([0-9]+) Hours ([0-9]+) Minutes
+method = re_duration
+key_method = re_rateduration
 address = http://pool.schaetter.us/stats.php
 
 [ghash]

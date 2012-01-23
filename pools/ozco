@@ -12,8 +12,12 @@ key_mhashrate = pool,hashrate_raw
 key = pool,round_shares
 
 [duration]
-key_day_hour_min = (\d+)d (\d+)h (\d+)m
-method = json
+day_group = 1
+hour_group = 2
+min_group = 3
+key_duration = (\d+)d (\d+)h (\d+)m
+method = re_duration
+key_method = json
 address = http://ozco.in/api.php
 
 [payout]

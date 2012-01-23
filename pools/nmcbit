@@ -15,6 +15,7 @@ key = Valid\s+shares\s+for\s+current\s+round:</th><td>([,0-9]+)</td>
 key = ([,0-9.]+) Ghash/s
 method = re
 address = http://www.nmcbit.com/statistics
+strip = ','
 
 [payout]
 scheme = pps

@@ -15,6 +15,7 @@ key = NMCroundshares
 key = hashrate
 method = json
 address = https://mtred.com/api/stats
+strip = ','
 
 [payout]
 scheme = pps

@@ -15,9 +15,11 @@ key = <td><span id="rs_round_shares">([0-9]+)</span></td>
 [duration]
 hour_group = 1
 min_group = 2
-key = <td><span id="rs_roundtime">([0-9]+):([0-9]+):
-method = re
+key_duration = <td><span id="rs_roundtime">([0-9]+):([0-9]+):
+method = re_duration
+key_method = re
 address = http://btcmine.com/stats/
+strip = ''
 
 [payout]
 scheme = score

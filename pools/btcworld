@@ -15,6 +15,7 @@ key = [Verifizierte Anteile der aktuellen Runde:]+</th><td>([,0-9]+)</td>
 key = ([,0-9.]+) Ghash/s
 method = re
 address = http://btcworld.de/statistics
+strip = ','
 
 [payout]
 scheme = prop

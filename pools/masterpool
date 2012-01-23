@@ -12,8 +12,9 @@ key = blockchains,BTC,shares
 
 [duration]
 key_sec = (\d+)
-method = json
+method = re_duration
 key = blockchains,BTC,roundduration
+key_method = json
 address = https://masterpool.eu/jsonstats
 
 [ghash]

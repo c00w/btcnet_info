@@ -14,8 +14,9 @@ key_hashrate = pool_speed
 
 [duration]
 key_sec = (\d+)
-method = json
+method = re_duration
 key = round_time
+key_method = json
 address = http://swepool.net/json?key=%(swepool_user_apikey)s
 
 [payout]

@@ -12,7 +12,8 @@ key = blockchains,NMC,shares
 
 [duration]
 key = blockchains,NMC,roundduration
-method = json
+method = re_duration
+key_method = json
 address = https://masterpool.eu/jsonstats
 
 [ghash]

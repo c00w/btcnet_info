@@ -14,14 +14,17 @@ key = BTC\s+Current\s+round\s+duration:</th><td>[0-9]+:[0-9]+:[0-9]+\s+hours</td
 [duration]
 hour_group = 1
 min_group = 2
-key = BTC Current round duration:</th><td>([0-9]+):([0-9]+):
-method = re
+key_duration = BTC Current round duration:</th><td>([0-9]+):([0-9]+):
+method = re_duration
+key_method = re
 address = http://www.nmcbit.com/statistics
+strip = ','
 
 [ghash]
 key = ([,0-9.]+) Ghash/s
 method = re
 address = http://www.nmcbit.com/statistics
+strip = ','
 
 [payout]
 scheme = prop

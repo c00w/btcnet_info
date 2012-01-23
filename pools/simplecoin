@@ -14,14 +14,17 @@ key = Current BTC Round Shares</td><td>([,0-9]+)</td>
 [duration]
 hour_group = 1
 min_group = 2
-key = Time Since Last Block</td><td><span class="green">([0-9]+) Hours ([0-9]+) Minutes
-method = re
+key_duration = Time Since Last Block</td><td><span class="green">([0-9]+) Hours ([0-9]+) Minutes
+method = re_duration
+key_method = re
 address = http://simplecoin.us/stats.php?pool_id=3
+strip = ','
 
 [ghash]
 key = Pool Hash Rate</td><td>([.0-9]+) Ghashes/s
 method = re
 address = http://simplecoin.us/stats.php?pool_id=3
+strip = ','
 
 [payout]
 scheme = prop

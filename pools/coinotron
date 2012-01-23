@@ -13,14 +13,17 @@ strip = ''
 [duration]
 hour_group = 1
 min_group = 2
-key = (\d+) h ?(\d+)? ?m?
-method = re_rateduration
+key_duration = (\d+) h ?(\d+)? ?m?
+method = re_duration
+key_method = re_rateduration
 address = http://coinotron.com/coinotron/AccountServlet?action=home
+strip = ''
 
 [ghash]
 key = ([0-9]+(?:\.[0-9]*)?) GH</td>
 method = re_rateduration
 address = http://coinotron.com/coinotron/AccountServlet?action=home
+strip = ''
 
 [payout]
 scheme = score
