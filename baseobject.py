@@ -92,8 +92,11 @@ class Base_Object(object):
         if 'key' not in info:
             raise ValueError('%s: No key in section' % self.name)
             
-        item = json.loads(resp)
-        
+        try:
+            item = json.loads(resp)
+        except ValueError as e:
+            print resp
+            raise e
         for key in info['key'].split(','):
             item = item[key]
             
