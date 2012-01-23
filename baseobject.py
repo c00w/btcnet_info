@@ -100,8 +100,9 @@ class Base_Object(object):
         for key in info['key'].split(','):
             item = item[key]
             
-        if 'strip' in info:
-            item.replace(info['strip'][1:-1], '')
+        if 'strip' in info and type(item) is str:
+        
+            item = item.replace(info['strip'][1:-1], '')
         
         return item
         
@@ -118,8 +119,27 @@ class Base_Object(object):
         group = info[group] if 'group' in info else 1
         result = result.group(group)
         
-        if 'strip' in info:
-            result.replace(info['strip'][1:-1], '')
+        if 'strip' in info  and type(result) is str:
+            result = result.replace(info['strip'][1:-1], '')
+        return result
+        
+    def _poll_re_duration(self, info, resp):
+        """
+        Handles re method of polling
+        """
+        if 'key' not in info:
+            raise ValueError('%s: No key in section' % self.name) 
+            
+        value = getattr(self, '_poll_' + info['key_method'])(info, resp)
+       
+        result = re.search( info['key_duration'], resp)
+        if not result:
+            return
+        group = info[group] if 'group' in info else 1
+        result = result.group(group)
+        
+        if 'strip' in info  and type(result) is str:
+            result = result.replace(info['strip'][1:-1], '')
         return result
         
     def _setup(self):
