@@ -69,13 +69,21 @@ for item in parse.sections():
                 added = True
             k = k.replace('api_', '')
             k = k.replace('_duration', '')
+            if k == 'key_day_hour_min':
+                k = 'key_duration'
+                config.set('duration', 'day_group', 1)
+                config.set('duration', 'hour_group', 2)
+                config.set('duration', 'min_group', 3)
             if k == 'key_hour_min':
-                k = 'key'
+                k = 'key_duration'
                 config.set('duration', 'hour_group', 1)
                 config.set('duration', 'min_group', 2)
             
             config.set('duration', k, v)
-            config.set('duration', 'method', pool_info['api_method'])
+            config.set('duration', 'method', 're_duration')
+            
+    if added:
+        config.set('duration', 'key_method', pool_info['api_method'])
             
     added = False
     for k,v in pool_info.items():
