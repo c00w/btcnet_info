@@ -100,7 +100,7 @@ for item in parse.sections():
             continue
         if 'address' not in config.items(section):
             config.set(section, 'address', config.get('api','address'))
-        if 'strip' not in config.items(section) and 'strip' in config.items('api'):
+        if 'strip' not in config.items(section) and 'strip' in dict(config.items('api')):
             config.set(section, 'strip', config.get('api','strip'))
             
             
