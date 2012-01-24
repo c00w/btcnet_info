@@ -130,11 +130,14 @@ class Base_Object(object):
         if 'key' in info:
             resp = getattr(self, '_poll_' + info['key_method'])(info, resp)
        
-        result = re.search( info['key_duration'], resp)
-        if not result:
-            return
-        group = info[group] if 'group' in info else 1
-        result = result.group(group)
+        if 'key_duration' in info:
+            result = re.search( info['key_duration'], str(resp))
+            if not result:
+                return
+            group = info[group] if 'group' in info else 1
+            result = result.group(group)
+        else:
+            result = resp
         
         if 'strip' in info  and type(result) is str:
             result = result.replace(info['strip'][1:-1], '')

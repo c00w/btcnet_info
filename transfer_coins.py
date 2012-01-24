@@ -79,7 +79,7 @@ for item in parse.sections():
                 config.set('duration', 'hour_group', 1)
                 config.set('duration', 'min_group', 2)
             if k == 'key_sec':
-                l = 'key_duration'
+                k = 'key_duration'
                 config.set('duration', 'second_group', 1)
             
             config.set('duration', k, v)

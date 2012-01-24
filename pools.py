@@ -48,7 +48,8 @@ class Pool(baseobject.Base_Object):
             return
             
         if method == 'rate':
-            if 'rate_type' in self.duration_info:
+            
+            if getattr(self, 'duration_info', None) and 'rate_type' in self.duration_info:
                 prefix = self.duration_info['rate_type']
                 if prefix == 'GH':
                     mult = 1000**3
@@ -60,6 +61,8 @@ class Pool(baseobject.Base_Object):
                     mult = 1
             else:
                 mult = 1000**3
+            if not getattr(self, 'api', None):
+                return
             rate = int(self.api)
             rate = rate * mult
             self.ghash = float(rate)/(1000**3) 
@@ -72,8 +75,13 @@ class Pool(baseobject.Base_Object):
             
         if method == 'shareestimate':
             # get share count based on user shares and user reward estimate
+            
+            if not getattr(self, 'api', None):
+                return
+            response = self.api
+            
             output = re.search(self.api_info['key_shares'],response)
-            shares = output.group(1)  
+            shares = output.group(1)
             
             output = re.search(self.api_info['key_estimate'],response)
             estimate = output.group(1)
@@ -83,6 +91,8 @@ class Pool(baseobject.Base_Object):
             
         if method == 'rateduration':
             
+            if not getattr(self, 'ghash', None):
+                return
             #Check and assume
             if self.ghash < 0:
                 self.ghash = 1
