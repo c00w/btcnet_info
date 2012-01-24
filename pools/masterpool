@@ -12,7 +12,7 @@ key = blockchains,BTC,shares
 
 [duration]
 second_group = 1
-key_sec = (\d+)
+key_duration = (\d+)
 method = re_duration
 key = blockchains,BTC,roundduration
 key_method = json
