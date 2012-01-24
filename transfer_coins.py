@@ -78,6 +78,9 @@ for item in parse.sections():
                 k = 'key_duration'
                 config.set('duration', 'hour_group', 1)
                 config.set('duration', 'min_group', 2)
+            if k == 'key_sec':
+                l = 'key_duration'
+                config.set('duration', 'second_group', 1)
             
             config.set('duration', k, v)
             config.set('duration', 'method', 're_duration')

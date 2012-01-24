@@ -11,6 +11,7 @@ address = https://www.rfcpool.com/api/pool/stats
 key = poolstats,round_shares
 
 [duration]
+second_group = 1
 key_sec = (\d+)
 method = re_duration
 key = poolstats,round_time

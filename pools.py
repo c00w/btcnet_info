@@ -3,7 +3,7 @@ try:
 except:
     import configparser as ConfigParser
     
-import gevent, baseobject, httplib2, re, json
+import gevent, baseobject, httplib2, re, json, time
 
 class Pool(baseobject.Base_Object):
         
@@ -47,8 +47,66 @@ class Pool(baseobject.Base_Object):
                 return int(self.api)
             return
             
-        if method == '':
-            return
+        if method == 'rate':
+            if 'rate_type' in self.duration_info:
+                prefix = self.duration_info['rate_type']
+                if prefix == 'GH':
+                    mult = 1000**3
+                if prefix == 'MH':
+                    mult = 1000**2
+                if prefix == 'KH':
+                    mult = 1000
+                if prefix == 'None':
+                    mult = 1
+            else:
+                mult = 1000**3
+            rate = int(self.api)
+            rate = rate * mult
+            self.ghash = float(rate)/(1000**3) 
+            rate = float(rate)/2**32
+            old = getattr( self, '_last_pulled', time.time())
+            self._last_pulled = time.time()
+            diff = self._last_pulled- old
+            shares = int(rate * diff)
+            return shares + self.shares
+            
+        if method == 'shareestimate':
+            # get share count based on user shares and user reward estimate
+            output = re.search(self.api_info['key_shares'],response)
+            shares = output.group(1)  
+            
+            output = re.search(self.api_info['key_estimate'],response)
+            estimate = output.group(1)
+            
+            round_shares = int(50.0 * float(shares) / float(estimate))
+            return int(round_shares) 
+            
+        if method == 'rateduration':
+            
+            #Check and assume
+            if self.ghash < 0:
+                self.ghash = 1
+                
+            old = getattr( self, '_last_pulled', time.time())
+            self._last_pulled = time.time()
+            diff = self._last_pulled - old
+            
+            self._duration_temporal = getattr(self, '_duration_temporal', 0) + diff
+            
+            # new round started or initial estimation
+            rate = 0.25 * self.ghash
+            
+            duration = getattr(self, 'duration', None)
+            if not duration:
+                return
+                
+            old_duration = getattr(self, 'old_duration', duration)
+            
+            if duration < old_duration or old_duration < 0: 
+                round_shares = int(rate * duration)
+            else:
+                round_shares = server['shares'] + int(rate * diff)
+            return round_shares
             
         return
         

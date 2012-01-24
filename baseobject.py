@@ -127,10 +127,8 @@ class Base_Object(object):
         """
         Handles re method of polling
         """
-        if 'key' not in info:
-            raise ValueError('%s: No key in section' % self.name) 
-            
-        value = getattr(self, '_poll_' + info['key_method'])(info, resp)
+        if 'key' in info:
+            resp = getattr(self, '_poll_' + info['key_method'])(info, resp)
        
         result = re.search( info['key_duration'], resp)
         if not result:

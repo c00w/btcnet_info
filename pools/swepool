@@ -13,6 +13,7 @@ key = round_shares
 key_hashrate = pool_speed
 
 [duration]
+second_group = 1
 key_sec = (\d+)
 method = re_duration
 key = round_time

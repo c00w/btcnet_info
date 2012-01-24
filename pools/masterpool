@@ -11,6 +11,7 @@ address = https://masterpool.eu/jsonstats
 key = blockchains,BTC,shares
 
 [duration]
+second_group = 1
 key_sec = (\d+)
 method = re_duration
 key = blockchains,BTC,roundduration
