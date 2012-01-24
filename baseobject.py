@@ -20,6 +20,12 @@ class Base_Object(object):
         self._setup()
         gevent.spawn(self._poll_wrap)
         
+    def _config_get(self, section, option, default):
+        try:
+            return self.config.get(section, option)
+        except ConfigParser.NoSectionError:
+            return default
+        
     def _poll_wrap(self):
         """
         Wrapper around polling which catches and prints exceptions
@@ -50,8 +56,9 @@ class Base_Object(object):
         if not self._urls:
             self._urls = set()
             for item in sections:
-                if getattr(self, item, None):
-                    self._urls.add(getattr(self, item).get('address'))
+                self._urls.add(self._config_get(item, 'address', None))
+            if None in self._urls:
+                self._urls.remove(None)
                     
         #Set up our http object
         if not self._http:
@@ -157,4 +164,12 @@ class Base_Object(object):
                 handle(dict(self.config.items(section)))
         
     def _poll(self):
-        pass
+        """
+        Default poll class
+        """
+        
+        values = self._helper_poll(
+            x.name for x in self.coins
+        )
+        for k, v in values.items():
+            setattr(self, k.split('_')[0], float(v))

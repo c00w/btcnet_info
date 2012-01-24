@@ -1,6 +1,12 @@
+"""
+Api Class which handles basic manipulation of objects
+"""
 import objects
 
 class API():
+    """
+    Wrapper Class for api access
+    """
     def __init__(self):
         self.objects = objects.Objects()
         
