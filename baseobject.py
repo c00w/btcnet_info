@@ -20,7 +20,7 @@ class Base_Object(object):
         self._setup()
         gevent.spawn(self._poll_wrap)
         
-    def _config_get(self, section, option, default):
+    def _config_get(self, section, option, default=None):
         try:
             return self.config.get(section, option)
         except ConfigParser.NoSectionError:
@@ -37,7 +37,7 @@ class Base_Object(object):
                     self.poll_hook()
                 self.api_down = False
             except (socket.error, httplib2.ServerNotFoundError) as e:
-                logging.error('%s Network Error: %s' % (self.name, str(e)))
+                #logging.error('%s Network Error: %s' % (self.name, str(e)))
                 self.api_down = True
             except Exception as e:
                 #todo, use python logging for this
@@ -57,8 +57,6 @@ class Base_Object(object):
             self._urls = set()
             for item in sections:
                 self._urls.add(self._config_get(item, 'address', None))
-            if None in self._urls:
-                self._urls.remove(None)
                     
         #Set up our http object
         if not self._http:
@@ -75,17 +73,16 @@ class Base_Object(object):
         
         #handle_stuff
         for item in sections:
-            if not getattr(self, item, None):
+        
+            addr = self._config_get( item, 'address')
+            if not addr:
                 continue
-                
-            info = getattr(self, item)
-            if 'address' not in info:
-                print info
-            resp = self._resp[info['address']]
+            resp = self._resp[addr]
             
             #Call the correct methods
-            if getattr(self, '_poll_' + info['method'], None):
-                value = getattr(self, '_poll_' + info['method'])(info, resp)
+            if getattr(self, '_poll_' + self._config_get(item, 'method'), None):
+                info = dict(self.config.items(item))
+                value = getattr(self, '_poll_' + self._config_get(item, 'method'), None)(info, resp)
                 self.values[item] =  value
         return self.values
                 
@@ -102,8 +99,9 @@ class Base_Object(object):
         try:
             item = json.loads(resp)
         except ValueError as e:
-            print resp
-            raise e
+            #print resp
+            #raise e
+            return None
         for key in info['key'].split(','):
             item = item[key]
             
@@ -172,4 +170,4 @@ class Base_Object(object):
             x.name for x in self.coins
         )
         for k, v in values.items():
-            setattr(self, k.split('_')[0], float(v))
+            setattr(self, k, float(v))

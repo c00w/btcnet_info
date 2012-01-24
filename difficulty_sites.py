@@ -1,9 +1,8 @@
-try:
-    import ConfigParser
-except:
-    import configparser as ConfigParser
-    
-import baseobject, re, json
+"""
+File for describing sites we scrape difficulty off of.
+"""
+
+import baseobject
 
 class Site(baseobject.Base_Object):
     """
@@ -19,19 +18,15 @@ class Site(baseobject.Base_Object):
         baseobject.Base_Object.__init__(self, configfile)
     
     def _setup_general(self, section):
-        self.general_info = section
+        """
+        Setup general info.
+        Also sets up name
+        """
         self.name = section.get('name', 'Unknown')
+        self.fields.add('name')
             
     def _setup_coin(self, section, coin):
-        setattr(self, coin + '_info', section)
         self.coins.add(self.objects.coins_dict[coin])
-        
-    def _poll(self):
-        values = self._helper_poll(
-            x.name + '_info' for x in self.coins
-        )
-        for k,v in values.items():
-            setattr(self, k.split('_')[0], float(v))
             
     def __repr__(self):
         return '<Difficulty Site %s, %s>' % (self.name, str(self.coins))

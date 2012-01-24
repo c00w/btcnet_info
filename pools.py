@@ -16,29 +16,11 @@ class Pool(baseobject.Base_Object):
         self.fields.add('coin')
         self.fields.add('url')
         
-    def _setup_mine(self, section):
-        self.mine_info = section
-        
-    def _setup_api(self, section):
-        self.api_info = section
-        
-    def _setup_shares(self, section):
-        self.shares_info = section
-        
-    def _setup_ghash(self, section):
-        self.hashrate_info = section
-        
-    def _setup_payout(self, section):
-        self.payout_info = section
-        
-    def _setup_duration(self, section):
-        self.duration_info = section
-        
     def __repr__(self):
         return '<Pool %s, %s, %s>' % (self.name, self.coin, self.url)
         
     def _handle_shares(self):
-        method = self.shares_info.get('method', None)
+        method = self.config.get('shares', 'method')
         if not method:
             return
         
@@ -48,9 +30,9 @@ class Pool(baseobject.Base_Object):
             return
             
         if method == 'rate':
-            
-            if getattr(self, 'duration_info', None) and 'rate_type' in self.duration_info:
-                prefix = self.duration_info['rate_type']
+            prefix = self._config_get('duration','rate_type')
+            if prefix:
+                
                 if prefix == 'GH':
                     mult = 1000**3
                 if prefix == 'MH':
@@ -61,7 +43,7 @@ class Pool(baseobject.Base_Object):
                     mult = 1
             else:
                 mult = 1000**3
-            if not getattr(self, 'api', None):
+            if 'api' not in self.fields:
                 return
             rate = int(self.api)
             rate = rate * mult
@@ -80,10 +62,10 @@ class Pool(baseobject.Base_Object):
                 return
             response = self.api
             
-            output = re.search(self.api_info['key_shares'],response)
+            output = re.search(self._config_get('api','key_shares'),response)
             shares = output.group(1)
             
-            output = re.search(self.api_info['key_estimate'],response)
+            output = re.search(self._config_get('api', 'key_estimate'),response)
             estimate = output.group(1)
             
             round_shares = int(50.0 * float(shares) / float(estimate))
@@ -126,14 +108,13 @@ class Pool(baseobject.Base_Object):
         """
         
         values = self._helper_poll(
-            ['api_info', 'ghash_info', 'duration_info']
+            ['api', 'ghash', 'duration']
         )
-        
         
         for k,v in values.items():
             if v:
-                setattr( self, k.split('_')[0], v)
-                self.fields.add(k.split('_')[0])
+                setattr( self, k, v)
+                self.fields.add(k)
             
         shares = self._handle_shares()
         if shares:
