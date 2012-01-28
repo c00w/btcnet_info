@@ -6,25 +6,21 @@ name = alex
 address = pool.schaetter.us:8337
 
 [api]
-method = re_rateduration
-address = http://pool.schaetter.us/stats.php
+method = json
+address = https://pool.schaetter.us/api.php
+key_mhashrate = hashrate
+key = shares
 
 [duration]
-hour_group = 1
-min_group = 2
-key_duration = Time Since Last Block</td><td><span\W+class="red">([0-9]+) Hours ([0-9]+) Minutes
+second_group = 1
+key_duration = "roundduration":"([0-9]+)
 method = re_duration
-key_method = re_rateduration
-address = http://pool.schaetter.us/stats.php
-
-[ghash]
-key = Pool Hash Rate</td><td>([0-9.]+) Ghashes/s
-method = re_rateduration
-address = http://pool.schaetter.us/stats.php
+key_method = json
+address = https://pool.schaetter.us/api.php
 
 [payout]
 scheme = prop
 
 [shares]
-method = rateduration
+method = direct
 

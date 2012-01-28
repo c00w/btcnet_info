@@ -3,12 +3,12 @@ coin = btc
 name = bclc
 
 [mine]
-address = bitcoins.lc:8080
+address = bitlc.net:8080
 
 [api]
 method = re_rate
 key = "hash_rate":([ 0-9]+).
-address = http://www.bitcoins.lc/stats.json
+address = https://www.bitlc.net/stats.json
 
 [payout]
 scheme = prop

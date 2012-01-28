@@ -7,7 +7,7 @@ address = us.ozco.in:8332
 
 [api]
 method = json
-address = http://ozco.in/api.php
+address = https://ozco.in/api.php
 key_mhashrate = pool,hashrate_raw
 key = pool,round_shares
 
@@ -18,7 +18,7 @@ min_group = 3
 key_duration = (\d+)d (\d+)h (\d+)m
 method = re_duration
 key_method = json
-address = http://ozco.in/api.php
+address = https://ozco.in/api.php
 
 [payout]
 scheme = dgm
