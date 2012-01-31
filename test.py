@@ -26,8 +26,13 @@ class TestStore(unittest.TestCase):
         for item in __init__.get_pools():
             if 'shares' in dir(item):
                 shares += 1
-        print "%s/%s" % (shares, count)
-        
+        print "Pools with shares: %s/%s" % (shares, count)
+        shares = 0
+        count = len(__init__.get_coins())
+        for item in __init__.get_coins():
+            if 'difficulty' in dir(item):
+                shares += 1
+        print "Coins with difficulty: %s/%s" % (shares, count)
 
 if __name__ == "__main__":
     unittest.main()  
