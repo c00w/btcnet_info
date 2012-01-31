@@ -41,7 +41,8 @@ class Objects(object):
         #Parse config files and create objects
         for file_name in os.listdir(os.path.join(FD_DIR,'coins')):
             self.coins.add(coins.Coin(
-                reduce(os.path.join, [FD_DIR, 'coins', file_name])
+                reduce(os.path.join, [FD_DIR, 'coins', file_name, ]),
+                self,
             ))
             
         #Some files need to know about the coins
@@ -62,7 +63,8 @@ class Objects(object):
         
         for file_name in os.listdir(os.path.join(FD_DIR,'pools')):
             self.pools.add(pools.Pool(
-                reduce(os.path.join, [FD_DIR, 'pools', file_name])
+                reduce(os.path.join, [FD_DIR, 'pools', file_name]),
+                self
             ))
         
         
