@@ -6,8 +6,8 @@ except:
 import gevent, traceback, httplib2, socket, logging, re, json
 
 class Base_Object(object):
-    def __init__(self, config_file, objects):
-        self.objects = objects
+    def __init__(self, config_file):
+        
         self.config = ConfigParser.RawConfigParser()
         self.config.read(config_file)
         self._poll_rate = 30

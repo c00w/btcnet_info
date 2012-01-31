@@ -42,7 +42,6 @@ class TestStore(unittest.TestCase):
             if 'difficulty' in dir(item):
                 shares += 1
         print "Valid Coins w/ Difficulty %s/%s" % (shares, count)
-        
 
 if __name__ == "__main__":
     unittest.main()  
