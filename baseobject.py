@@ -3,7 +3,7 @@ try:
 except:
     import configparser as ConfigParser
     
-import gevent, traceback, httplib2, socket, logging, re, json
+import gevent, traceback, httplib2, socket, logging, request_wrapper
 
 class Base_Object(object):
     def __init__(self, config_file, objects):
@@ -12,13 +12,24 @@ class Base_Object(object):
         self.config.read(config_file)
         self._poll_rate = 30
         self._alive = True
-        self._urls =  None
-        self._http = None
         self.poll_hook = None
-        self.api_down = False
-        self.fields = set(['api_down', 'poll_hook'])
+        self.fields = set(['poll_hook'])
+        self.wrapper = request_wrapper.Wrapper(self)
         self._setup()
         gevent.spawn(self._poll_wrap)
+        
+    def _setup(self):
+        #List all sections
+        sections = self.config.sections()
+        
+        #We must have a general section
+        if 'general' not in sections:
+            raise ValueError('No general info %s' % str(sections))
+        
+        for section in sections:
+            handle = getattr(self, '_setup_' + str(section), None)
+            if handle:
+                handle(dict(self.config.items(section)))
         
     def _config_get(self, section, option, default=None):
         try:
@@ -45,129 +56,3 @@ class Base_Object(object):
                 traceback.print_exc()
                 print self.name + "^^^"
             gevent.sleep(self._poll_rate)
-            
-    def _helper_poll(self, sections):
-        """
-        Makes a list of urls we should pull
-        Pulls them
-        Calls appropriate handler function
-        """
-        #Get a list of urls we have to pull
-        if not self._urls:
-            self._urls = set()
-            for item in sections:
-                self._urls.add(self._config_get(item, 'address', None))
-                    
-        #Set up our http object
-        if not self._http:
-            self._http = httplib2.Http(disable_ssl_certificate_validation=True, timeout=10)
-            
-        #Get the bodies
-        self._resp = {}
-        for item in self._urls:
-            if not item:
-                continue
-            headers, self._resp[item] = self._http.request(item, 'GET')
-            
-        self.values = {}
-        
-        #handle_stuff
-        for item in sections:
-        
-            addr = self._config_get( item, 'address')
-            if not addr:
-                continue
-            resp = self._resp[addr]
-            
-            #Call the correct methods
-            if getattr(self, '_poll_' + self._config_get(item, 'method'), None):
-                info = dict(self.config.items(item))
-                value = getattr(self, '_poll_' + self._config_get(item, 'method'), None)(info, resp)
-                self.values[item] =  value
-        return self.values
-                
-    def _poll_direct(self, info, resp):
-        return resp
-            
-    def _poll_json(self, info, resp):
-        """
-        Handles json method of polling
-        """
-        if 'key' not in info:
-            raise ValueError('%s: No key in section' % self.name)
-            
-        try:
-            item = json.loads(resp)
-        except ValueError as e:
-            #print resp
-            #raise e
-            return None
-        for key in info['key'].split(','):
-            item = item[key]
-            
-        if 'strip' in info and type(item) is str:
-        
-            item = item.replace(info['strip'][1:-1], '')
-        
-        return item
-        
-    def _poll_re(self, info, resp):
-        """
-        Handles re method of polling
-        """
-        if 'key' not in info:
-            raise ValueError('%s: No key in section' % self.name) 
-       
-        result = re.search( info['key'], resp)
-        if not result:
-            return
-        group = info[group] if 'group' in info else 1
-        result = result.group(group)
-        
-        if 'strip' in info  and type(result) is str:
-            result = result.replace(info['strip'][1:-1], '')
-        return result
-        
-    def _poll_re_duration(self, info, resp):
-        """
-        Handles re method of polling
-        """
-        if 'key' in info:
-            resp = getattr(self, '_poll_' + info['key_method'])(info, resp)
-       
-        if 'key_duration' in info:
-            result = re.search( info['key_duration'], str(resp))
-            if not result:
-                return
-            group = info[group] if 'group' in info else 1
-            result = result.group(group)
-        else:
-            result = resp
-        
-        if 'strip' in info  and type(result) is str:
-            result = result.replace(info['strip'][1:-1], '')
-        return result
-        
-    def _setup(self):
-        #List all sections
-        sections = self.config.sections()
-        
-        #We must have a general section
-        if 'general' not in sections:
-            raise ValueError('No general info %s' % str(sections))
-        
-        for section in sections:
-            handle = getattr(self, '_setup_' + str(section), None)
-            if handle:
-                handle(dict(self.config.items(section)))
-        
-    def _poll(self):
-        """
-        Default poll class
-        """
-        
-        values = self._helper_poll(
-            x.name for x in self.coins
-        )
-        for k, v in values.items():
-            setattr(self, k, float(v))
