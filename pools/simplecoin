@@ -27,7 +27,7 @@ address = http://simplecoin.us/stats.php?pool_id=3
 strip = ','
 
 [payout]
-scheme = prop
+scheme = SMPPS
 merged_mining = true
 
 [shares]

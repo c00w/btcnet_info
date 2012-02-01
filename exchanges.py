@@ -45,7 +45,7 @@ class Exchange(baseobject.Base_Object):
             if value:
                 print item, value
                 setattr(self, item, value)
-                self.fields.add(value)
+                self.fields.add(item)
         
     def __repr__(self):
         return '<Exchange Site %s, %s>' % (self.name, str(self.coins))
