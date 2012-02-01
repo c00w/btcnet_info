@@ -46,7 +46,7 @@ class Site(baseobject.Base_Object):
             value = self.wrapper.handle(dict(self.config.items(item)))
             if value:
                 setattr(self, item, value)
-                self.fields.add(value)
+                self.fields.add(item)
             
     def __repr__(self):
         return '<Difficulty Site %s, %s>' % (self.name, str(self.coins))
