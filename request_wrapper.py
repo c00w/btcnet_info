@@ -80,6 +80,9 @@ class Wrapper():
                 result = result.replace(info['strip'][1:-1], '')
             return result
             
+    def handle_disable(self, info, resp):
+        return
+            
     def pull(self, address):
         """
         Pulls web addresses in a sensible manner
