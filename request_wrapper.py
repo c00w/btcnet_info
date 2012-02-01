@@ -1,3 +1,4 @@
+import gevent
 import httplib2, socket, traceback, json, re, logging
 
 class Wrapper():
@@ -13,7 +14,7 @@ class Wrapper():
             resp = getattr(self, 'handle_' + info['key_method'])(info, resp)
        
         if 'key_duration' in info:
-            result = re.search( info['key_duration'], str(resp))
+            result = re.search( info['key_duration'], resp)
             if not result:
                 return
             group = info[group] if 'group' in info else 1
@@ -67,15 +68,15 @@ class Wrapper():
             Handles re method of polling
             """
             if 'key' not in info:
-                raise ValueError('%s: No key in section' % self.name) 
+                raise ValueError('%s: No key in section' % self.object.name) 
            
-            result = re.search( info['key'], resp)
+            result = re.search( info['key'], str(resp))
             if not result:
-                return
-            group = info[group] if 'group' in info else 1
+                raise ValueError('%s: No matching re %s, %s' % (self.object.name, len(resp), info))
+            group = info['group'] if 'group' in info else 1
             result = result.group(group)
             
-            if 'strip' in info  and type(result) is str:
+            if 'strip' in info and type(result) is str:
                 result = result.replace(info['strip'][1:-1], '')
             return result
             
@@ -83,6 +84,7 @@ class Wrapper():
         """
         Pulls web addresses in a sensible manner
         """
+            
         if address not in self.http:
             self.http[address] = httplib2.Http(disable_ssl_certificate_validation=True, timeout=10)
             
@@ -93,7 +95,12 @@ class Wrapper():
         """
         Handles web request
         """
-        resp = self.pull(section['address'])
+        if 'address' not in section or 'method' not in section:
+            return
+        addr = section['address']
+        if 'http' not in addr:
+            addr = 'http://' + addr
+        resp = self.pull(addr)
         method = section['method']
         return getattr(self, 'handle_' + method)(section, resp)
         
@@ -176,6 +183,8 @@ class Wrapper():
         return
 
     def handle_virtual(self, section):
+        if 'method' not in section:
+            return
         return getattr(self, 'handlev_' + section['method'])(section)
 
     def handle(self, section):

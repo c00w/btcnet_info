@@ -43,6 +43,7 @@ class Exchange(baseobject.Base_Object):
         for item in self.coins:
             value = self.wrapper.handle(dict(self.config.items(item)))
             if value:
+                print item, value
                 setattr(self, item, value)
                 self.fields.add(value)
         
