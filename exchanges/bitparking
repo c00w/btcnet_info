@@ -5,15 +5,3 @@ name: bitparking.com
 address: https://exchange.bitparking.com/main
 method: re
 key: <th>Low:</th><td class=\"coin\">([0-9.]+)</td>
-
-[ixc]
-address: http://ixchange.bitparking.com:8080/api/ticker
-method: re
-key: "average":([0-9.]+)
-
-[i0c]
-address: http://i0exchange.bitparking.com:8080/api/ticker
-method: re
-key: "average":([0-9.]+)
-
-
