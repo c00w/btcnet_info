@@ -126,6 +126,8 @@ class Wrapper():
         """
         if 'address' not in section or 'method' not in section:
             return
+        if section['method'] == 'disable':
+            return
         addr = section['address']
         if 'http' not in addr:
             addr = 'http://' + addr
