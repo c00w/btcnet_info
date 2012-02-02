@@ -1,7 +1,9 @@
-import gevent
-import httplib2, socket, traceback, json, re, logging
+import httplib2, socket, traceback, json, re, logging, time
 
 class Wrapper():
+    """
+    Wrapper class that handles sections. Returns the value for the section
+    """
     def __init__(self, site):
         self.object = site
     http = {}
@@ -17,7 +19,7 @@ class Wrapper():
             result = re.search( info['key_duration'], resp)
             if not result:
                 return
-            group = info[group] if 'group' in info else 1
+            group = info['group'] if 'group' in info else 1
             result = result.group(group)
         else:
             result = resp
@@ -46,7 +48,7 @@ class Wrapper():
         Handles json method of polling
         """
         if 'key' not in info:
-            raise ValueError('%s: No key in section' % self.name)
+            raise ValueError('No key in section, %s' % info)
             
         try:
             item = json.loads(resp)
@@ -64,21 +66,22 @@ class Wrapper():
         return item
         
     def handle_re(self, info, resp):
-            """
-            Handles re method of polling
-            """
-            if 'key' not in info:
-                raise ValueError('%s: No key in section' % self.object.name) 
-           
-            result = re.search( info['key'], str(resp))
-            if not result:
-                raise ValueError('%s: No matching re %s, %s' % (self.object.name, len(resp), info))
-            group = info['group'] if 'group' in info else 1
-            result = result.group(group)
-            
-            if 'strip' in info and type(result) is str:
-                result = result.replace(info['strip'][1:-1], '')
-            return result
+        """
+        Handles re method of polling
+        """
+        if 'key' not in info:
+            raise ValueError('%s: No key in section' % self.object.name) 
+       
+        result = re.search( info['key'], str(resp))
+        if not result:
+            raise ValueError('%s: No matching re %s, %s' 
+                    % (self.object.name, len(resp), info))
+        group = info['group'] if 'group' in info else 1
+        result = result.group(group)
+        
+        if 'strip' in info and type(result) is str:
+            result = result.replace(info['strip'][1:-1], '')
+        return result
             
     def handle_disable(self, info, resp):
         return
@@ -133,9 +136,9 @@ class Wrapper():
         rate = float(rate)/2**32
         old = getattr( self.object, '_last_pulled', time.time())
         self.object._last_pulled = time.time()
-        diff = self._last_pulled- old
+        diff = self.object._last_pulled- old
         shares = int(rate * diff)
-        return shares + self.object.shares
+        return shares + get(self.object, 'shares', 0)
             
     def handlev_shareestimate(self, section):
         # get share count based on user shares and user reward estimate
@@ -155,10 +158,8 @@ class Wrapper():
             
     def handlev_rateduration(self, section):
         
-        if 'ghash' not in self.object.fields:
-            return
         #Check and assume
-        if self.object.ghash < 0:
+        if getattr(self.object, 'ghash', -1) < 0:
             self.object.ghash = 1
             
         old = getattr( self.object, '_last_pulled', time.time())
@@ -168,7 +169,7 @@ class Wrapper():
         self.object._duration_temporal = getattr(self.object, '_duration_temporal', 0) + diff
         
         # new round started or initial estimation
-        rate = 0.25 * self.ghash
+        rate = 0.25 * self.object.ghash
         
         duration = getattr(self.object, 'duration', None)
         if not duration:
@@ -179,7 +180,7 @@ class Wrapper():
         if duration < old_duration or old_duration < 0: 
             round_shares = int(rate * duration)
         else:
-            round_shares = server['shares'] + int(rate * diff)
+            round_shares = getattr(self.object, 'shares', 0) + int(rate * diff)
         return round_shares
 
     def handlev_disable(self, section):
