@@ -1,24 +1,45 @@
 try:
     import ConfigParser
-except:
+except ImportError:
     import configparser as ConfigParser
     
-import gevent, traceback, httplib2, socket, logging, request_wrapper
+import gevent, traceback, httplib2, socket, request_wrapper, logging
 
 class Base_Object(object):
+    """
+    Base object for all website classes to inherit off of
+    """
     def __init__(self, config_file, objects):
+        self.name = ''
         self.objects = objects
         self.config = ConfigParser.RawConfigParser()
         self.config.read(config_file)
         self._poll_rate = 30
         self._alive = True
-        self.poll_hook = None
-        self.fields = set(['poll_hook'])
+        self.fields = set()
         self.wrapper = request_wrapper.Wrapper(self)
         self._setup()
+        self.api_down = False
         gevent.spawn(self._poll_wrap)
         
+    def _poll(self):
+        """
+        Should be overriden, provides main polling function
+        """
+        pass
+        
+    def poll_hook(self):
+        """
+        Should be left alone so that progams which import the library
+        can customize some behavior
+        """
+        pass
+        
     def _setup(self):
+        """
+        Default setup function.
+        Calls self._handle_name for each name in sections
+        """
         #List all sections
         sections = self.config.sections()
         
@@ -32,6 +53,10 @@ class Base_Object(object):
                 handle(dict(self.config.items(section)))
         
     def _config_get(self, section, option, default=None):
+        """
+        Acts like a getattr for a config section, allows you to specify a
+        default paramater if item does not exists
+        """
         try:
             return self.config.get(section, option)
         except ConfigParser.NoSectionError:
@@ -47,10 +72,10 @@ class Base_Object(object):
                 if self.poll_hook:
                     self.poll_hook()
                 self.api_down = False
-            except (socket.error, httplib2.ServerNotFoundError) as e:
-                #logging.error('%s Network Error: %s' % (self.name, str(e)))
+            except (socket.error, httplib2.ServerNotFoundError) as error:
+                logging.error('%s Network Error: %s' , (self.name, str(error)))
                 self.api_down = True
-            except Exception as e:
+            except Exception:
                 #todo, use python logging for this
                 self.api_down = True
                 traceback.print_exc()
