@@ -3,11 +3,11 @@ coin = btc
 name = p2pool
 
 [mine]
-address = localhost:8332
+address = localhost:9332
 
 [api]
 method = disable
-address = http://localhost:8332
+address = http://localhost:9332
 key = code
 
 [payout]

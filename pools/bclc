@@ -3,7 +3,7 @@ coin = btc
 name = bclc
 
 [mine]
-address = bitlc.net:8080
+address = pool.bitlc.net:80
 
 [api]
 method = re_rate
