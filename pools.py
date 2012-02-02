@@ -1,13 +1,12 @@
-try:
-    import ConfigParser
-except:
-    import configparser as ConfigParser
-    
-import gevent, baseobject, httplib2, re, json, time
+   
+import baseobject
 
 class Pool(baseobject.Base_Object):
         
     def _setup_general(self, section):
+        """
+        Sets up general information
+        """
         self.general_info = section
         self.name = section.get('name', 'Unknown')
         self.coin = section.get('coin', 'btc')
@@ -24,7 +23,7 @@ class Pool(baseobject.Base_Object):
         Updates a couple of statistics. Has special handling for duration
         """
         
-        for item in ['api','ghash', 'duration','shares']: 
+        for item in ['api', 'ghash', 'duration','shares']: 
             if item not in self.config.sections():
                 continue
             value = self.wrapper.handle(dict(self.config.items(item)))

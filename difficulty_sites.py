@@ -2,7 +2,7 @@
 File for describing sites we scrape difficulty off of.
 """
 
-import baseobject, request_wrapper
+import baseobject
 
 class Site(baseobject.Base_Object):
     """
@@ -28,7 +28,7 @@ class Site(baseobject.Base_Object):
                 
         for section in sections:
             if section in self.objects.coins_dict:
-                self._setup_coin(dict(self.config.items(section)), section)
+                self._setup_coin(section)
     
     def _setup_general(self, section):
         """
@@ -38,7 +38,10 @@ class Site(baseobject.Base_Object):
         self.name = section.get('name', 'Unknown')
         self.fields.add('name')
             
-    def _setup_coin(self, section, coin):
+    def _setup_coin(self, coin):
+        """
+        Log that we scrape this coin
+        """
         self.coins.add(coin)
             
     def _poll(self):

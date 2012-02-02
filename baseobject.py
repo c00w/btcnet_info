@@ -1,3 +1,7 @@
+"""
+Base object that all sites inherit off of.
+"""
+
 try:
     import ConfigParser
 except ImportError:

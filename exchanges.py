@@ -1,9 +1,8 @@
-try:
-    import ConfigParser
-except:
-    import configparser as ConfigParser
+"""
+Represents sites that give us exchange information
+"""
     
-import gevent, baseobject, request_wrapper
+import baseobject
 
 class Exchange(baseobject.Base_Object):
     """
@@ -29,13 +28,18 @@ class Exchange(baseobject.Base_Object):
                 
         for section in sections:
             if section in self.objects.coins_dict:
-                self._setup_coin(dict(self.config.items(section)), section)
+                self._setup_coin(section)
             
-    def _setup_coin(self, section, coin):
+    def _setup_coin(self, coin):
+        """
+        Add this coin to our list of coins we provide info on
+        """
         self.coins.add(coin)
             
     def _setup_general(self, section):
-        self.general_info = section
+        """
+        Sets up name and thats basically it
+        """
         self.name = section.get('name', 'Unknown')
         self.fields.add('name')
         

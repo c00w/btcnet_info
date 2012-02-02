@@ -1,8 +1,6 @@
-try:
-    import ConfigParser
-except:
-    import configparser as ConfigParser
-    
+"""
+Aggregation class to store information about coins
+"""
 import baseobject
 
 class Coin(baseobject.Base_Object):
@@ -10,22 +8,28 @@ class Coin(baseobject.Base_Object):
     Class for coins.
     """
     def _median(self, data):
+        """
+        Returns the median from a set of data.
+        Is not O(1) for memory usage but whatever
+        """
         if not data:
             return None
         count = {}
-        median = None
         for item in data:
             if item not in count:
                 count[item] = 0
             count[item] += 1
         
         max_count = max(count.values())
-        for x in count:
-            if count[x] == max_count:
-                return x
+        for item in count:
+            if count[item] == max_count:
+                return item
         
     
     def _setup_general(self, section):
+        """
+        Sets up the name and stored difficulty
+        """
         self.name = section.get('short_name', 'Unknown')
         self.long_name = section.get('long_name', 'Unknown')
         self.difficulty = section.get('recent_difficulty', 1)

@@ -1,3 +1,7 @@
+"""
+Handles all of the update methods and returns a result
+"""
+
 import httplib2, socket, traceback, json, re, logging, time
 
 class Wrapper():
@@ -29,18 +33,33 @@ class Wrapper():
         return result
     
     def handle_direct(self, info, resp):
+        """
+        Direct method. Just return the result
+        """
         return resp
         
     def handle_re_rateduration(self, info, resp):
+        """
+        TODO
+        """
         pass
             
     def handle_json_ec(self, info, resp):
+        """
+        TODO or perhaps deprecate
+        """
         pass
         
     def handle_re_rate(self, info, resp):
+        """
+        TODO
+        """
         pass
         
     def handle_re_shareestimate(self, info, resp):
+        """
+        TODO
+        """
         pass
             
     def handle_json(self, info, resp):
@@ -92,7 +111,8 @@ class Wrapper():
         """
             
         if address not in self.http:
-            self.http[address] = httplib2.Http(disable_ssl_certificate_validation=True, timeout=10)
+            self.http[address] = httplib2.Http(
+                    disable_ssl_certificate_validation=True, timeout=10)
             
         headers, resp = self.http[address].request(address, 'GET')
         return resp
@@ -138,7 +158,7 @@ class Wrapper():
         self.object._last_pulled = time.time()
         diff = self.object._last_pulled- old
         shares = int(rate * diff)
-        return shares + get(self.object, 'shares', 0)
+        return shares + getattr(self.object, 'shares', 0)
             
     def handlev_shareestimate(self, section):
         # get share count based on user shares and user reward estimate
@@ -150,7 +170,8 @@ class Wrapper():
         output = re.search(self.object._config_get('api','key_shares'),response)
         shares = output.group(1)
         
-        output = re.search(self.object._config_get('api', 'key_estimate'),response)
+        output = re.search(self.object._config_get('api',
+                                     'key_estimate'),response)
         estimate = output.group(1)
         
         round_shares = int(50.0 * float(shares) / float(estimate))
@@ -166,7 +187,8 @@ class Wrapper():
         self.object._last_pulled = time.time()
         diff = self.object._last_pulled - old
         
-        self.object._duration_temporal = getattr(self.object, '_duration_temporal', 0) + diff
+        self.object._duration_temporal = getattr(self.object,
+                                     '_duration_temporal', 0) + diff
         
         # new round started or initial estimation
         rate = 0.25 * self.object.ghash
