@@ -103,6 +103,9 @@ class Wrapper():
         return result
             
     def handle_disable(self, info, resp):
+        """
+        Disabled pull function
+        """
         return
             
     def pull(self, address):
@@ -131,10 +134,17 @@ class Wrapper():
         return getattr(self, 'handle_' + method)(section, resp)
         
     def handlev_direct(self, section):
+        """
+        returns the direct api
+        Used for shares
+        """
         if 'api' in self.object.fields:
             return int(self.object.api)
             
     def handlev_rate(self, section):
+        """
+        Does rate calculations
+        """
         prefix = section.get('rate_type', None)
         if prefix:
             
@@ -161,13 +171,16 @@ class Wrapper():
         return shares + getattr(self.object, 'shares', 0)
             
     def handlev_shareestimate(self, section):
-        # get share count based on user shares and user reward estimate
+        """
+        Get share count based on user shares and user reward estimate
+        """
         
         if not getattr(self.object, 'api', None):
             return
         response = self.object.api
         
-        output = re.search(self.object._config_get('api','key_shares'),response)
+        output = re.search(self.object._config_get('api','key_shares'),
+                             response)
         shares = output.group(1)
         
         output = re.search(self.object._config_get('api',
@@ -178,7 +191,9 @@ class Wrapper():
         return int(round_shares) 
             
     def handlev_rateduration(self, section):
-        
+        """
+        Handles a website with rate and duration
+        """
         #Check and assume
         if getattr(self.object, 'ghash', -1) < 0:
             self.object.ghash = 1
@@ -206,23 +221,32 @@ class Wrapper():
         return round_shares
 
     def handlev_disable(self, section):
+        """
+        A disabled virtual function
+        """
         return
 
     def handle_virtual(self, section):
+        """
+        Function that calls the proper virtual functions
+        """
         if 'method' not in section:
             return
         return getattr(self, 'handlev_' + section['method'])(section)
 
     def handle(self, section):
+        """
+        Calls the proper virtual are real function handler
+        """
         try:
             if 'address' in section:
                 return self.handle_web(section)
             else:
                 return self.handle_virtual(section)
-        except (socket.error, httplib2.ServerNotFoundError) as e:
-            logging.error('Network Error: %s' % ( str(e)))
-            self.api_down = True
-        except Exception as e:
+        except (socket.error, httplib2.ServerNotFoundError) as error:
+            logging.error('Network Error: %s', str(error))
+            self.object.api_down = True
+        except Exception as error:
             #todo, use python logging for this
-            self.api_down = True
+            self.object.api_down = True
             traceback.print_exc()

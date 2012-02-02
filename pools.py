@@ -1,7 +1,12 @@
-   
+"""
+Module to contain pools which have share counts and can be mined
+"""
 import baseobject
 
 class Pool(baseobject.Base_Object):
+    """
+    Class of pool that can be mined.
+    """
         
     def _setup_general(self, section):
         """
