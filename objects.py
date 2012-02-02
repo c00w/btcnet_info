@@ -2,10 +2,6 @@ import gevent.monkey
 gevent.monkey.patch_all()
 
 import os, os.path, gevent, pools, exchanges, coins, difficulty_sites, sys
-try:
-    import ConfigParser
-except:
-    import configparser as ConfigParser
 
 class Objects(object):
     def __init__(self):
