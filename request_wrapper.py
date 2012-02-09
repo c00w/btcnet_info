@@ -246,9 +246,9 @@ class Wrapper():
             else:
                 return self.handle_virtual(section)
         except (socket.error, httplib2.ServerNotFoundError) as error:
-            logging.error('Network Error: %s', str(error))
+            logging.debug('Network Error: %s', str(error))
             self.object.api_down = True
         except Exception as error:
             #todo, use python logging for this
             self.object.api_down = True
-            traceback.print_exc()
+            logging.debug(traceback.format_exc())
