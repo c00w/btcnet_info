@@ -1,0 +1,19 @@
+[general]
+coin = btc
+name = bitparking
+
+[mine]
+address = mmpool.bitparking.com:15098
+
+[api]
+method = re
+address = http://mmpool.bitparking.com/pool
+key_mhashrate = Pool Hash rate [(]MHash[/]second[)]</td><td>([0-9]+)
+
+[payout]
+scheme = pps
+merged_mining = true
+
+[shares]
+method = direct
+
