@@ -62,6 +62,11 @@ class Objects(object):
                 reduce(os.path.join, [FD_DIR, 'pools', file_name]),
                 self
             ))
+            
+        gevent.sleep(2)
+        
+        for item in self.coins:
+            item._poll()
         
         
 if __name__ == "__main__":
