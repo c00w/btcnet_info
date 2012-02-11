@@ -1,5 +1,5 @@
 import gevent.monkey
-gevent.monkey.patch_all()
+gevent.monkey.patch_all(threading = False, time=False)
 
 import os, os.path, gevent, pools, exchanges, coins, difficulty_sites, sys
 
