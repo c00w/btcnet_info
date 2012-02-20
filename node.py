@@ -55,8 +55,12 @@ class Node():
             source = self.namespace.get_node(source_addr)
             
             #If this is a web address make a dummy node
-            if not source and 'http' in source_addr:
+            if not source and 'http' in source_addr[0:4]:
                 Http_Node(source_addr, self.namespace)
+                source = self.namespace.get_node(source_addr)
+                
+            if not source and 'timer:' in source_addr[0:6]:
+                Timer_Node(source_add, self.namespace)
                 source = self.namespace.get_node(source_addr)
                 
             if source:
@@ -111,6 +115,24 @@ class Http_Node(Node):
                 self.dict['value'] = content
                 self._trigger()
             gevent.sleep(60)
+            
+class Timer_Node(Node):
+    def __init__(self, addr, namespace):
+        self.name = addr
+        self.time = int(addr.split(':')[1])
+        self.hooks = set()
+        self.namespace = namespace
+        self.namespace.add_node(self)
+        self.dict = {'value':None}
+        gevent.spawn(self._poll)
+        
+    def _poll(self):
+        """
+        Looping functions that pulls values
+        """
+        while True:
+            self._trigger()
+            gevent.sleep(self.time)
                     
 import unittest
 class TestNodes(unittest.TestCase):
