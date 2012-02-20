@@ -8,80 +8,67 @@ except ImportError:
     import configparser as ConfigParser
     
 import gevent, traceback, httplib2, socket, request_wrapper, logging
+import node, copy, queue, threading, time
 
 class Base_Object(object):
     """
     Base object for all website classes to inherit off of
     """
     def __init__(self, config_file, objects):
-        self.name = ''
-        self.objects = objects
+        
         self.config = ConfigParser.RawConfigParser()
         self.config.read(config_file)
-        self._poll_rate = 30
-        self._alive = True
-        self.fields = set()
-        self.wrapper = request_wrapper.Wrapper(self)
-        self._setup()
-        self.api_down = False
-        gevent.spawn(self._poll_wrap)
+        self.name = ''
+        self.namespace = node.Node_NameSpace
+        self.write_nodes = set()
+        self.file_name = config_file
+        self.lock = threading.Lock()
+        self.lock.acquire()
         
-    def _poll(self):
-        """
-        Should be overriden, provides main polling function
-        """
-        pass
+        thread = threading.Thread(target=self.write_thread)
+        thread.daemon = True
+        thread.start()
         
-    def poll_hook(self):
-        """
-        Should be left alone so that progams which import the library
-        can customize some behavior
-        """
-        pass
-        
-    def _setup(self):
-        """
-        Default setup function.
-        Calls self._handle_name for each name in sections
-        """
-        #List all sections
-        sections = self.config.sections()
-        
-        #We must have a general section
-        if 'general' not in sections:
-            raise ValueError('No general info %s' % str(sections))
-        
-        for section in sections:
-            handle = getattr(self, '_setup_' + str(section), None)
-            if handle:
-                handle(dict(self.config.items(section)))
-        
-    def _config_get(self, section, option, default=None):
-        """
-        Acts like a getattr for a config section, allows you to specify a
-        default paramater if item does not exists
-        """
-        try:
-            return self.config.get(section, option)
-        except ConfigParser.NoSectionError:
-            return default
-        
-    def _poll_wrap(self):
-        """
-        Wrapper around polling which catches and prints exceptions
-        """
-        while self._alive:
-            try:
-                self._poll()
-                if self.poll_hook:
-                    self.poll_hook()
-                self.api_down = False
-            except (socket.error, httplib2.ServerNotFoundError) as error:
-                logging.error('%s Network Error: %s' , (self.name, str(error)))
-                self.api_down = True
-            except Exception:
-                #todo, use python logging for this
-                self.api_down = True
-                traceback.print_exc()
-                print self.name + "^^^"
-            gevent.sleep(self._poll_rate)
+        for section in self.config.sections():
+            if section not 'general':
+                item = node.Node(item, dict(self.config.items(section)), self.namespace)
+                self.write_nodes.add(item)
+            else:
+                values = dict(self.config.items(section))
+                for item in values:
+                    setattr(self, item, values[item])
+                    
+        self.lock.release()
+                    
+    def write_poll(self):
+        while True:
+            while not self.lock.acquire(False):
+                gevent.sleep(0)
+            
+            for node in self.writes:
+                section = node.name
+                for k,v in node.get_dict().items():
+                    self.parser.set(section, k,v)
+                    
+            self.lock.release()
+            gevent.sleep(60)
+                        
+    def write_thread(self):
+        while True:
+            fd = open(self.file_name, 'wb')
+            with self.lock:
+                try:
+                    fd.seek(0)
+                    self.parser.write(fd)
+                except IOError as e:
+                    fd.close()
+                    fd = open(self.file_name, 'wb')
+            time.sleep(60)
+                    
+    def __getattr__(self, name):
+        node = self.namespace.get_node(name)
+        if node and 'value' in node.dict:
+            return node.dict['value']
+        else:
+            return None
+    
