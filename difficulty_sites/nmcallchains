@@ -5,5 +5,5 @@ name = nmcallchains
 [nmc]
 source = http://allchains.info/calc.html
 method = re
-key = id='nmc_diff' maxlength='[0-9]+' size='[0-9]+' value='([.0-9]+)'
+key = id='nmc_diff' maxlength='[0-9]+' size='[0-9]+' value="([.0-9]+)"
 

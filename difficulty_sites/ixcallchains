@@ -5,5 +5,5 @@ name = ixcallchains
 [ixc]
 source = http://allchains.info/calc.html
 method = re
-key = i0c </td><td align='right'> [0-9]+ </td><td align='right'> [0-9]+M </td><td align='right'> [0-9]+ </td><td align='right'> [0-9]+ </td><td align='right'> [0-9]+ </td><td align='right'> [.0-9]+% </td><td align='right'> ([.0-9]+)
+key = id='ixc_diff' maxlength='[0-9]+' size='[0-9]+' value="([0-9.]+)"/></td>
 

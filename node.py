@@ -109,11 +109,12 @@ class Http_Node(Node):
         while True:
             try:
                 headers, content = Http.request(self.name)
+                if content != self.dict['value']:
+                    self.dict['value'] = content
+                    self._trigger()
             except:
                 logging.error(traceback.format_exc())
-            if content != self.dict['value']:
-                self.dict['value'] = content
-                self._trigger()
+            
             gevent.sleep(60)
             
 class Timer_Node(Node):
