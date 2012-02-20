@@ -4,6 +4,7 @@ Script used to import coins from bitHopper
 
 import ConfigParser
 
+"""
 parse = ConfigParser.SafeConfigParser()
 parse.read('../bitHopper/whatevercoin.cfg')
 for item in parse.sections():
@@ -18,6 +19,7 @@ for item in parse.sections():
         config.set('general', k, v)
     with open('./coins/%s' % coin_info['short_name'], 'wb') as configfile:
         config.write(configfile)
+"""
 """      
 parse = ConfigParser.RawConfigParser()  
 parse.read('../bitHopper/diffwebs.cfg')
@@ -60,6 +62,8 @@ for item in parse.sections():
     for k,v in pool_info.items():
         if 'api' in k and 'duration' not in k and 'ghashrate' not in k:
             k = k.replace('api_','')
+            if k == 'address':
+                k = 'source'
             config.set('api', k, v)
             
     added = False
@@ -110,8 +114,8 @@ for item in parse.sections():
     for section in ['duration','ghash']:
         if section not in config.sections():
             continue
-        if 'address' not in config.items(section):
-            config.set(section, 'address', config.get('api','address'))
+        if  'source' not in config.items(section):
+            config.set(section, 'address', config.get('api','source'))
         if 'strip' not in config.items(section) and 'strip' in dict(config.items('api')):
             config.set(section, 'strip', config.get('api','strip'))
             
@@ -119,6 +123,7 @@ for item in parse.sections():
     config.add_section('shares')
     if pool_info['api_method'] in ['json', 're', 'json_ec']:
         config.set('shares', 'method', 'direct')
+        config.set('shares', 'source', 'api')
     else:
         config.set('shares', 'method', pool_info['api_method'].replace('re_',''))
         
