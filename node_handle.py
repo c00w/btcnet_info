@@ -1,7 +1,7 @@
 import logging, traceback, json, re
 
 class Handler():
-    def direct(self, Node, value):
+    def direct(self, Node, value, _):
         """
         Direct method. Just return the result
         """
@@ -35,21 +35,21 @@ class Handler():
         """
         info = Node.dict
         
-        if 'key' not in info:
-            raise ValueError('%s: No key in section' % self.object.name) 
+        if 'key' not in Node.dict:
+            raise ValueError('%s: No key in section' % Node.name) 
        
-        result = re.search( info['key'], str(resp))
+        result = re.search( Node.dict['key'], str(resp))
         if not result:
             raise ValueError('%s: No matching re %s, %s' 
-                    % (self.object.name, len(resp), info))
-        group = info['group'] if 'group' in info else 1
+                    % (Node.name, len(resp), Node))
+        group = Node.dict['group'] if 'group' in Node.dict else 1
         result = result.group(group)
         
-        if 'strip' in info and type(result) is str:
-            result = result.replace(info['strip'][1:-1], '')
+        if 'strip' in Node.dict and type(result) is str:
+            result = result.replace(Node.dict['strip'][1:-1], '')
         return result
         
-    def rateduration(self, info, resp):
+    def rateduration(self, Node, info, resp):
         if resp == 'rate':
             """
             If this is the rate just update it
@@ -70,6 +70,26 @@ class Handler():
             If this is the increment timer increase the shares
             """
             
+    def difficulty(self, Node, info, resp):
+         #Difficulty Sites
+        diffs = []
+        for site in Node.objects.difficulty_sites:
+            if getattr(site, Node.name):
+                diffs.append(getattr(site, Node.name))
+           
+        return self._median(diffs)
+        
+    def exchange(self, Node, info, resp):
+        #Exchange Sites
+        exchange = []
+        for site in Node.objects.exchanges:
+            if getattr(site, Node.name):
+                exchange.append(getattr(site, Node.name))
+           
+        exchange = self._median(exchange)
+        if not exchange and self.name == 'btc':
+            return '1.0'
+        return exchange
     
 handler = Handler()
 

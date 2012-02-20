@@ -18,6 +18,9 @@ class Node_NameSpace():
         if node.name in self.nodes:
             raise KeyError('Duplicate Name')
         self.nodes[node.name] = node
+        
+    def __repr__(self):
+        return '<Node_NameSpace %s>' % (self.nodes)
     
 
 class Node():
@@ -80,6 +83,9 @@ class Node():
         self.dict['value'] = output
         if old != output:
             self._trigger()
+            
+    def __repr__(self):
+        return '<Node %s>' % (self.name)
         
         
 class Http_Node(Node):
@@ -88,7 +94,7 @@ class Http_Node(Node):
         self.hooks = set()
         self.namespace = namespace
         self.namespace.add_node(self)
-        self.dict = {}
+        self.dict = {'value':None}
         gevent.spawn(self._poll)
         
     def _poll(self):

@@ -9,16 +9,7 @@ class Objects(object):
         self.exchanges = set()
         self.difficulty_sites = set()
         self.coins = set()
-        self.coins_dict = {}
         self._setup()
-        
-    def _mapping_setup(self):
-        """
-        Set up a mapping such that we can access coins by name
-        for the exchanges
-        """
-        for coin in self.coins:
-            self.coins_dict[coin.name] = coin
     
     def _setup(self):
         """
@@ -40,10 +31,6 @@ class Objects(object):
                 reduce(os.path.join, [FD_DIR, 'coins', file_name, ]),
                 self,
             ))
-            
-        #Some files need to know about the coins
-            
-        self._mapping_setup()
         
         for file_name in os.listdir(os.path.join(FD_DIR,'difficulty_sites')):
             self.difficulty_sites.add(difficulty_sites.Site(
@@ -64,9 +51,6 @@ class Objects(object):
             ))
             
         gevent.sleep(2)
-        
-        for item in self.coins:
-            item._poll()
         
         
 if __name__ == "__main__":

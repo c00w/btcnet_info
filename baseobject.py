@@ -8,7 +8,7 @@ except ImportError:
     import configparser as ConfigParser
     
 import gevent, traceback, httplib2, socket, request_wrapper, logging
-import node, copy, queue, threading, time
+import node, copy, threading, time
 
 class Base_Object(object):
     """
@@ -19,7 +19,7 @@ class Base_Object(object):
         self.config = ConfigParser.RawConfigParser()
         self.config.read(config_file)
         self.name = ''
-        self.namespace = node.Node_NameSpace
+        self.namespace = node.Node_NameSpace()
         self.write_nodes = set()
         self.file_name = config_file
         self.lock = threading.Lock()
@@ -30,8 +30,8 @@ class Base_Object(object):
         thread.start()
         
         for section in self.config.sections():
-            if section not 'general':
-                item = node.Node(item, dict(self.config.items(section)), self.namespace)
+            if section is not 'general':
+                item = node.Node(section, dict(self.config.items(section)), self.namespace)
                 self.write_nodes.add(item)
             else:
                 values = dict(self.config.items(section))
@@ -48,7 +48,7 @@ class Base_Object(object):
             for node in self.writes:
                 section = node.name
                 for k,v in node.get_dict().items():
-                    self.parser.set(section, k,v)
+                    self.config.set(section, k,v)
                     
             self.lock.release()
             gevent.sleep(60)
@@ -59,11 +59,29 @@ class Base_Object(object):
             with self.lock:
                 try:
                     fd.seek(0)
-                    self.parser.write(fd)
+                    self.config.write(fd)
                 except IOError as e:
                     fd.close()
                     fd = open(self.file_name, 'wb')
             time.sleep(60)
+            
+    def _median(self, data):
+        """
+        Returns the median from a set of data.
+        Is not O(1) for memory usage but whatever
+        """
+        if not data:
+            return None
+        count = {}
+        for item in data:
+            if item not in count:
+                count[item] = 0
+            count[item] += 1
+        
+        max_count = max(count.values())
+        for item in count:
+            if count[item] == max_count:
+                return item
                     
     def __getattr__(self, name):
         node = self.namespace.get_node(name)
