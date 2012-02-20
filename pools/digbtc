@@ -11,7 +11,7 @@ address = INVALID
 [api]
 method = json
 key = shares_this_round
-address = http://digbtc.net/papi.php
+source = http://digbtc.net/papi.php
 key_mhashrate = pool_total_mhash
 
 [payout]

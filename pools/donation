@@ -8,7 +8,7 @@ address = btcproxy.net:80
 [api]
 method = json
 key = currentroundshares
-address = https://www.arsbitcoin.com/api.php
+source = https://www.arsbitcoin.com/api.php
 
 [payout]
 

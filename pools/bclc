@@ -8,7 +8,7 @@ address = pool.bitlc.net:80
 [api]
 method = re_rate
 key = "hash_rate":([ 0-9]+).
-address = https://www.bitlc.net/stats.json
+source = https://www.bitlc.net/stats.json
 
 [payout]
 scheme = prop

@@ -7,7 +7,7 @@ address = pool.bitfarms.ca:8332
 
 [api]
 method = re_rate
-address = http://bitfarms.ca/
+source = http://bitfarms.ca/
 strip = ' '
 key = Pool Rate:([ 0-9]+).
 

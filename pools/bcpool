@@ -7,7 +7,7 @@ address = bitcoinpool.com:8334
 
 [api]
 method = re_shareestimate
-address = http://bitcoinpool.com/index.php?do=currentround
+source = http://bitcoinpool.com/index.php?do=currentround
 key_estimate = <td width="120" align="center"><img src="btc.png" border="0" alt="BTC">&nbsp;([\.0-9]+)</td>
 key_shares = <td width="80"> (\d+)</td>
 

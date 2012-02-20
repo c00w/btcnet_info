@@ -7,7 +7,7 @@ address = bitchomp.info:8332
 
 [api]
 method = re
-address = http://www.bitchomp.info/api
+source = http://www.bitchomp.info/api
 strip = ''
 key = "shares": (\d+)
 

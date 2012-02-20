@@ -7,7 +7,7 @@ address = pool.unitedminers.com:8332
 
 [api]
 method = json
-address = http://www.unitedminers.com/?action=api
+source = http://www.unitedminers.com/?action=api
 key_mhashrate = hashrate
 key = validcurrentshares
 

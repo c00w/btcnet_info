@@ -7,7 +7,7 @@ address = bitcoin.ne.jp:8334
 
 [api]
 method = re
-address = https://bitcoin.ne.jp/
+source = https://bitcoin.ne.jp/
 key_mhashrate = Speed: ([,0-9.]+) Mh/s
 key = Shares this round: ([,0-9]+)
 

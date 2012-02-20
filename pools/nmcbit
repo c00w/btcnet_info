@@ -7,7 +7,7 @@ address = nmcbit.com:8332
 
 [api]
 method = re
-address = http://www.nmcbit.com/statistics
+source = http://www.nmcbit.com/statistics
 strip = ','
 key = Valid\s+shares\s+for\s+current\s+round:</th><td>([,0-9]+)</td>
 

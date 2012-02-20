@@ -7,7 +7,7 @@ address = a1bitcoinpool.com:8999
 
 [api]
 method = re_rateduration
-address = http://www.a1bitcoinpool.com/stats.php
+source = http://www.a1bitcoinpool.com/stats.php
 
 [duration]
 hour_group = 1

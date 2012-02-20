@@ -7,7 +7,7 @@ address = pit.deepbit.net:8332
 
 [api]
 method = re_rate
-address = http://deepbit.net/
+source = http://deepbit.net/
 strip = ''
 key = [rate:&nbsp;]+([0-9]+)+&nbsp;Gh/s
 

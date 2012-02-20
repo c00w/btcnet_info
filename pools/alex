@@ -7,7 +7,7 @@ address = pool.schaetter.us:8337
 
 [api]
 method = json
-address = https://pool.schaetter.us/api.php
+source = https://pool.schaetter.us/api.php
 key_mhashrate = hashrate
 key = shares
 

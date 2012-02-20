@@ -7,7 +7,7 @@ address = mineco.in:3000
 
 [api]
 method = json
-address = https://mineco.in/stats.json
+source = https://mineco.in/stats.json
 key = shares_this_round
 key_hashrate = hashrate
 

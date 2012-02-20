@@ -7,7 +7,7 @@ address = poolmunity.com:8332
 
 [api]
 method = json
-address = https://poolmunity.com/api.php?server
+source = https://poolmunity.com/api.php?server
 key_mhashrate = speed
 key = totalShares
 

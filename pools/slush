@@ -7,7 +7,7 @@ address = api2.bitcoin.cz:8332
 
 [api]
 method = json
-address = http://mining.bitcoin.cz/stats/json/
+source = http://mining.bitcoin.cz/stats/json/
 key = shares
 
 [duration]

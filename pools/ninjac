@@ -7,7 +7,7 @@ address = mine.ninjacoin.com:8332
 
 [api]
 method = re_rate
-address = https://www.ninjacoin.com/
+source = https://www.ninjacoin.com/
 strip = ' '
 key = Hashrate:([ 0-9]+).
 

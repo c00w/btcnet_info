@@ -7,7 +7,7 @@ address = polmine.pl:8347
 
 [api]
 method = re
-address = https://polmine.pl/?action=statistics
+source = https://polmine.pl/?action=statistics
 strip = ' '
 key = poprawnych wszystkich: &nbsp; </b> <br/>([ 0-9]+)<br/>
 

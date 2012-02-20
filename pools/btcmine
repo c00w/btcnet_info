@@ -7,7 +7,7 @@ address = btcmine.com:8332
 
 [api]
 method = re
-address = http://btcmine.com/stats/
+source = http://btcmine.com/stats/
 key_mhashrate = <td><span id="rs_hashrate">([0-9.]+)
 strip = ''
 key = <td><span id="rs_round_shares">([0-9]+)</span></td>

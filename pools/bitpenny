@@ -7,7 +7,7 @@ address = bitpenny.dyndns.biz:8338
 
 [api]
 method = re_rateduration
-address = http://www.bitpenny.com
+source = http://www.bitpenny.com
 key = ([0-9]+).[0-9]+ Mh/s &nbsp
 
 [duration]

@@ -7,7 +7,7 @@ address = pool.squidnet.org:8341
 
 [api]
 method = json
-address = http://pool.squidnet.org/api
+source = http://pool.squidnet.org/api
 key = shares_this_round
 
 [payout]

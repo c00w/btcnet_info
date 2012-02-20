@@ -7,7 +7,7 @@ address = us.ozco.in:8332
 
 [api]
 method = json
-address = http://ozco.in/api.php
+source = http://ozco.in/api.php
 key_mhashrate = pool,hashrate_raw
 key = pool,round_shares
 

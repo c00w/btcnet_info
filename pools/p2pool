@@ -7,7 +7,7 @@ address = localhost:9332
 
 [api]
 method = disable
-address = http://localhost:9332
+source = http://localhost:9332
 key = code
 
 [payout]

@@ -7,7 +7,7 @@ address = lp1.itzod.ru:8344
 
 [api]
 method = json
-address = https://pool.itzod.ru/api.php
+source = https://pool.itzod.ru/api.php
 key = total_shares_count
 
 [payout]

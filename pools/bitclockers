@@ -9,7 +9,7 @@ address = pool.bitclockers.com:8332
 method = json
 user_address = http://bitclockers.com/api/%(bitclockers_user_apikey)s
 bitclockers_user_apikey = 965469e512aa0de5a37b83ccfd5e849e
-address = http://bitclockers.com/api
+source = http://bitclockers.com/api
 key_mhashrate = hashrate
 key = roundshares
 

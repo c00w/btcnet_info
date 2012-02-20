@@ -7,7 +7,7 @@ address = i0.digbtc.net:8382
 
 [api]
 method = json
-address = http://i0.digbtc.net/papi.php
+source = http://i0.digbtc.net/papi.php
 key = shares_this_round
 
 [payout]

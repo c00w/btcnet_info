@@ -7,7 +7,7 @@ address = pool.bitminersunion.org:8341
 
 [api]
 method = re
-address = http://pool.bitminersunion.org/stats.php
+source = http://pool.bitminersunion.org/stats.php
 key = Shares this round:([0-9]+)<br/>
 
 [payout]

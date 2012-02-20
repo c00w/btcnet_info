@@ -7,7 +7,7 @@ address = US01.masterpool.eu:8888
 
 [api]
 method = json
-address = https://masterpool.eu/jsonstats
+source = https://masterpool.eu/jsonstats
 key = blockchains,BTC,shares
 
 [duration]

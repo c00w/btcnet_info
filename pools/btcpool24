@@ -7,7 +7,7 @@ address = min.btcpool24.com:8338
 
 [api]
 method = re
-address = http://www.btcpool24.com/stat.php
+source = http://www.btcpool24.com/stat.php
 strip = ' '
 key = <br/>Round Shares:([ 0-9]+)<br/><br/></span>
 

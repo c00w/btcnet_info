@@ -7,7 +7,7 @@ address = sc.btcguild.com:8332
 
 [api]
 method = re_rate
-address = http://sc.btcguild.com/
+source = http://sc.btcguild.com/
 strip = ''
 key = _stat">([0-9]+).
 

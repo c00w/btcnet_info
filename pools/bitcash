@@ -7,7 +7,7 @@ address = bitcash.cz:8337
 
 [api]
 method = re
-address = http://bitcash.cz/pool/actual.php?s=
+source = http://bitcash.cz/pool/actual.php?s=
 strip = ','
 key = <td bgcolor="#fafafa" align="center"><font face="verdana, arial, helvetica" size="2" class="nf">([0-9]+(,[0-9]+)*)</font>
 

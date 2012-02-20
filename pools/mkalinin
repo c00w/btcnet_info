@@ -7,7 +7,7 @@ address = pool.mkalinin.ru:8344
 
 [api]
 method = json
-address = http://pool.mkalinin.ru/api.php
+source = http://pool.mkalinin.ru/api.php
 key_mhashrate = hashrate
 key = shares
 

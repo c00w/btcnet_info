@@ -7,7 +7,7 @@ address = ra.mining.eligius.st:8337
 
 [api]
 method = re
-address = http://eligius.st/~artefact2/
+source = http://eligius.st/~artefact2/
 strip = ','
 key = id="instant_scount_7">([,0-9]+)</td>
 

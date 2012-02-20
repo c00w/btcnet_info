@@ -8,7 +8,7 @@ address = pool.ABCPool.co:8332
 [api]
 method = re_rate
 abc_user_apikey = 
-address = http://www.abcpool.co/stats.php
+source = http://www.abcpool.co/stats.php
 strip = ''
 key = <span class="stat">([0-9]+) GH/s</span>
 

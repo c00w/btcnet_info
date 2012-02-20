@@ -7,7 +7,7 @@ address = mining.yourbtc.net:8999
 
 [api]
 method = json
-address = http://www.yourbtc.net/api.php
+source = http://www.yourbtc.net/api.php
 key = pool,round_shares
 
 [payout]

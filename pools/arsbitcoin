@@ -7,7 +7,7 @@ address = arsbitcoin.com:8344
 
 [api]
 method = json
-address = https://www.arsbitcoin.com/api.php
+source = https://www.arsbitcoin.com/api.php
 key_mhashrate = hashrate
 key = currentroundshares
 

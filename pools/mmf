@@ -7,7 +7,7 @@ address = mining.mainframe.nl:8343
 
 [api]
 method = json
-address = http://mining.mainframe.nl/api
+source = http://mining.mainframe.nl/api
 key = shares_this_round
 
 [payout]

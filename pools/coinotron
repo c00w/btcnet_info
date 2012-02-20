@@ -7,7 +7,7 @@ address = coinotron.com:8322
 
 [api]
 method = re_rateduration
-address = http://coinotron.com/coinotron/AccountServlet?action=home
+source = http://coinotron.com/coinotron/AccountServlet?action=home
 strip = ''
 
 [duration]

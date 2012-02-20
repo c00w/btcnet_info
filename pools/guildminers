@@ -7,7 +7,7 @@ address = pit.guildminers.com:8332
 
 [api]
 method = re
-address = http://guildminers.com/
+source = http://guildminers.com/
 strip = ','
 key = ([,0-9]+) shares
 

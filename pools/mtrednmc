@@ -7,7 +7,7 @@ address = mtred.com:8337
 
 [api]
 method = json
-address = https://mtred.com/api/stats
+source = https://mtred.com/api/stats
 strip = ','
 key = NMCroundshares
 

@@ -7,7 +7,7 @@ address = ixpool.bitparking.com:10098
 
 [api]
 method = re
-address = http://ixpool.bitparking.com/pool
+source = http://ixpool.bitparking.com/pool
 strip = ' '
 key = block</td><td>([ 0-9]+)</td>
 

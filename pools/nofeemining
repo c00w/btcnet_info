@@ -8,7 +8,7 @@ address = nofeemining.appspot.com:80
 [api]
 method = json
 nofeemining_user_apikey = 4140cbc6405f4425cf91ca74e1450b66
-address = https://nofeemining.appspot.com/api.php
+source = https://nofeemining.appspot.com/api.php
 key = poolRoundShares
 
 [ghash]

@@ -8,7 +8,7 @@ address = asspennypool.com:8999
 [api]
 method = json
 asspenny_user_apikey = xxxxxx
-address = http://asspennypool.com/api.php?api_key=%(asspenny_user_apikey)s
+source = http://asspennypool.com/api.php?api_key=%(asspenny_user_apikey)s
 key_mhashrate = poolhash
 key = shares
 
