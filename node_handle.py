@@ -29,7 +29,7 @@ class Handler():
         
         return item
     
-    def handle_re(self, Node, resp, _):
+    def re(self, Node, resp, _):
         """
         Handles re method of polling
         """
@@ -49,7 +49,7 @@ class Handler():
             result = result.replace(info['strip'][1:-1], '')
         return result
         
-    def handle_rateduration(self, info, resp):
+    def rateduration(self, info, resp):
         if resp == 'rate':
             """
             If this is the rate just update it
