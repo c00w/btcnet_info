@@ -1,5 +1,9 @@
 [general]
 long_name = Geist Geld
-recent_difficulty = 1.63535
-short_name = geg
+name = geg
+
+[difficulty]
+value = 1.63535
+method = difficulty
+source = time:30
 

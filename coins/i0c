@@ -1,5 +1,9 @@
 [general]
 long_name = I0coin
-recent_difficulty = 448.348
-short_name = i0c
+name = i0c
+
+[difficulty]
+value = 448.348
+method = difficulty
+source = time:30
 

@@ -1,5 +1,9 @@
 [general]
 long_name = Namecoin
-recent_difficulty = 518525.941302
-short_name = nmc
+name = nmc
+
+[difficulty]
+value = 518525.941302
+method = difficulty
+source = time:30
 

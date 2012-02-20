@@ -1,5 +1,9 @@
 [general]
 long_name = Bitcoin
-recent_difficulty = 1379647.43921
-short_name = btc
+name = btc
+
+[difficulty]
+value = 1378647.43921
+method = difficulty
+source = time:30
 
