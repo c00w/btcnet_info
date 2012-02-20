@@ -1,9 +1,28 @@
 [general]
-coin = geg
 name = allchains
 
 [geg]
 source = http://allchains.info/index.html
 method = re
 key = gg </td><td align='right'> [0-9]+ </td><td align='right'> [0-9]+M </td><td align='right'> [0-9]+ </td><td align='right'> [0-9]+ </td><td align='right'> [0-9]+ </td><td align='right'> [.0-9]+% </td><td align='right'> ([.0-9]+)
+
+[i0c]
+source = http://allchains.info/calc.html
+method = re
+key = id='i0c_diff' maxlength='[0-9]+' size='[0-9]+' value="([0-9.]+)"
+
+[ixc]
+source = http://allchains.info/calc.html
+method = re
+key = id='ixc_diff' maxlength='[0-9]+' size='[0-9]+' value="([0-9.]+)"/></td>
+
+[nmc]
+source = http://allchains.info/calc.html
+method = re
+key = id='nmc_diff' maxlength='[0-9]+' size='[0-9]+' value="([.0-9]+)"
+
+[btc]
+source = http://allchains.info/calc.html
+method = re
+key = id='btc_diff' maxlength='[0-9]+' size='[0-9]+' value="([.0-9]+)"
 
