@@ -9,4 +9,4 @@ class Coin(baseobject.Base_Object):
     """
     
     def __repr__(self):
-        return '<Coin %s>' % (self.name)
+        return '<Coin %s, %s>' % (self.name, self.dict)
