@@ -31,13 +31,14 @@ class Node():
     Also has the ability to produce a dictionary describing its internal state
     """
     
-    def __init__(self, name, source_dict, namespace):
+    def __init__(self, name, source_dict, namespace, objects):
         self.name = name
         self.dict = source_dict
         self.hooks = set()
         self.namespace = namespace
         self.namespace.add_node(self)
         self._set_source()
+        self.objects = objects
         
     def get_dict(self):
         return self.dict
@@ -59,8 +60,8 @@ class Node():
                 Http_Node(source_addr, self.namespace)
                 source = self.namespace.get_node(source_addr)
                 
-            if not source and 'timer:' in source_addr[0:6]:
-                Timer_Node(source_add, self.namespace)
+            if not source and 'time:' in source_addr[0:5]:
+                Timer_Node(source_addr, self.namespace)
                 source = self.namespace.get_node(source_addr)
                 
             if source:
@@ -81,8 +82,9 @@ class Node():
         """
         Called when our source value changes
         """
-        #TO BE CHANGED
         output = node_handle.handle(self, value, name)
+        if output == None:
+            return
         old = getattr(self.dict, 'value', None)
         self.dict['value'] = output
         if old != output:

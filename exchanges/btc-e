@@ -2,12 +2,12 @@
 name = btc-e.com
 
 [scc]
-address = https://btc-e.com/sc_exchanger
+source = https://btc-e.com/sc_exchanger
 method = re
 key = Highest Bid Price<p><b><span id='max_price'>([0-9.]+)
 
 [geg]
-address = https://btc-e.com/exchange/gg_btc
+source = https://btc-e.com/exchange/gg_btc
 method = re
 key = Highest Bid Price<p><b><span id='max_price'>([.0-9]+)
 

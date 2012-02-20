@@ -1,5 +1,23 @@
 import logging, traceback, json, re
 
+def _median(data):
+        """
+        Returns the median from a set of data.
+        Is not O(1) for memory usage but whatever
+        """
+        if not data:
+            return None
+        count = {}
+        for item in data:
+            if item not in count:
+                count[item] = 0
+            count[item] += 1
+        
+        max_count = max(count.values())
+        for item in count:
+            if count[item] == max_count:
+                return item
+
 class Handler():
     def direct(self, Node, value, _):
         """
@@ -85,7 +103,7 @@ class Handler():
             if getattr(site, Node.name):
                 diffs.append(getattr(site, Node.name))
            
-        return self._median(diffs)
+        return _median(diffs)
         
     def exchange(self, Node, info, resp):
         #Exchange Sites
@@ -94,8 +112,8 @@ class Handler():
             if getattr(site, Node.name):
                 exchange.append(getattr(site, Node.name))
            
-        exchange = self._median(exchange)
-        if not exchange and self.name == 'btc':
+        exchange = _median(exchange)
+        if not exchange and Node.name == 'btc':
             return '1.0'
         return exchange
     

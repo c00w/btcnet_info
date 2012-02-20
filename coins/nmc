@@ -7,3 +7,7 @@ value = 518525.941302
 method = difficulty
 source = time:30
 
+[exchange]
+method = exchange
+source = time:30
+

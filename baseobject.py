@@ -31,7 +31,7 @@ class Base_Object(object):
         
         for section in self.config.sections():
             if section is not 'general':
-                item = node.Node(section, dict(self.config.items(section)), self.namespace)
+                item = node.Node(section, dict(self.config.items(section)), self.namespace, objects)
                 self.write_nodes.add(item)
             else:
                 values = dict(self.config.items(section))
@@ -64,24 +64,6 @@ class Base_Object(object):
                     fd.close()
                     fd = open(self.file_name, 'wb')
             time.sleep(60)
-            
-    def _median(self, data):
-        """
-        Returns the median from a set of data.
-        Is not O(1) for memory usage but whatever
-        """
-        if not data:
-            return None
-        count = {}
-        for item in data:
-            if item not in count:
-                count[item] = 0
-            count[item] += 1
-        
-        max_count = max(count.values())
-        for item in count:
-            if count[item] == max_count:
-                return item
                     
     def __getattr__(self, name):
         node = self.namespace.get_node(name)
