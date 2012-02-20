@@ -1,9 +1,0 @@
-[general]
-coin = geg
-name = simplegeg
-
-[geg]
-source = http://simplecoin.us/stats.php?pool_id=6
-method = re
-key = Current GG Difficulty</th><td><a href="http://dot-bit.org/tools/nextDifficulty.php">([.0-9]+)
-
