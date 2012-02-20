@@ -89,7 +89,7 @@ class Node():
             self._trigger()
             
     def __repr__(self):
-        return '<Node %s>' % (self.name)
+        return '<Node %s, %s>' % (self.name, self.dict)
         
         
 class Http_Node(Node):

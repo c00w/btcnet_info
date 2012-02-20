@@ -40,8 +40,8 @@ class Handler():
        
         result = re.search( Node.dict['key'], str(resp))
         if not result:
-            raise ValueError('%s: No matching re %s, %s' 
-                    % (Node.name, len(resp), Node))
+            raise ValueError('%s: No matching re %s, %s, %s' 
+                    % (Node.name, len(resp), Node, Node.dict['key']))
         group = Node.dict['group'] if 'group' in Node.dict else 1
         result = result.group(group)
         
