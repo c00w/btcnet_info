@@ -16,4 +16,5 @@ scheme = pplns
 
 [shares]
 method = direct
+source = api
 

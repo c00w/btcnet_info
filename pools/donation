@@ -14,4 +14,5 @@ source = https://www.arsbitcoin.com/api.php
 
 [shares]
 method = direct
+source = api
 

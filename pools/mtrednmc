@@ -23,4 +23,5 @@ merged_mining = true
 
 [shares]
 method = direct
+source = api
 

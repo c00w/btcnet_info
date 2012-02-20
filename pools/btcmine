@@ -27,4 +27,5 @@ c = 1
 
 [shares]
 method = direct
+source = api
 

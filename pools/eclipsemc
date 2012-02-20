@@ -16,4 +16,5 @@ scheme = dgm
 
 [shares]
 method = direct
+source = api
 

@@ -19,4 +19,5 @@ scheme = prop
 
 [shares]
 method = direct
+source = api
 

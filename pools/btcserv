@@ -15,4 +15,5 @@ scheme = pps
 
 [shares]
 method = direct
+source = api
 

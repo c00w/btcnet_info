@@ -31,4 +31,5 @@ c = 300
 
 [shares]
 method = direct
+source = api
 

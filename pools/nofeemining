@@ -21,4 +21,5 @@ scheme = smpps
 
 [shares]
 method = direct
+source = api
 
