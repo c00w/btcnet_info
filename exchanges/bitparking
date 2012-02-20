@@ -1,7 +1,8 @@
 [general]
-name: bitparking.com
+name = bitparking.com
 
 [nmc]
-address: https://exchange.bitparking.com/main
-method: re
-key: <th>Low:</th><td class=\"coin\">([0-9.]+)</td>
+address = https://exchange.bitparking.com/main
+method = re
+key = <th>Low:</th><td class=\"coin\">([0-9.]+)</td>
+
