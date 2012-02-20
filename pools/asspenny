@@ -3,7 +3,7 @@ coin = btc
 name = asspenny
 
 [mine]
-address = asspennypool.com:8443
+address = asspennypool.com:8999
 
 [api]
 method = json
