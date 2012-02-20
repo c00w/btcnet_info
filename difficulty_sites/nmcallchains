@@ -3,7 +3,7 @@ coin = nmc
 name = nmcallchains
 
 [nmc]
-address = http://allchains.info/calc.html
+source = http://allchains.info/calc.html
 method = re
 key = id='nmc_diff' maxlength='[0-9]+' size='[0-9]+' value='([.0-9]+)'
 

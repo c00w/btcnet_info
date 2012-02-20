@@ -3,7 +3,7 @@ coin = geg
 name = allchains
 
 [geg]
-address = http://allchains.info/index.html
+source = http://allchains.info/index.html
 method = re
 key = gg </td><td align='right'> [0-9]+ </td><td align='right'> [0-9]+M </td><td align='right'> [0-9]+ </td><td align='right'> [0-9]+ </td><td align='right'> [0-9]+ </td><td align='right'> [.0-9]+% </td><td align='right'> ([.0-9]+)
 

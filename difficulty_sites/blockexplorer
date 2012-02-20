@@ -3,6 +3,6 @@ coin = btc
 name = blockexplorer
 
 [btc]
-address = http://blockexplorer.com/q/getdifficulty
+source = http://blockexplorer.com/q/getdifficulty
 method = direct
 

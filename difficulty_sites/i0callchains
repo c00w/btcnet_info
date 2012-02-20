@@ -3,7 +3,7 @@ coin = i0c
 name = i0callchains
 
 [i0c]
-address = http://allchains.info/calc.html
+source = http://allchains.info/calc.html
 method = re
 key = i0c </td><td align='right'> [0-9]+ </td><td align='right'> [0-9]+M </td><td align='right'> [0-9]+ </td><td align='right'> [0-9]+ </td><td align='right'> [0-9]+ </td><td align='right'> [.0-9]+% </td><td align='right'> ([.0-9]+)
 

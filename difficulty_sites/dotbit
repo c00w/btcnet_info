@@ -3,7 +3,7 @@ coin = nmc
 name = dotbit
 
 [nmc]
-address = http://dot-bit.org/tools/namecoinCalculator.php
+source = http://dot-bit.org/tools/namecoinCalculator.php
 method = re
 key = Current difficulty : ([0-9.]+)<br />
 

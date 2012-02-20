@@ -3,7 +3,7 @@ coin = nmc
 name = namebit
 
 [nmc]
-address = http://namebit.org
+source = http://namebit.org
 method = re
 key = <td id="difficulty">([.0-9]+)</td>
 
