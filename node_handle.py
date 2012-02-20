@@ -48,6 +48,28 @@ class Handler():
         if 'strip' in info and type(result) is str:
             result = result.replace(info['strip'][1:-1], '')
         return result
+        
+    def handle_rateduration(self, info, resp):
+        if resp == 'rate':
+            """
+            If this is the rate just update it
+            """
+            self.dict['rate'] = float(info)
+            
+        elif resp == 'duration':
+            """
+            If this is duration check for a drop
+            """
+            old_dur = self.dict.get('duration', 0)
+            if int(info) < old_dur:
+                self.dict['value'] = 0
+            self.dict['duration'] = int(info)
+            
+        elif resp == 'timer:30':
+            """
+            If this is the increment timer increase the shares
+            """
+            
     
 handler = Handler()
 
