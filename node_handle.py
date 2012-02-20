@@ -7,7 +7,7 @@ class Handler():
         """
         return value
         
-    def json(self, Node, value):
+    def json(self, Node, value, _):
         """
         Handles json method of polling
         """
@@ -29,7 +29,7 @@ class Handler():
         
         return item
     
-    def handle_re(self, Node, resp):
+    def handle_re(self, Node, resp, _):
         """
         Handles re method of polling
         """
@@ -51,7 +51,7 @@ class Handler():
     
 handler = Handler()
 
-def handle(Node, value):
+def handle(Node, value, source):
     """
     Returns a processed value.
     """
@@ -64,7 +64,7 @@ def handle(Node, value):
         return value
         
     try:
-        return func(Node, value)
+        return func(Node, value, source)
     except:
         logging.error(traceback.format_exc())
         return value

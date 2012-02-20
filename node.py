@@ -36,6 +36,9 @@ class Node():
         self.namespace.add_node(self)
         self._set_source()
         
+    def get_dict(self):
+        return self.dict
+        
     def _set_source(self):
         """
         Add ourselves to the update list
@@ -44,34 +47,35 @@ class Node():
             return
             
         source_addr = self.dict['source']
+        for item in source_addr.split(','):
         
-        source = self.namespace.get_node(source_addr)
-        
-        #If this is a web address make a dummy node
-        if not source and 'http' in source_addr:
-            Http_Node(source_addr, self.namespace)
             source = self.namespace.get_node(source_addr)
             
-        if source:
-            source.add_hook(self._update_hook)
+            #If this is a web address make a dummy node
+            if not source and 'http' in source_addr:
+                Http_Node(source_addr, self.namespace)
+                source = self.namespace.get_node(source_addr)
+                
+            if source:
+                source.add_hook(self._update_hook)
             
     def add_hook(self, func):
         "Add someone to the hook list"
         self.hooks.add(func)
         if 'value' in self.dict:
-            gevent.spawn(func, self.dict['value'])
+            gevent.spawn(func, self.dict['value'], self.name)
             
     def _trigger(self):
         "Function to trigger everything in hooks"
         for func in self.hooks:
-            gevent.spawn(func, self.dict['value'])
+            gevent.spawn(func, self.dict['value'], self.name)
         
-    def _update_hook(self, value):
+    def _update_hook(self, value, name):
         """
         Called when our source value changes
         """
         #TO BE CHANGED
-        output = node_handle.handle(self, value)
+        output = node_handle.handle(self, value, name)
         old = getattr(self.dict, 'value', None)
         self.dict['value'] = output
         if old != output:
