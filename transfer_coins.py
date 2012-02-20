@@ -18,7 +18,7 @@ for item in parse.sections():
         config.set('general', k, v)
     with open('./coins/%s' % coin_info['short_name'], 'wb') as configfile:
         config.write(configfile)
-      
+"""      
 parse = ConfigParser.RawConfigParser()  
 parse.read('../bitHopper/diffwebs.cfg')
 for item in parse.sections():
@@ -38,6 +38,7 @@ for item in parse.sections():
     with open('./difficulty_sites/%s' % item, 'wb') as configfile:
         config.write(configfile)
         
+"""
 parse = ConfigParser.RawConfigParser()
 parse.read('../bitHopper/pools.cfg')
 parse.read('../bitHopper/user.cfg.default')
