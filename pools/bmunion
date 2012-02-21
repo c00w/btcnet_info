@@ -5,15 +5,8 @@ name = bmunion
 [mine]
 address = pool.bitminersunion.org:8341
 
-[api]
+[shares]
 method = re
 source = http://pool.bitminersunion.org/stats.php
 key = Shares this round:([0-9]+)<br/>
-
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
 

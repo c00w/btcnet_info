@@ -5,27 +5,13 @@ name = masterpoolnmc
 [mine]
 address = US01.masterpool.eu:8888
 
-[api]
+[shares]
 method = json
 source = https://masterpool.eu/jsonstats
 key = blockchains,NMC,shares
 
-[duration]
-key = blockchains,NMC,roundduration
-method = re_duration
-key_method = json
-address = https://masterpool.eu/jsonstats
-
-[ghash]
-key = hashrate
+[ghashrate]
 method = json
-address = https://masterpool.eu/jsonstats
-
-[payout]
-scheme = prop
-merged_mining = true
-
-[shares]
-method = direct
-source = api
+source = https://masterpool.eu/jsonstats
+key = hashrate
 

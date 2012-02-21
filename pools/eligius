@@ -5,32 +5,14 @@ name = eligius
 [mine]
 address = ra.mining.eligius.st:8337
 
-[api]
+[shares]
 method = re
 source = http://eligius.st/~artefact2/
 strip = ','
 key = id="instant_scount_7">([,0-9]+)</td>
 
-[duration]
-hour_group = 1
-min_group = 2
-key_duration = "instant_durationh_7">([,0-9]+)h</td><td class="ralign" id="instant_durationm_7">([,0-9]+)m
-method = re_duration
-key_method = re
-address = http://eligius.st/~artefact2/
-strip = ','
-
-[ghash]
-key = ([0-9.]+) GH/s
+[ghashrate]
 method = re
-address = http://eligius.st/~artefact2/
-strip = ','
-
-[payout]
-scheme = smpps
-merged_mining = true
-
-[shares]
-method = direct
-source = api
+source = http://eligius.st/~artefact2/
+key = ([0-9.]+) GH/s
 

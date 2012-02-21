@@ -5,29 +5,13 @@ name = masterpool
 [mine]
 address = US01.masterpool.eu:8888
 
-[api]
+[shares]
 method = json
 source = https://masterpool.eu/jsonstats
 key = blockchains,BTC,shares
 
-[duration]
-second_group = 1
-key_duration = (\d+)
-method = re_duration
-key = blockchains,BTC,roundduration
-key_method = json
-address = https://masterpool.eu/jsonstats
-
-[ghash]
-key = hashrate
+[ghashrate]
 method = json
-address = https://masterpool.eu/jsonstats
-
-[payout]
-scheme = pplns
-merged_mining = true
-
-[shares]
-method = direct
-source = api
+source = https://masterpool.eu/jsonstats
+key = hashrate
 

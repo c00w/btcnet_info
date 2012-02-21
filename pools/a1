@@ -5,26 +5,12 @@ name = a1
 [mine]
 address = a1bitcoinpool.com:8999
 
-[api]
+[shares]
 method = re_rateduration
 source = http://www.a1bitcoinpool.com/stats.php
 
-[duration]
-hour_group = 1
-min_group = 2
-key_duration = Time Since Last Block</td><td><span class="\w+">([0-9]+) Hours ([0-9]+) Minutes
-method = re_duration
-key_method = re_rateduration
-address = http://www.a1bitcoinpool.com/stats.php
-
-[ghash]
-key = Pool Hash Rate</td><td>([0-9.]+) Ghashes/s
+[ghashrate]
 method = re_rateduration
-address = http://www.a1bitcoinpool.com/stats.php
-
-[payout]
-scheme = prop
-
-[shares]
-method = rateduration
+source = http://www.a1bitcoinpool.com/stats.php
+key = Pool Hash Rate</td><td>([0-9.]+) Ghashes/s
 

@@ -5,16 +5,13 @@ name = btcjapan
 [mine]
 address = bitcoin.ne.jp:8334
 
-[api]
+[shares]
 method = re
 source = https://bitcoin.ne.jp/
-key_mhashrate = Speed: ([,0-9.]+) Mh/s
 key = Shares this round: ([,0-9]+)
 
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
+[mhashrate]
+method = re
+source = https://bitcoin.ne.jp/
+key = Speed: ([,0-9.]+) Mh/s
 

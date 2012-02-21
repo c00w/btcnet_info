@@ -5,18 +5,14 @@ name = asspenny
 [mine]
 address = asspennypool.com:8999
 
-[api]
+[shares]
 method = json
 asspenny_user_apikey = xxxxxx
 source = http://asspennypool.com/api.php?api_key=%(asspenny_user_apikey)s
-key_mhashrate = poolhash
 key = shares
 
-[payout]
-scheme = prop
-merged_mining = true
-
-[shares]
-method = direct
-source = api
+[mhashrate]
+method = json
+source = http://asspennypool.com/api.php?api_key=%(asspenny_user_apikey)s
+key = poolhash
 

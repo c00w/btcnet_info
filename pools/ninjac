@@ -5,15 +5,9 @@ name = ninjac
 [mine]
 address = mine.ninjacoin.com:8332
 
-[api]
+[shares]
 method = re_rate
 source = https://www.ninjacoin.com/
 strip = ' '
 key = Hashrate:([ 0-9]+).
-
-[payout]
-scheme = pps
-
-[shares]
-method = rate
 

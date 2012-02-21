@@ -5,15 +5,8 @@ name = poolmunitynmc
 [mine]
 address = poolmunity.com:18332
 
-[api]
+[shares]
 method = json
 source = https://poolmunity.com/api.php?server
 key = totalShares
-
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
 

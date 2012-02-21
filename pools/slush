@@ -5,31 +5,13 @@ name = slush
 [mine]
 address = api2.bitcoin.cz:8332
 
-[api]
+[shares]
 method = json
 source = http://mining.bitcoin.cz/stats/json/
 key = shares
 
-[duration]
-hour_group = 1
-min_group = 2
-key_duration = (\d+):(\d+):
-method = re_duration
-key = round_duration
-key_method = json
-address = http://mining.bitcoin.cz/stats/json/
-
-[ghash]
-key = ghashes_ps
+[ghashrate]
 method = json
-address = http://mining.bitcoin.cz/stats/json/
-
-[payout]
-scheme = score
-merged_mining = true
-c = 300
-
-[shares]
-method = direct
-source = api
+source = http://mining.bitcoin.cz/stats/json/
+key = ghashes_ps
 

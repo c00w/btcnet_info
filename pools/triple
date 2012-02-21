@@ -5,15 +5,8 @@ name = triple
 [mine]
 address = eu1.triplemining.com:8344
 
-[api]
+[shares]
 method = json
 source = http://api.triplemining.com/json/stats
 key = solved
-
-[payout]
-scheme = pplns
-
-[shares]
-method = direct
-source = api
 

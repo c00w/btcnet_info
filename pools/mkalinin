@@ -5,16 +5,13 @@ name = mkalinin
 [mine]
 address = pool.mkalinin.ru:8344
 
-[api]
+[shares]
 method = json
 source = http://pool.mkalinin.ru/api.php
-key_mhashrate = hashrate
 key = shares
 
-[payout]
-scheme = pplns
-
-[shares]
-method = direct
-source = api
+[mhashrate]
+method = json
+source = http://pool.mkalinin.ru/api.php
+key = hashrate
 

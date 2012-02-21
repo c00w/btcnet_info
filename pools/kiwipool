@@ -5,31 +5,14 @@ name = kiwipool
 [mine]
 address = pool2.kiwipool.me:8332
 
-[api]
+[shares]
 method = re
 source = http://kiwipool.me
 strip = ''
 key = [:0-9]+[,]([0-9]+)
 
-[duration]
-hour_group = 1
-min_group = 2
-key_duration = ([0-9]+):([0-9]+):
-method = re_duration
-key_method = re
-address = http://kiwipool.me
-strip = ''
-
-[ghash]
-key = current\s+hash\s+rate\W+([0-9]+)
+[ghashrate]
 method = re
-address = http://kiwipool.me
-strip = ''
-
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
+source = http://kiwipool.me
+key = current\s+hash\s+rate\W+([0-9]+)
 

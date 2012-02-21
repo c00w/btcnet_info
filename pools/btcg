@@ -5,17 +5,10 @@ name = btcg
 [mine]
 address = btcguild.com:8332
 
-[api]
+[shares]
 method = re_rate
 key = <td>([0-9])+
 btcguild_user_apikey = 81a9081f4d5f32db7dbbed407cb5f686
 source = https://www.btcguild.com
 strip = ''
-
-[payout]
-scheme = pps
-merged_mining = true
-
-[shares]
-method = rate
 

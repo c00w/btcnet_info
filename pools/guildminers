@@ -5,16 +5,9 @@ name = guildminers
 [mine]
 address = pit.guildminers.com:8332
 
-[api]
+[shares]
 method = re
 source = http://guildminers.com/
 strip = ','
 key = ([,0-9]+) shares
-
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
 

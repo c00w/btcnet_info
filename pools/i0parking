@@ -5,16 +5,9 @@ name = i0parking
 [mine]
 address = i0pool.bitparking.com:11098
 
-[api]
+[shares]
 method = re
 source = http://i0pool.bitparking.com/pool
 strip = ' '
 key = block</td><td>([ 0-9]+)</td>
-
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
 

@@ -5,21 +5,13 @@ name = mtred
 [mine]
 address = mtred.com:8337
 
-[api]
+[shares]
 method = json
 source = https://mtred.com/api/stats
 key = roundshares
 
-[ghash]
-key = hashrate
+[ghashrate]
 method = json
-address = https://mtred.com/api/stats
-
-[payout]
-scheme = pps
-merged_mining = true
-
-[shares]
-method = direct
-source = api
+source = https://mtred.com/api/stats
+key = hashrate
 

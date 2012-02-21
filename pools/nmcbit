@@ -5,23 +5,14 @@ name = nmcbit
 [mine]
 address = nmcbit.com:8332
 
-[api]
+[shares]
 method = re
 source = http://www.nmcbit.com/statistics
 strip = ','
 key = Valid\s+shares\s+for\s+current\s+round:</th><td>([,0-9]+)</td>
 
-[ghash]
-key = ([,0-9.]+) Ghash/s
+[ghashrate]
 method = re
-address = http://www.nmcbit.com/statistics
-strip = ','
-
-[payout]
-scheme = pps
-merged_mining = true
-
-[shares]
-method = direct
-source = api
+source = http://www.nmcbit.com/statistics
+key = ([,0-9.]+) Ghash/s
 

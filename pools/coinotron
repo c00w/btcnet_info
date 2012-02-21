@@ -5,30 +5,13 @@ name = coinotron
 [mine]
 address = coinotron.com:8322
 
-[api]
+[shares]
 method = re_rateduration
 source = http://coinotron.com/coinotron/AccountServlet?action=home
 strip = ''
 
-[duration]
-hour_group = 1
-min_group = 2
-key_duration = (\d+) h ?(\d+)? ?m?
-method = re_duration
-key_method = re_rateduration
-address = http://coinotron.com/coinotron/AccountServlet?action=home
-strip = ''
-
-[ghash]
-key = ([0-9]+(?:\.[0-9]*)?) GH</td>
+[ghashrate]
 method = re_rateduration
-address = http://coinotron.com/coinotron/AccountServlet?action=home
-strip = ''
-
-[payout]
-scheme = score
-c = 1
-
-[shares]
-method = rateduration
+source = http://coinotron.com/coinotron/AccountServlet?action=home
+key = ([0-9]+(?:\.[0-9]*)?) GH</td>
 

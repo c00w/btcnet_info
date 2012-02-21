@@ -5,15 +5,9 @@ name = bitfarms
 [mine]
 address = pool.bitfarms.ca:8332
 
-[api]
+[shares]
 method = re_rate
 source = http://bitfarms.ca/
 strip = ' '
 key = Pool Rate:([ 0-9]+).
-
-[payout]
-scheme = pps
-
-[shares]
-method = rate
 

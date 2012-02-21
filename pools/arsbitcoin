@@ -5,16 +5,13 @@ name = arsbitcoin
 [mine]
 address = arsbitcoin.com:8344
 
-[api]
+[shares]
 method = json
 source = https://www.arsbitcoin.com/api.php
-key_mhashrate = hashrate
 key = currentroundshares
 
-[payout]
-scheme = pps
-
-[shares]
-method = direct
-source = api
+[mhashrate]
+method = json
+source = https://www.arsbitcoin.com/api.php
+key = hashrate
 

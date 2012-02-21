@@ -5,27 +5,12 @@ name = polmine
 [mine]
 address = polmine.pl:8347
 
-[api]
+[shares]
 method = re_rateduration
 source = https://polmine.pl/?action=statistics
 
-[duration]
-day_group = 1
-hour_group = 2
-min_group = 3
-key_duration = </b> <br/>([ 0-9]+)dni([ 0-9]+)godzin([ 0-9]+)minut
-method = re_duration
-key_method = re_rateduration
-address = https://polmine.pl/?action=statistics
-
-[ghash]
-key = <b> ([\.0-9]+)</b> Ghash
+[ghashrate]
 method = re_rateduration
-address = https://polmine.pl/?action=statistics
-
-[payout]
-scheme = pps
-
-[shares]
-method = rateduration
+source = https://polmine.pl/?action=statistics
+key = <b> ([\.0-9]+)</b> Ghash
 

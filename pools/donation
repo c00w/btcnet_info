@@ -5,14 +5,8 @@ name = donation
 [mine]
 address = btcproxy.net:80
 
-[api]
+[shares]
 method = json
 key = currentroundshares
 source = https://www.arsbitcoin.com/api.php
-
-[payout]
-
-[shares]
-method = direct
-source = api
 

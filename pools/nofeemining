@@ -5,21 +5,14 @@ name = nofeemining
 [mine]
 address = nofeemining.appspot.com:80
 
-[api]
+[shares]
 method = json
 nofeemining_user_apikey = 4140cbc6405f4425cf91ca74e1450b66
 source = https://nofeemining.appspot.com/api.php
 key = poolRoundShares
 
-[ghash]
-key = poolspeed
+[ghashrate]
 method = json
-address = https://nofeemining.appspot.com/api.php
-
-[payout]
-scheme = smpps
-
-[shares]
-method = direct
-source = api
+source = https://nofeemining.appspot.com/api.php
+key = poolspeed
 

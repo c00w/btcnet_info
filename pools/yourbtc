@@ -5,15 +5,8 @@ name = yourbtc
 [mine]
 address = mining.yourbtc.net:8999
 
-[api]
+[shares]
 method = json
 source = http://www.yourbtc.net/api.php
 key = pool,round_shares
-
-[payout]
-scheme = dgm
-
-[shares]
-method = direct
-source = api
 

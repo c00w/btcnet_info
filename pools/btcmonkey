@@ -5,16 +5,13 @@ name = btcmonkey
 [mine]
 address = www.bitcoinmonkey.com:8332
 
-[api]
+[shares]
 method = json
 source = https://www.bitcoinmonkey.com/json/api.php
-key_mhashrate = pool_total_mhash
 key = shares_this_round
 
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
+[mhashrate]
+method = json
+source = https://www.bitcoinmonkey.com/json/api.php
+key = pool_total_mhash
 

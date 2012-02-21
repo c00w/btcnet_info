@@ -5,16 +5,13 @@ name = unitedminers
 [mine]
 address = pool.unitedminers.com:8332
 
-[api]
+[shares]
 method = json
 source = http://www.unitedminers.com/?action=api
-key_mhashrate = hashrate
 key = validcurrentshares
 
-[payout]
-scheme = pplns
-
-[shares]
-method = direct
-source = api
+[mhashrate]
+method = json
+source = http://www.unitedminers.com/?action=api
+key = hashrate
 

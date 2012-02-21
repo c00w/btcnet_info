@@ -5,26 +5,13 @@ name = ozco
 [mine]
 address = us.ozco.in:8332
 
-[api]
+[shares]
 method = json
 source = http://ozco.in/api.php
-key_mhashrate = pool,hashrate_raw
 key = pool,round_shares
 
-[duration]
-day_group = 1
-hour_group = 2
-min_group = 3
-key_duration = (\d+)d (\d+)h (\d+)m
-method = re_duration
-key_method = json
-address = http://ozco.in/api.php
-
-[payout]
-scheme = dgm
-merged_mining = true
-
-[shares]
-method = direct
-source = api
+[mhashrate]
+method = json
+source = http://ozco.in/api.php
+key = pool,hashrate_raw
 

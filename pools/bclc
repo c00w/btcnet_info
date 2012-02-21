@@ -5,14 +5,8 @@ name = bclc
 [mine]
 address = pool.bitlc.net:80
 
-[api]
+[shares]
 method = re_rate
 key = "hash_rate":([ 0-9]+).
 source = https://www.bitlc.net/stats.json
-
-[payout]
-scheme = prop
-
-[shares]
-method = rate
 

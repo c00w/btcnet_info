@@ -5,15 +5,8 @@ name = squid
 [mine]
 address = pool.squidnet.org:8341
 
-[api]
+[shares]
 method = json
 source = http://pool.squidnet.org/api
 key = shares_this_round
-
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
 

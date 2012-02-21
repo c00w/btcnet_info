@@ -5,16 +5,13 @@ name = poolmunity
 [mine]
 address = poolmunity.com:8332
 
-[api]
+[shares]
 method = json
 source = https://poolmunity.com/api.php?server
-key_mhashrate = speed
 key = totalShares
 
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
+[mhashrate]
+method = json
+source = https://poolmunity.com/api.php?server
+key = speed
 

@@ -5,16 +5,9 @@ name = mine4us
 [mine]
 address = go.mine-for.us:16101
 
-[api]
+[shares]
 method = re
 source = http://solid.mine-for.us/index.php?page=round
 strip = ' '
 key = <td>Valid shares this round: </td><td>([0-9]+)</td>
-
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
 

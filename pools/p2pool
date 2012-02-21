@@ -5,14 +5,8 @@ name = p2pool
 [mine]
 address = localhost:9332
 
-[api]
+[shares]
 method = disable
 source = http://localhost:9332
 key = code
-
-[payout]
-scheme = pplns
-
-[shares]
-method = disable
 

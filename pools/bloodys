@@ -5,31 +5,14 @@ name = bloodys
 [mine]
 address = pool.bloodys.com:8332
 
-[api]
+[shares]
 method = re
 source = http://pool.bloodys.com/?action=statistics
 strip = ','
 key = ([0-9]+(,[0-9]+)*) Shares
 
-[duration]
-hour_group = 1
-min_group = 2
-key_duration = Current Round: ([0-9]+):([0-9]+) hours
-method = re_duration
-key_method = re
-address = http://pool.bloodys.com/?action=statistics
-strip = ','
-
-[ghash]
-key = ([,0-9.]+) Ghash/s
+[ghashrate]
 method = re
-address = http://pool.bloodys.com/?action=statistics
-strip = ','
-
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
+source = http://pool.bloodys.com/?action=statistics
+key = ([,0-9.]+) Ghash/s
 

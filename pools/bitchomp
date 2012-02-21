@@ -5,17 +5,9 @@ name = bitchomp
 [mine]
 address = bitchomp.info:8332
 
-[api]
+[shares]
 method = re
 source = http://www.bitchomp.info/api
 strip = ''
 key = "shares": (\d+)
-
-[payout]
-scheme = smpps
-merged_mining = true
-
-[shares]
-method = direct
-source = api
 

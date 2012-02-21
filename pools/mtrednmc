@@ -5,23 +5,14 @@ name = mtrednmc
 [mine]
 address = mtred.com:8337
 
-[api]
+[shares]
 method = json
 source = https://mtred.com/api/stats
 strip = ','
 key = NMCroundshares
 
-[ghash]
-key = hashrate
+[ghashrate]
 method = json
-address = https://mtred.com/api/stats
-strip = ','
-
-[payout]
-scheme = pps
-merged_mining = true
-
-[shares]
-method = direct
-source = api
+source = https://mtred.com/api/stats
+key = hashrate
 

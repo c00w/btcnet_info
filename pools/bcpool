@@ -5,27 +5,12 @@ name = bcpool
 [mine]
 address = bitcoinpool.com:8334
 
-[api]
+[shares]
 method = re_rateduration
 source = http://bitcoinpool.com/index.php?do=currentround
 
-[duration]
-day_group = 1
-hour_group = 2
-min_group = 3
-key_duration = <p class=\"title\">Round Duration: <d class=\"info\">(?:([0-9]+)d&nbsp;)?([0-9]+)h&nbsp;([0-9]+)m&nbsp;
-method = re_duration
-key_method = re_rateduration
-address = http://bitcoinpool.com/index.php?do=currentround
-
-[ghash]
-key = Pool Speed: <d class=\"info\">([\.0-9]+) Gh/s
+[ghashrate]
 method = re_rateduration
-address = http://bitcoinpool.com/index.php?do=currentround
-
-[payout]
-scheme = prop
-
-[shares]
-method = rateduration
+source = http://bitcoinpool.com/index.php?do=currentround
+key = Pool Speed: <d class=\"info\">([\.0-9]+) Gh/s
 

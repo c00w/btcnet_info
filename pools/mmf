@@ -5,15 +5,8 @@ name = mmf
 [mine]
 address = mining.mainframe.nl:8343
 
-[api]
+[shares]
 method = json
 source = http://mining.mainframe.nl/api
 key = shares_this_round
-
-[payout]
-scheme = pplns
-
-[shares]
-method = direct
-source = api
 

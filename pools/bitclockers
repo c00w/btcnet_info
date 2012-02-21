@@ -5,22 +5,15 @@ name = bitclockers
 [mine]
 address = pool.bitclockers.com:8332
 
-[api]
+[shares]
 method = json
 user_address = http://bitclockers.com/api/%(bitclockers_user_apikey)s
 bitclockers_user_apikey = 965469e512aa0de5a37b83ccfd5e849e
 source = http://bitclockers.com/api
 key = roundshares
 
-[ghash]
-key = hashrate
+[ghashrate]
 method = json
-address = http://bitclockers.com/api
-
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
+source = http://bitclockers.com/api
+key = hashrate
 

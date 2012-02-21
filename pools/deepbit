@@ -5,15 +5,9 @@ name = deepbit
 [mine]
 address = pit.deepbit.net:8332
 
-[api]
+[shares]
 method = re_rate
 source = http://deepbit.net/
 strip = ''
 key = [rate:&nbsp;]+([0-9]+)+&nbsp;Gh/s
-
-[payout]
-scheme = prop
-
-[shares]
-method = rate
 

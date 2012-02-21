@@ -5,23 +5,13 @@ name = alex
 [mine]
 address = pool.schaetter.us:8337
 
-[api]
+[shares]
 method = json
 source = https://pool.schaetter.us/api.php
-key_mhashrate = hashrate
 key = shares
 
-[duration]
-second_group = 1
-key_duration = "roundduration":"([0-9]+)
-method = re_duration
-key_method = json
-address = https://pool.schaetter.us/api.php
-
-[payout]
-scheme = prop
-
-[shares]
-method = direct
-source = api
+[mhashrate]
+method = json
+source = https://pool.schaetter.us/api.php
+key = hashrate
 
