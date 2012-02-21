@@ -10,3 +10,8 @@ method = json
 source = https://mineco.in/stats.json
 key = shares_this_round
 
+[hashrate]
+method = json
+source = https://mineco.in/stats.json
+key = hashrate
+
