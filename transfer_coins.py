@@ -76,6 +76,11 @@ for item in parse.sections():
             config.set('ghashrate', 'method', pool_info['api_method'])
             config.set('ghashrate', 'source', pool_info['api_address'])
             config.set('ghashrate', 'key', v)
+        elif k == 'api_key_hashrate':
+            config.add_section('hashrate')
+            config.set('hashrate', 'method', pool_info['api_method'])
+            config.set('hashrate', 'source', pool_info['api_address'])
+            config.set('hashrate', 'key', v)
         elif 'duration' in k:
             print k
         elif 'api' in k and 'hashrate' in k:
