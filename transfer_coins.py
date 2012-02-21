@@ -58,74 +58,28 @@ for item in parse.sections():
     if 'lp_address' in pool_info:
         config.add_section('lp')
         config.set('lp', 'address', pool_info['lp_address'])
-    config.add_section('api')
+        
+    config.add_section('shares')
     for k,v in pool_info.items():
-        if 'api' in k and 'duration' not in k and 'ghashrate' not in k:
+        if 'api' in k and 'duration' not in k and 'hashrate' not in k:
             k = k.replace('api_','')
             if k == 'address':
                 k = 'source'
-            config.set('api', k, v)
-            
-    added = False
-    for k,v in pool_info.items():
-        if 'api' in k and 'duration' in k:
-            if not added:
-                config.add_section('duration')
-                added = True
-            k = k.replace('api_', '')
-            k = k.replace('_duration', '')
-            if k == 'key_day_hour_min':
-                k = 'key_duration'
-                config.set('duration', 'day_group', 1)
-                config.set('duration', 'hour_group', 2)
-                config.set('duration', 'min_group', 3)
-            if k == 'key_hour_min':
-                k = 'key_duration'
-                config.set('duration', 'hour_group', 1)
-                config.set('duration', 'min_group', 2)
-            if k == 'key_sec':
-                k = 'key_duration'
-                config.set('duration', 'second_group', 1)
-            
-            config.set('duration', k, v)
-            config.set('duration', 'method', 're_duration')
-            
-    if added:
-        config.set('duration', 'key_method', pool_info['api_method'])
-            
-    added = False
-    for k,v in pool_info.items():
-        if 'api' in k and 'ghashrate' in k:
-            if not added:
-                config.add_section('ghash')
-                added = True
-            k = k.replace('api_', '')
-            k = k.replace('_ghashrate', '')
-            config.set('ghash', k, v)
-    if added:
-        config.set('ghash', 'method', pool_info['api_method'])
-    
-    config.add_section('payout')
-    for k,v in pool_info.items():
-        if 'payout' in k:
-            k = k.replace('payout_','')
-            config.set('payout', k, v)
-            
-    for section in ['duration','ghash']:
-        if section not in config.sections():
-            continue
-        if  'source' not in config.items(section):
-            config.set(section, 'address', config.get('api','source'))
-        if 'strip' not in config.items(section) and 'strip' in dict(config.items('api')):
-            config.set(section, 'strip', config.get('api','strip'))
-            
-            
-    config.add_section('shares')
-    if pool_info['api_method'] in ['json', 're', 'json_ec']:
-        config.set('shares', 'method', 'direct')
-        config.set('shares', 'source', 'api')
-    else:
-        config.set('shares', 'method', pool_info['api_method'].replace('re_',''))
+            config.set('shares', k, v)
+        elif k == 'api_key_mhashrate':
+            config.add_section('mhashrate')
+            config.set('mhashrate', 'method', pool_info['api_method'])
+            config.set('mhashrate', 'source', pool_info['api_address'])
+            config.set('mhashrate', 'key', v)
+        elif k == 'api_key_ghashrate':
+            config.add_section('ghashrate')
+            config.set('ghashrate', 'method', pool_info['api_method'])
+            config.set('ghashrate', 'source', pool_info['api_address'])
+            config.set('ghashrate', 'key', v)
+        elif 'duration' in k:
+            print k
+        elif 'api' in k and 'hashrate' in k:
+            print k
         
     with open('./pools/%s' % item, 'wb') as configfile:
         config.write(configfile)
