@@ -24,8 +24,11 @@ class TestStore(unittest.TestCase):
         count = len(__init__.get_pools())
         shares = 0
         for item in __init__.get_pools():
-            if item.shares:
+            try:
+                a = float(item.shares)
                 shares += 1
+            except:
+                pass
         print
         print "Valid Pools %s/%s" % (shares, count)
         
