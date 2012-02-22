@@ -116,6 +116,7 @@ class Http_Node(Node):
                     self._trigger()
             except:
                 logging.error(traceback.format_exc())
+                logging.error(self.name)
             
             gevent.sleep(60)
             

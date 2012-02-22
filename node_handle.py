@@ -135,4 +135,5 @@ def handle(Node, value, source):
         return func(Node, value, source)
     except:
         logging.error(traceback.format_exc())
+        logging.error(Node)
         return value
