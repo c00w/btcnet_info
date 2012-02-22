@@ -33,7 +33,8 @@ class Handler():
         try:
             item = json.loads(value)
         except ValueError as e:
-            return value
+            print value
+            raise e
         
         if 'key' not in Node.dict:
             raise ValueError('No key in section, %s' % value)
