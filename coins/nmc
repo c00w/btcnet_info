@@ -3,11 +3,13 @@ long_name = Namecoin
 name = nmc
 
 [difficulty]
+coin = nmc
 value = 518525.941302
 method = difficulty
 source = time:30
 
 [exchange]
+coin = nmc
 method = exchange
 source = time:30
 

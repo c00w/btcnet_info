@@ -3,11 +3,13 @@ long_name = IXcoin
 name = ixc
 
 [difficulty]
+coin = ixc
 value = 236.115
 method = difficulty
 source = time:30
 
 [exchange]
+coin = ixc
 method = exchange
 source = time:30
 

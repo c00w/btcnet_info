@@ -3,11 +3,13 @@ long_name = I0coin
 name = i0c
 
 [difficulty]
+coin = i0c
 value = 448.348
 method = difficulty
 source = time:30
 
 [exchange]
+coin = i0c
 method = exchange
 source = time:30
 

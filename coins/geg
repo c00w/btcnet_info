@@ -3,11 +3,13 @@ long_name = Geist Geld
 name = geg
 
 [difficulty]
+coin = geg
 value = 1.63535
 method = difficulty
 source = time:30
 
 [exchange]
+coin = geg
 method = exchange
 source = time:30
 
