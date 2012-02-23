@@ -97,21 +97,31 @@ class Handler():
             If this is the increment timer increase the shares
             """
             
-    def difficulty(self, Node, info, resp):
+    def difficulty(self, Node, _, __):
          #Difficulty Sites
+        if 'coin' not in Node.dict:
+            raise ValueError("No coin in node")
+            
+        coin = Node.dict['coin']
+            
         diffs = []
         for site in Node.objects.difficulty_sites:
-            if getattr(site, Node.name):
-                diffs.append(getattr(site, Node.name))
+            if getattr(site, coin, None):
+                diffs.append(getattr(site, coin))
            
         return _median(diffs)
         
-    def exchange(self, Node, info, resp):
+    def exchange(self, Node, _, __):
         #Exchange Sites
+        
+        if 'coin' not in Node.dict:
+            raise ValueError("No coin in node")
+            
+        coin = Node.dict['coin']
         exchange = []
         for site in Node.objects.exchanges:
-            if getattr(site, Node.name):
-                exchange.append(getattr(site, Node.name))
+            if getattr(site, coin, None):
+                exchange.append(getattr(site, coin, None))
            
         exchange = _median(exchange)
         if not exchange and Node.name == 'btc':
