@@ -34,7 +34,6 @@ class Base_Object(object):
                 self.write_nodes.add(item)
             else:
                 values = dict(self.config.items(section))
-                print values
                 for item in values:
                     setattr(self, item, values[item])
                     
