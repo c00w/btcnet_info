@@ -10,3 +10,19 @@ method = re_rateduration
 source = http://www.bitpenny.com
 key = ([0-9]+).[0-9]+ Mh/s &nbsp
 
+[duration_hour]
+method = re
+source = http://www.bitpenny.com
+key = time since last block: ([0-9]+):([0-9]+):
+group = 1
+
+[duration_minute]
+method = re
+source = http://www.bitpenny.com
+key = time since last block: ([0-9]+):([0-9]+):
+group = 2
+
+[duration]
+method = duration
+source = duration_minute
+

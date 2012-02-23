@@ -14,3 +14,19 @@ method = re_rateduration
 source = http://www.a1bitcoinpool.com/stats.php
 key = Pool Hash Rate</td><td>([0-9.]+) Ghashes/s
 
+[duration_hour]
+method = re
+source = http://www.a1bitcoinpool.com/stats.php
+key = Time Since Last Block</td><td><span class="\w+">([0-9]+) Hours ([0-9]+) Minutes
+group = 1
+
+[duration_minute]
+method = re
+source = http://www.a1bitcoinpool.com/stats.php
+key = Time Since Last Block</td><td><span class="\w+">([0-9]+) Hours ([0-9]+) Minutes
+group = 2
+
+[duration]
+method = duration
+source = duration_minute
+

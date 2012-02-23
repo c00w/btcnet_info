@@ -16,3 +16,19 @@ method = re
 source = http://btcmine.com/stats/
 key = <td><span id="rs_hashrate">([0-9.]+)
 
+[duration_hour]
+method = re
+source = http://btcmine.com/stats/
+key = <td><span id="rs_roundtime">([0-9]+):([0-9]+):
+group = 1
+
+[duration_minute]
+method = re
+source = http://btcmine.com/stats/
+key = <td><span id="rs_roundtime">([0-9]+):([0-9]+):
+group = 2
+
+[duration]
+method = duration
+source = duration_minute
+

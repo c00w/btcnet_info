@@ -16,3 +16,19 @@ method = re
 source = http://simplecoin.us/stats.php?pool_id=3
 key = Pool Hash Rate</td><td>([.0-9]+) Ghashes/s
 
+[duration_hour]
+method = re
+source = http://simplecoin.us/stats.php?pool_id=3
+key = Time Since Last Block</td><td><span class="\w+">([0-9]+) Hours ([0-9]+) Minutes
+group = 1
+
+[duration_minute]
+method = re
+source = http://simplecoin.us/stats.php?pool_id=3
+key = Time Since Last Block</td><td><span class="\w+">([0-9]+) Hours ([0-9]+) Minutes
+group = 2
+
+[duration]
+method = duration
+source = duration_minute
+
