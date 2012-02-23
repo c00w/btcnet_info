@@ -128,6 +128,19 @@ for item in parse.sections():
             print k
         elif 'api' in k and 'hashrate' in k:
             print k
+            
+    shares_info = dict(config.items('shares'))
+    for k,v in shares_info.items():
+        if k == 'method' and k == 're_rate':
+            config.add_section('rate')
+            for k,v in shares_info.items():
+                config.set('rate', k, v)
+                config.remove_option('shares', k)
+            
+            config.set('rate', 'method', 're')
+            config.set('shares', 'method', 'rate')
+            config.set('shares', 'source', 'rate,timer:30')
+            
         
     with open('./pools/%s' % item, 'wb') as configfile:
         config.write(configfile)

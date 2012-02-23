@@ -69,12 +69,36 @@ class Handler():
             #        % (Node.name, len(resp), Node))
             return
             
-        group = Node.dict['group'] if 'group' in Node.dict else 1
+        group = int(Node.dict['group']) if 'group' in Node.dict else 1
         result = result.group(group)
         
         if 'strip' in Node.dict and type(result) is str:
             result = result.replace(Node.dict['strip'][1:-1], '')
         return result
+        
+    def rate(self, Node, info, resp):
+        if resp == 'rate':
+            """
+            If this is the rate just update it
+            """
+            Node.dict['rate'] = float(info)
+            
+        if resp == 'timer:30':
+            """
+            If this is the increment timer increase the shares
+            """
+            
+            #Figure out how long it has been
+            old_time = float(Node.dict.get('last_called', time.time()))
+            new_time = float(time.time())
+            diff = new_time - old_time
+            Node.dict['last_called'] = new_time
+            
+            #Add to shares
+            shares = float(Node.dict.get('value', 0))
+            rate = float(Node.dict.get('rate', 0))
+            mult = float(Node.dict.get('rate_mult', 1000**3))
+            Node.dict['value'] = shares + rate * mult * diff
         
     def rateduration(self, Node, info, resp):
         if resp == 'rate':
