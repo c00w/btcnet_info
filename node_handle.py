@@ -82,6 +82,7 @@ class Handler():
             If this is the rate just update it
             """
             Node.dict['rate'] = float(info)
+            return Node.dict.get('value', None)
             
         if resp == 'timer:30':
             """
@@ -98,7 +99,9 @@ class Handler():
             shares = float(Node.dict.get('value', 0))
             rate = float(Node.dict.get('rate', 0))
             mult = float(Node.dict.get('rate_mult', 1000**3))
-            Node.dict['value'] = shares + rate * mult * diff
+            new = shares + rate * mult * diff
+            return new
+
         
     def rateduration(self, Node, info, resp):
         if resp == 'rate':
