@@ -28,6 +28,7 @@ class TestStore(unittest.TestCase):
                 a = float(item.shares)
                 shares += 1
             except:
+                print 'Invalid Pool: %s' %( item.name)
                 pass
         print
         print "Valid Pools %s/%s" % (shares, count)

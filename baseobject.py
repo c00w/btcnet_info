@@ -18,7 +18,6 @@ class Base_Object(object):
         
         self.config = ConfigParser.RawConfigParser()
         self.config.read(config_file)
-        self.name = ''
         self.namespace = node.Node_NameSpace()
         self.write_nodes = set()
         self.file_name = config_file
@@ -30,11 +29,12 @@ class Base_Object(object):
         thread.start()
         
         for section in self.config.sections():
-            if section is not 'general':
+            if section != 'general':
                 item = node.Node(section, dict(self.config.items(section)), self.namespace, objects)
                 self.write_nodes.add(item)
             else:
                 values = dict(self.config.items(section))
+                print values
                 for item in values:
                     setattr(self, item, values[item])
                     
