@@ -9,6 +9,28 @@ address = bitcoinpool.com:8334
 method = re_rateduration
 source = http://bitcoinpool.com/index.php?do=currentround
 
+[duration_day]
+method = re
+source = http://bitcoinpool.com/index.php?do=currentround
+key = <p class=\"title\">Round Duration: <d class=\"info\">(?:([0-9]+)d&nbsp;)?([0-9]+)h&nbsp;([0-9]+)m&nbsp;
+group = 1
+
+[duration_hour]
+method = re
+source = http://bitcoinpool.com/index.php?do=currentround
+key = <p class=\"title\">Round Duration: <d class=\"info\">(?:([0-9]+)d&nbsp;)?([0-9]+)h&nbsp;([0-9]+)m&nbsp;
+group = 2
+
+[duration_minute]
+method = re
+source = http://bitcoinpool.com/index.php?do=currentround
+key = <p class=\"title\">Round Duration: <d class=\"info\">(?:([0-9]+)d&nbsp;)?([0-9]+)h&nbsp;([0-9]+)m&nbsp;
+group = 3
+
+[duration]
+method = duration_day
+source = duration_minute
+
 [ghashrate]
 method = re_rateduration
 source = http://bitcoinpool.com/index.php?do=currentround
