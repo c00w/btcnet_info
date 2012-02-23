@@ -120,7 +120,7 @@ class Handler():
                 self.dict['value'] = 0
             self.dict['duration'] = int(info)
             
-        elif resp == 'timer:30':
+        elif resp == 'time:30':
             """
             If this is the increment timer increase the shares
             """
