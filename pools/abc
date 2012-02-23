@@ -6,9 +6,13 @@ name = abc
 address = pool.ABCPool.co:8332
 
 [shares]
-method = re_rate
-abc_user_apikey = 
+method = rate
+source = rate,time:30
+
+[rate]
 source = http://www.abcpool.co/stats.php
-strip = ''
+abc_user_apikey = 
+method = re
 key = <span class="stat">([0-9]+) GH/s</span>
+strip = ''
 

@@ -131,7 +131,7 @@ for item in parse.sections():
             
     shares_info = dict(config.items('shares'))
     for k,v in shares_info.items():
-        if k == 'method' and k == 're_rate':
+        if k == 'method' and v == 're_rate':
             config.add_section('rate')
             for k,v in shares_info.items():
                 config.set('rate', k, v)
@@ -139,7 +139,7 @@ for item in parse.sections():
             
             config.set('rate', 'method', 're')
             config.set('shares', 'method', 'rate')
-            config.set('shares', 'source', 'rate,timer:30')
+            config.set('shares', 'source', 'rate,time:30')
             
         
     with open('./pools/%s' % item, 'wb') as configfile:

@@ -6,9 +6,13 @@ name = btcg
 address = btcguild.com:8332
 
 [shares]
-method = re_rate
-key = <td>([0-9])+
-btcguild_user_apikey = 81a9081f4d5f32db7dbbed407cb5f686
+method = rate
+source = rate,time:30
+
+[rate]
 source = https://www.btcguild.com
+btcguild_user_apikey = 81a9081f4d5f32db7dbbed407cb5f686
+method = re
+key = <td>([0-9])+
 strip = ''
 

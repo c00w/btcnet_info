@@ -6,8 +6,12 @@ name = ninjac
 address = mine.ninjacoin.com:8332
 
 [shares]
-method = re_rate
+method = rate
+source = rate,time:30
+
+[rate]
 source = https://www.ninjacoin.com/
-strip = ' '
+method = re
 key = Hashrate:([ 0-9]+).
+strip = ' '
 

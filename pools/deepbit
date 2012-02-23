@@ -6,8 +6,12 @@ name = deepbit
 address = pit.deepbit.net:8332
 
 [shares]
-method = re_rate
+method = rate
+source = rate,time:30
+
+[rate]
 source = http://deepbit.net/
-strip = ''
+method = re
 key = [rate:&nbsp;]+([0-9]+)+&nbsp;Gh/s
+strip = ''
 

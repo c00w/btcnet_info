@@ -77,6 +77,7 @@ class Handler():
         return result
         
     def rate(self, Node, info, resp):
+        print Node, info, resp
         if resp == 'rate':
             """
             If this is the rate just update it
@@ -84,7 +85,7 @@ class Handler():
             Node.dict['rate'] = float(info)
             return Node.dict.get('value', None)
             
-        if resp == 'timer:30':
+        if resp[0:4] == 'time':
             """
             If this is the increment timer increase the shares
             """

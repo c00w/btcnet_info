@@ -6,7 +6,11 @@ name = bclc
 address = pool.bitlc.net:80
 
 [shares]
-method = re_rate
-key = "hash_rate":([ 0-9]+).
+method = rate
+source = rate,time:30
+
+[rate]
 source = https://www.bitlc.net/stats.json
+method = re
+key = "hash_rate":([ 0-9]+).
 
