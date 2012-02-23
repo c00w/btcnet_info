@@ -75,6 +75,7 @@ class Node():
             
     def _trigger(self):
         "Function to trigger everything in hooks"
+            
         for func in self.hooks:
             gevent.spawn(func, self.dict['value'], self.name)
         
@@ -100,7 +101,7 @@ class Http_Node(Node):
         self.hooks = set()
         self.namespace = namespace
         self.namespace.add_node(self)
-        self.dict = {'value':None}
+        self.dict = {}
         gevent.spawn(self._poll)
         
     def _poll(self):
@@ -111,7 +112,11 @@ class Http_Node(Node):
         while True:
             try:
                 headers, content = Http.request(self.name)
-                if content != self.dict['value']:
+                if content == None:
+                    continue
+                if len(content) == 0:
+                    continue
+                if content != self.dict.get('value', None):
                     self.dict['value'] = content
                     self._trigger()
             except:
@@ -127,7 +132,7 @@ class Timer_Node(Node):
         self.hooks = set()
         self.namespace = namespace
         self.namespace.add_node(self)
-        self.dict = {'value':None}
+        self.dict = {'value':self.name}
         gevent.spawn(self._poll)
         
     def _poll(self):
