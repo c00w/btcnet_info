@@ -19,19 +19,8 @@ source = http://pool.bloodys.com/?action=statistics
 key = ([,0-9.]+) Ghash/s
 scale = gh
 
-[duration_hour]
-method = re
-source = http://pool.bloodys.com/?action=statistics
-key = Current Round: ([0-9]+):([0-9]+) hours
-group = 1
-
-[duration_minute]
-method = re
-source = http://pool.bloodys.com/?action=statistics
-key = Current Round: ([0-9]+):([0-9]+) hours
-group = 2
-
 [duration]
-method = duration
-source = duration_minute
+method = re
+source = http://pool.bloodys.com/?action=statistics
+items = hour,min
 

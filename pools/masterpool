@@ -18,3 +18,13 @@ source = https://masterpool.eu/jsonstats
 key = hashrate
 scale = gh
 
+[duration]
+method = re
+source = duration_pre
+items = sec
+
+[duration_pre]
+source = https://masterpool.eu/jsonstats
+method = json
+key = blockchains,BTC,roundduration
+

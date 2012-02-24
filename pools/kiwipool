@@ -19,19 +19,8 @@ source = http://kiwipool.me
 key = current\s+hash\s+rate\W+([0-9]+)
 scale = gh
 
-[duration_hour]
-method = re
-source = http://kiwipool.me
-key = ([0-9]+):([0-9]+):
-group = 1
-
-[duration_minute]
-method = re
-source = http://kiwipool.me
-key = ([0-9]+):([0-9]+):
-group = 2
-
 [duration]
-method = duration
-source = duration_minute
+method = re
+source = http://kiwipool.me
+items = hour,min
 

@@ -19,19 +19,8 @@ source = http://eligius.st/~artefact2/
 key = ([0-9.]+) GH/s
 scale = gh
 
-[duration_hour]
-method = re
-source = http://eligius.st/~artefact2/
-key = "instant_durationh_7">([,0-9]+)h</td><td class="ralign" id="instant_durationm_7">([,0-9]+)m
-group = 1
-
-[duration_minute]
-method = re
-source = http://eligius.st/~artefact2/
-key = "instant_durationh_7">([,0-9]+)h</td><td class="ralign" id="instant_durationm_7">([,0-9]+)m
-group = 2
-
 [duration]
-method = duration
-source = duration_minute
+method = re
+source = http://eligius.st/~artefact2/
+items = hour,min
 

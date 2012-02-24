@@ -11,27 +11,10 @@ address = polmine.pl:8347
 method = rateduration
 source = rate,duration
 
-[duration_day]
-method = re
-source = https://polmine.pl/?action=statistics
-key = </b> <br/>([ 0-9]+)dni([ 0-9]+)godzin([ 0-9]+)minut
-group = 1
-
-[duration_hour]
-method = re
-source = https://polmine.pl/?action=statistics
-key = </b> <br/>([ 0-9]+)dni([ 0-9]+)godzin([ 0-9]+)minut
-group = 2
-
-[duration_minute]
-method = re
-source = https://polmine.pl/?action=statistics
-key = </b> <br/>([ 0-9]+)dni([ 0-9]+)godzin([ 0-9]+)minut
-group = 3
-
 [duration]
-method = duration_day
-source = duration_minute
+method = re
+source = https://polmine.pl/?action=statistics
+items = day,hour,min
 
 [rate]
 method = re

@@ -12,6 +12,11 @@ method = json
 source = https://pool.schaetter.us/api.php
 key = shares
 
+[duration]
+method = re
+source = https://pool.schaetter.us/api.php
+items = sec
+
 [rate]
 method = json
 source = https://pool.schaetter.us/api.php

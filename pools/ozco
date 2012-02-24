@@ -12,27 +12,10 @@ method = json
 source = http://ozco.in/api.php
 key = pool,round_shares
 
-[duration_day]
-method = re
-source = http://ozco.in/api.php
-key = (\d+)d (\d+)h (\d+)m
-group = 1
-
-[duration_hour]
-method = re
-source = http://ozco.in/api.php
-key = (\d+)d (\d+)h (\d+)m
-group = 2
-
-[duration_minute]
-method = re
-source = http://ozco.in/api.php
-key = (\d+)d (\d+)h (\d+)m
-group = 3
-
 [duration]
-method = duration_day
-source = duration_minute
+method = re
+source = http://ozco.in/api.php
+items = day,hour,min
 
 [rate]
 method = json

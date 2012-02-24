@@ -18,19 +18,13 @@ source = http://mining.bitcoin.cz/stats/json/
 key = ghashes_ps
 scale = gh
 
-[duration_hour]
-method = re
-source = http://mining.bitcoin.cz/stats/json/
-key = (\d+):(\d+):
-group = 1
-
-[duration_minute]
-method = re
-source = http://mining.bitcoin.cz/stats/json/
-key = (\d+):(\d+):
-group = 2
-
 [duration]
-method = duration
-source = duration_minute
+method = re
+source = duration_pre
+items = hour,min
+
+[duration_pre]
+source = http://mining.bitcoin.cz/stats/json/
+method = json
+key = round_duration
 
