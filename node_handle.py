@@ -33,7 +33,7 @@ class Handler():
         try:
             item = json.loads(value)
         except:
-            print value
+            logging.debug(value)
             raise
         
         if 'key' not in Node.dict:
@@ -61,7 +61,7 @@ class Handler():
             raise ValueError('%s: No key in section' % Node.name) 
        
         #Hacks to deal with wierd parser imports
-        Node.dict['key'] = Node.dict['key'].replace('\\r', '\r').replace('\\n', '\n').replace('\\d', '\d')
+        Node.dict['key'] = Node.dict['key'].replace('\\r', '\r').replace('\\n', '\n').replace('\\\\d', '\d')
        
         result = re.search( Node.dict['key'], str(resp))
         if not result:
@@ -204,7 +204,7 @@ class Handler():
             try:
                 duration += float(result.group(index)) * prefix_multiplier(prefix)
             except TypeError:
-                logging.error('Potential type error %s, %s' % (result.group(index), traceback.format_exc()))
+                logging.info('Potential type error %s, %s' % (result.group(index), traceback.format_exc()))
         return duration
         
         
@@ -225,6 +225,6 @@ def handle(Node, value, source):
     try:
         return func(Node, value, source)
     except:
-        logging.error(traceback.format_exc())
-        logging.error(Node)
+        logging.debug(traceback.format_exc())
+        logging.debug(Node)
         return value
