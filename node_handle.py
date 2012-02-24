@@ -61,7 +61,7 @@ class Handler():
             raise ValueError('%s: No key in section' % Node.name) 
        
         #Hacks to deal with wierd parser imports
-        Node.dict['key'] = Node.dict['key'].replace('\\\\r', '\r').replace('\\\\n', '\n')
+        Node.dict['key'] = Node.dict['key'].replace('\\r', '\r').replace('\\n', '\n').replace('\\d', '\d')
        
         result = re.search( Node.dict['key'], str(resp))
         if not result:
@@ -92,7 +92,7 @@ class Handler():
                 return 1
             
             rate = float(info)
-            mode = Node.namespace.get('rate').dict['scale']
+            mode = Node.namespace.get_node('rate').dict['scale']
             
             hashs = rate * scale_to_mult(mode)
             Node.dict['rate'] = hashs
@@ -133,13 +133,13 @@ class Handler():
             rate = float(Node.dict['rate'])
             
             old_dur = Node.dict.get('duration', 0)
-            self.dict['duration'] = float(value)
+            Node.dict['duration'] = float(value)
             
             if float(value) < old_dur:
                 return 0
             else:
                 diff = float(value) - float(old_dur)
-                return float(Node.get('value', 0)) + float(rate)/(2**32) * float(diff)
+                return float(Node.dict.get('value', 0)) + float(rate)/(2**32) * float(diff)
             
     def difficulty(self, Node, _, __):
          #Difficulty Sites
@@ -204,7 +204,7 @@ class Handler():
             try:
                 duration += float(result.group(index)) * prefix_multiplier(prefix)
             except TypeError:
-                logging.debug('Potential type error %s, %s' % (result.group(index), traceback.format_exc()))
+                logging.error('Potential type error %s, %s' % (result.group(index), traceback.format_exc()))
         return duration
         
         

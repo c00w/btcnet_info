@@ -65,6 +65,13 @@ class Node():
                 
             if source:
                 source.add_hook(self._update_hook)
+            else:
+                gevent.spawn(self._looping_add, item)
+                
+    def _looping_add(self, source):
+        while not self.namespace.get_node(source):
+            gevent.sleep(0.1)
+        self.namespace.get_node(source).add_hook(self._update_hook)
             
     def add_hook(self, func):
         "Add someone to the hook list"
@@ -91,7 +98,7 @@ class Node():
             self._trigger()
             
     def __repr__(self):
-        return '<Node %s, %s>' % (self.name, self.dict)
+        return '<Node %s, %s, %s>' % (self.name, self.dict, self.hooks)
         
         
 class Http_Node(Node):
