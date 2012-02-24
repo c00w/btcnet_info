@@ -121,21 +121,19 @@ class Handler():
             """
             If this is the rate just update it
             """
-            self.dict['rate'] = float(info)
+            shares = self.rate(Node, info, resp)
+            return shares
             
         elif resp == 'duration':
             """
             If this is duration check for a drop
             """
             old_dur = self.dict.get('duration', 0)
-            if int(info) < old_dur:
-                self.dict['value'] = 0
             self.dict['duration'] = int(info)
             
-        elif resp == 'time:30':
-            """
-            If this is the increment timer increase the shares
-            """
+            if int(info) < old_dur:
+                return 0
+            return Node.dict['value']
             
     def difficulty(self, Node, _, __):
          #Difficulty Sites
