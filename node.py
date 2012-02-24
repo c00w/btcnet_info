@@ -126,8 +126,8 @@ class Http_Node(Node):
                     self.dict['value'] = content
                     self._trigger()
             except:
-                logging.error(traceback.format_exc())
-                logging.error(self.name)
+                logging.debug(traceback.format_exc())
+                logging.debug(self.name)
             
             gevent.sleep(60)
             
