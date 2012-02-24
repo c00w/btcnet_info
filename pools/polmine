@@ -6,7 +6,7 @@ name = polmine
 address = polmine.pl:8347
 
 [shares]
-method = re_rateduration
+method = rateduration
 source = rate,duration
 
 [duration_day]

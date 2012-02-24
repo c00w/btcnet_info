@@ -6,7 +6,7 @@ name = a1
 address = a1bitcoinpool.com:8999
 
 [shares]
-method = re_rateduration
+method = rateduration
 source = rate,duration
 
 [rate]

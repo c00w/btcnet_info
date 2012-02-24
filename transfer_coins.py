@@ -158,6 +158,7 @@ for item in parse.sections():
             
         if k == 'method' and v == 're_rateduration':
             config.set('shares', 'source', 'rate,duration')
+            config.set('shares', 'method', 'rateduration')
             
         
     with open('./pools/%s' % item, 'wb') as configfile:

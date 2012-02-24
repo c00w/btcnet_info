@@ -6,7 +6,7 @@ name = coinotron
 address = coinotron.com:8322
 
 [shares]
-method = re_rateduration
+method = rateduration
 source = rate,duration
 strip = ''
 

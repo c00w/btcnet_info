@@ -6,7 +6,7 @@ name = bcpool
 address = bitcoinpool.com:8334
 
 [shares]
-method = re_rateduration
+method = rateduration
 source = rate,duration
 
 [duration_day]
