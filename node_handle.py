@@ -92,11 +92,11 @@ class Handler():
                 return 1
             
             rate = float(info)
-            mode = Node.namespace.get('scale')
+            mode = Node.namespace.get('rate').dict['scale']
             
             hashs = rate * scale_to_mult(mode)
-            Node.dict['hash'] = hashs
-            return Node.dict.get('hash', None)
+            Node.dict['rate'] = hashs
+            return Node.dict.get('value', None)
             
         if source[0:4] == 'time':
             """
@@ -116,24 +116,30 @@ class Handler():
             return new
 
         
-    def rateduration(self, Node, info, resp):
+    def rateduration(self, Node, value, resp):
         if resp == 'rate':
             """
             If this is the rate just update it
             """
-            shares = self.rate(Node, info, resp)
-            return shares
+            self.rate(Node, value, resp)
             
         elif resp == 'duration':
             """
             If this is duration check for a drop
             """
-            old_dur = self.dict.get('duration', 0)
-            self.dict['duration'] = int(info)
+            if 'rate' not in Node.dict:
+                return
             
-            if int(info) < old_dur:
+            rate = float(Node.dict['rate'])
+            
+            old_dur = Node.dict.get('duration', 0)
+            self.dict['duration'] = float(value)
+            
+            if float(value) < old_dur:
                 return 0
-            return Node.dict['value']
+            else:
+                diff = float(value) - float(old_dur)
+                return float(Node.get('value', 0)) + float(rate)/(2**32) * float(diff)
             
     def difficulty(self, Node, _, __):
          #Difficulty Sites
