@@ -6,12 +6,12 @@ name = bitparking
 address = mmpool.bitparking.com:15098
 
 [shares]
-method = re
-source = http://mmpool.bitparking.com/pool
+method = rate
+source = rate,time:30
 
 [rate]
-method = re
 source = http://mmpool.bitparking.com/pool
+method = re
 key = Pool Hash rate [(]MHash[/]second[)]</td><td>([0-9]+)
-scale = mh
+scale = gh
 
