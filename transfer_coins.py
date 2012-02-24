@@ -53,6 +53,8 @@ for item in parse.sections():
     config.add_section('general')
     config.set('general', 'coin', pool_info['coin'])
     config.set('general', 'name', item)
+    config.set('general', 'payout_scheme', pool_info.get('payout_scheme','unknown'))
+    config.set('general', 'payout_mm', str('payout_merged_mining' in pool_info))
     config.add_section('mine')
     config.set('mine','address', pool_info['mine_address'])
     if 'lp_address' in pool_info:
