@@ -1,4 +1,4 @@
-import logging, traceback, json, re
+import logging, traceback, json, re, time
 
 def _median(data):
         """
@@ -76,16 +76,29 @@ class Handler():
             result = result.replace(Node.dict['strip'][1:-1], '')
         return result
         
-    def rate(self, Node, info, resp):
-        print Node, info, resp
-        if resp == 'rate':
+    def rate(self, Node, info, source):
+        if source == 'rate':
             """
             If this is the rate just update it
             """
-            Node.dict['rate'] = float(info)
-            return Node.dict.get('value', None)
+            def scale_to_mult(scale):
+                scale = scale.lower()
+                if scale == 'gh':
+                    return 1000**3
+                elif scale == 'mh':
+                    return 1000 ** 2
+                elif scale == 'kh':
+                    return 1000
+                return 1
             
-        if resp[0:4] == 'time':
+            rate = float(info)
+            mode = Node.namespace.get('scale')
+            
+            hashs = rate * scale_to_mult(mode)
+            Node.dict['hash'] = hashs
+            return Node.dict.get('hash', None)
+            
+        if source[0:4] == 'time':
             """
             If this is the increment timer increase the shares
             """
@@ -99,8 +112,7 @@ class Handler():
             #Add to shares
             shares = float(Node.dict.get('value', 0))
             rate = float(Node.dict.get('rate', 0))
-            mult = float(Node.dict.get('rate_mult', 1000**3))
-            new = shares + rate * mult * diff
+            new = shares + float(rate)/(2**32) * diff
             return new
 
         

@@ -52,17 +52,16 @@ class Node():
             
         source_addr = self.dict['source']
         for item in source_addr.split(','):
-        
-            source = self.namespace.get_node(source_addr)
             
+            source = self.namespace.get_node(item)
             #If this is a web address make a dummy node
-            if not source and 'http' in source_addr[0:4]:
-                Http_Node(source_addr, self.namespace)
-                source = self.namespace.get_node(source_addr)
+            if not source and 'http' in item[0:4]:
+                Http_Node(item, self.namespace)
+                source = self.namespace.get_node(item)
                 
-            if not source and 'time:' in source_addr[0:5]:
-                Timer_Node(source_addr, self.namespace)
-                source = self.namespace.get_node(source_addr)
+            if not source and 'time:' in item[0:5]:
+                Timer_Node(item, self.namespace)
+                source = self.namespace.get_node(item)
                 
             if source:
                 source.add_hook(self._update_hook)
