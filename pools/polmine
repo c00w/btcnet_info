@@ -7,7 +7,7 @@ address = polmine.pl:8347
 
 [shares]
 method = re_rateduration
-source = https://polmine.pl/?action=statistics
+source = rate,duration
 
 [duration_day]
 method = re

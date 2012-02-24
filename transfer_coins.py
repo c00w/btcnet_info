@@ -66,6 +66,7 @@ for item in parse.sections():
             if k == 'address':
                 k = 'source'
             config.set('shares', k, v)
+            
         elif k == 'api_key_mhashrate':
             config.add_section('rate')
             config.set('rate', 'method', pool_info['api_method'])
@@ -154,6 +155,9 @@ for item in parse.sections():
             
             config.set('shares', 'method', 'rate')
             config.set('shares', 'source', 'rate,time:30')
+            
+        if k == 'method' and v == 're_rateduration':
+            config.set('shares', 'source', 'rate,duration')
             
         
     with open('./pools/%s' % item, 'wb') as configfile:

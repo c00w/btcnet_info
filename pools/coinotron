@@ -7,7 +7,7 @@ address = coinotron.com:8322
 
 [shares]
 method = re_rateduration
-source = http://coinotron.com/coinotron/AccountServlet?action=home
+source = rate,duration
 strip = ''
 
 [rate]

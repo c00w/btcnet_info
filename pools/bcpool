@@ -7,7 +7,7 @@ address = bitcoinpool.com:8334
 
 [shares]
 method = re_rateduration
-source = http://bitcoinpool.com/index.php?do=currentround
+source = rate,duration
 
 [duration_day]
 method = re
