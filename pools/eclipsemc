@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = eclipsemc
+payout_scheme = dgm
+payout_mm = False
 
 [mine]
 address = pacrim.eclipsemc.com:8337

@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = itzod
+payout_scheme = smpps
+payout_mm = False
 
 [mine]
 address = lp1.itzod.ru:8344

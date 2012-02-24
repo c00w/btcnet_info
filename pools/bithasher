@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = bithasher
+payout_scheme = prop
+payout_mm = False
 
 [mine]
 address = bithasher.com:8332

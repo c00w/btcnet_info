@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = asspenny
+payout_scheme = prop
+payout_mm = True
 
 [mine]
 address = asspennypool.com:8999

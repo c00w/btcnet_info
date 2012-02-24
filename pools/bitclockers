@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = bitclockers
+payout_scheme = prop
+payout_mm = False
 
 [mine]
 address = pool.bitclockers.com:8332

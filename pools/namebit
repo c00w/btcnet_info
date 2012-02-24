@@ -1,6 +1,8 @@
 [general]
 coin = nmc
 name = namebit
+payout_scheme = prop
+payout_mm = False
 
 [mine]
 address = pool.namebit.org:10000

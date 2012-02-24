@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = btcjapan
+payout_scheme = prop
+payout_mm = False
 
 [mine]
 address = bitcoin.ne.jp:8334

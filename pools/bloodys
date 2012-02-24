@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = bloodys
+payout_scheme = prop
+payout_mm = False
 
 [mine]
 address = pool.bloodys.com:8332

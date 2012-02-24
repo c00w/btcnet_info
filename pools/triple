@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = triple
+payout_scheme = pplns
+payout_mm = False
 
 [mine]
 address = eu1.triplemining.com:8344

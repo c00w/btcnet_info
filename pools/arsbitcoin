@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = arsbitcoin
+payout_scheme = pps
+payout_mm = False
 
 [mine]
 address = arsbitcoin.com:8344

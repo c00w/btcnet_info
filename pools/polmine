@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = polmine
+payout_scheme = pps
+payout_mm = False
 
 [mine]
 address = polmine.pl:8347

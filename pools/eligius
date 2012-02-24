@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = eligius
+payout_scheme = smpps
+payout_mm = True
 
 [mine]
 address = ra.mining.eligius.st:8337

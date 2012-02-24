@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = simplecoin
+payout_scheme = SMPPS
+payout_mm = True
 
 [mine]
 address = pool.simplecoin.us:8337

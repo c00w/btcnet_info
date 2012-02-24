@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = slush
+payout_scheme = score
+payout_mm = True
 
 [mine]
 address = api2.bitcoin.cz:8332

@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = masterpool
+payout_scheme = pplns
+payout_mm = True
 
 [mine]
 address = US01.masterpool.eu:8888

@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = ninjac
+payout_scheme = pps
+payout_mm = False
 
 [mine]
 address = mine.ninjacoin.com:8332

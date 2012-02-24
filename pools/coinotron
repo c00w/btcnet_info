@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = coinotron
+payout_scheme = score
+payout_mm = False
 
 [mine]
 address = coinotron.com:8322
@@ -13,22 +15,6 @@ strip = ''
 [rate]
 method = re
 source = http://coinotron.com/coinotron/AccountServlet?action=home
-key = ([0-9]+(?:\.[0-9]*)?) GH</td>
+key = ([0-9.]+) GH</td>
 scale = gh
-
-[duration_hour]
-method = re
-source = http://coinotron.com/coinotron/AccountServlet?action=home
-key = (\d+) h ?(\d+)? ?m?
-group = 1
-
-[duration_minute]
-method = re
-source = http://coinotron.com/coinotron/AccountServlet?action=home
-key = (\d+) h ?(\d+)? ?m?
-group = 2
-
-[duration]
-method = duration
-source = duration_minute
 

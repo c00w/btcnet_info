@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = bitcash
+payout_scheme = prop
+payout_mm = False
 
 [mine]
 address = bitcash.cz:8337

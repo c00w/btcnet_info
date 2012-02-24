@@ -1,6 +1,8 @@
 [general]
 coin = nmc
 name = mtrednmc
+payout_scheme = pps
+payout_mm = True
 
 [mine]
 address = mtred.com:8337

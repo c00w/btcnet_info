@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = bclc
+payout_scheme = prop
+payout_mm = False
 
 [mine]
 address = pool.bitlc.net:80

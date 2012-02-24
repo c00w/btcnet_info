@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = mkalinin
+payout_scheme = pplns
+payout_mm = False
 
 [mine]
 address = pool.mkalinin.ru:8344

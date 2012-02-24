@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = alex
+payout_scheme = prop
+payout_mm = False
 
 [mine]
 address = pool.schaetter.us:8337

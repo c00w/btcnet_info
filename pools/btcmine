@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = btcmine
+payout_scheme = score
+payout_mm = False
 
 [mine]
 address = btcmine.com:8332

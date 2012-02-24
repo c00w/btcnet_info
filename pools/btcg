@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = btcg
+payout_scheme = pps
+payout_mm = True
 
 [mine]
 address = btcguild.com:8332

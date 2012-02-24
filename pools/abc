@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = abc
+payout_scheme = pps
+payout_mm = False
 
 [mine]
 address = pool.ABCPool.co:8332

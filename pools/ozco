@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = ozco
+payout_scheme = dgm
+payout_mm = True
 
 [mine]
 address = us.ozco.in:8332

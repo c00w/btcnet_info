@@ -1,6 +1,8 @@
 [general]
 coin = nmc
 name = nmcbit
+payout_scheme = pps
+payout_mm = True
 
 [mine]
 address = nmcbit.com:8332

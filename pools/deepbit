@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = deepbit
+payout_scheme = prop
+payout_mm = False
 
 [mine]
 address = pit.deepbit.net:8332

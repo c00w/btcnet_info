@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = bcpool
+payout_scheme = prop
+payout_mm = False
 
 [mine]
 address = bitcoinpool.com:8334

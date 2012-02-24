@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = bitparking
+payout_scheme = pps
+payout_mm = True
 
 [mine]
 address = mmpool.bitparking.com:15098

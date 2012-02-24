@@ -1,6 +1,8 @@
 [general]
 coin = btc
 name = kiwipool
+payout_scheme = prop
+payout_mm = False
 
 [mine]
 address = pool2.kiwipool.me:8332

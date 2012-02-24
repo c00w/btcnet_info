@@ -1,6 +1,8 @@
 [general]
 coin = nmc
 name = masterpoolnmc
+payout_scheme = prop
+payout_mm = True
 
 [mine]
 address = US01.masterpool.eu:8888
