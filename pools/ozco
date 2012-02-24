@@ -32,8 +32,9 @@ group = 3
 method = duration_day
 source = duration_minute
 
-[mhashrate]
+[rate]
 method = json
 source = http://ozco.in/api.php
 key = pool,hashrate_raw
+scale = mh
 

@@ -15,4 +15,5 @@ btcguild_user_apikey = 81a9081f4d5f32db7dbbed407cb5f686
 method = re
 key = <td>([0-9])+
 strip = ''
+scale = gh
 

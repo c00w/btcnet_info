@@ -67,20 +67,30 @@ for item in parse.sections():
                 k = 'source'
             config.set('shares', k, v)
         elif k == 'api_key_mhashrate':
-            config.add_section('mhashrate')
-            config.set('mhashrate', 'method', pool_info['api_method'])
-            config.set('mhashrate', 'source', pool_info['api_address'])
-            config.set('mhashrate', 'key', v)
+            config.add_section('rate')
+            config.set('rate', 'method', pool_info['api_method'])
+            config.set('rate', 'source', pool_info['api_address'])
+            config.set('rate', 'key', v)
+            config.set('rate', 'scale', 'mh')
         elif k == 'api_key_ghashrate':
-            config.add_section('ghashrate')
-            config.set('ghashrate', 'method', pool_info['api_method'])
-            config.set('ghashrate', 'source', pool_info['api_address'])
-            config.set('ghashrate', 'key', v)
+            config.add_section('rate')
+            config.set('rate', 'method', pool_info['api_method'])
+            config.set('rate', 'source', pool_info['api_address'])
+            config.set('rate', 'key', v)
+            config.set('rate', 'scale', 'gh')
         elif k == 'api_key_hashrate':
-            config.add_section('hashrate')
-            config.set('hashrate', 'method', pool_info['api_method'])
-            config.set('hashrate', 'source', pool_info['api_address'])
-            config.set('hashrate', 'key', v)
+            config.add_section('rate')
+            config.set('rate', 'method', pool_info['api_method'])
+            config.set('rate', 'source', pool_info['api_address'])
+            config.set('rate', 'key', v)
+            config.set('rate', 'scale', 'h')
+        elif k == 'api_key_khashrate':
+            config.add_section('rate')
+            config.set('rate', 'method', pool_info['api_method'])
+            config.set('rate', 'source', pool_info['api_address'])
+            config.set('rate', 'key', v)
+            config.set('rate', 'scale', 'kh')
+            
         elif k == 'api_key_duration_hour_min':
             config.add_section('duration_hour')
             config.set('duration_hour', 'method', 're')
@@ -137,7 +147,11 @@ for item in parse.sections():
                 config.set('rate', k, v)
                 config.remove_option('shares', k)
             
+            #This should be checked
+            config.set('rate', 'scale', 'gh')
+            
             config.set('rate', 'method', 're')
+            
             config.set('shares', 'method', 'rate')
             config.set('shares', 'source', 'rate,time:30')
             

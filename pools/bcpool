@@ -31,8 +31,9 @@ group = 3
 method = duration_day
 source = duration_minute
 
-[ghashrate]
+[rate]
 method = re_rateduration
 source = http://bitcoinpool.com/index.php?do=currentround
 key = Pool Speed: <d class=\"info\">([\.0-9]+) Gh/s
+scale = gh
 

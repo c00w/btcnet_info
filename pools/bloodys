@@ -11,10 +11,11 @@ source = http://pool.bloodys.com/?action=statistics
 strip = ','
 key = ([0-9]+(,[0-9]+)*) Shares
 
-[ghashrate]
+[rate]
 method = re
 source = http://pool.bloodys.com/?action=statistics
 key = ([,0-9.]+) Ghash/s
+scale = gh
 
 [duration_hour]
 method = re

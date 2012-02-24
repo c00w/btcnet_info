@@ -9,10 +9,11 @@ address = a1bitcoinpool.com:8999
 method = re_rateduration
 source = http://www.a1bitcoinpool.com/stats.php
 
-[ghashrate]
+[rate]
 method = re_rateduration
 source = http://www.a1bitcoinpool.com/stats.php
 key = Pool Hash Rate</td><td>([0-9.]+) Ghashes/s
+scale = gh
 
 [duration_hour]
 method = re

@@ -11,8 +11,9 @@ source = https://mtred.com/api/stats
 strip = ','
 key = NMCroundshares
 
-[ghashrate]
+[rate]
 method = json
 source = https://mtred.com/api/stats
 key = hashrate
+scale = gh
 

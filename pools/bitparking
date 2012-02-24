@@ -9,8 +9,9 @@ address = mmpool.bitparking.com:15098
 method = re
 source = http://mmpool.bitparking.com/pool
 
-[mhashrate]
+[rate]
 method = re
 source = http://mmpool.bitparking.com/pool
 key = Pool Hash rate [(]MHash[/]second[)]</td><td>([0-9]+)
+scale = mh
 

@@ -10,8 +10,9 @@ method = json
 source = https://masterpool.eu/jsonstats
 key = blockchains,NMC,shares
 
-[ghashrate]
+[rate]
 method = json
 source = https://masterpool.eu/jsonstats
 key = hashrate
+scale = gh
 

@@ -10,8 +10,9 @@ method = json
 source = https://mtred.com/api/stats
 key = roundshares
 
-[ghashrate]
+[rate]
 method = json
 source = https://mtred.com/api/stats
 key = hashrate
+scale = gh
 

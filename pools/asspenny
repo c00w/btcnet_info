@@ -11,8 +11,9 @@ asspenny_user_apikey = xxxxxx
 source = http://asspennypool.com/api.php?api_key=%(asspenny_user_apikey)s
 key = shares
 
-[mhashrate]
+[rate]
 method = json
 source = http://asspennypool.com/api.php?api_key=%(asspenny_user_apikey)s
 key = poolhash
+scale = mh
 

@@ -11,10 +11,11 @@ source = http://eligius.st/~artefact2/
 strip = ','
 key = id="instant_scount_7">([,0-9]+)</td>
 
-[ghashrate]
+[rate]
 method = re
 source = http://eligius.st/~artefact2/
 key = ([0-9.]+) GH/s
+scale = gh
 
 [duration_hour]
 method = re

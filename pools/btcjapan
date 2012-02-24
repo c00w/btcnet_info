@@ -10,8 +10,9 @@ method = re
 source = https://bitcoin.ne.jp/
 key = Shares this round: ([,0-9]+)
 
-[mhashrate]
+[rate]
 method = re
 source = https://bitcoin.ne.jp/
 key = Speed: ([,0-9.]+) Mh/s
+scale = mh
 

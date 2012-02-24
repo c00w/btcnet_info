@@ -12,8 +12,9 @@ bitclockers_user_apikey = 965469e512aa0de5a37b83ccfd5e849e
 source = http://bitclockers.com/api
 key = roundshares
 
-[ghashrate]
+[rate]
 method = json
 source = http://bitclockers.com/api
 key = hashrate
+scale = gh
 

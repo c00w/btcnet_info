@@ -10,10 +10,11 @@ method = json
 source = http://mining.bitcoin.cz/stats/json/
 key = shares
 
-[ghashrate]
+[rate]
 method = json
 source = http://mining.bitcoin.cz/stats/json/
 key = ghashes_ps
+scale = gh
 
 [duration_hour]
 method = re

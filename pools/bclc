@@ -13,4 +13,5 @@ source = rate,time:30
 source = https://www.bitlc.net/stats.json
 method = re
 key = "hash_rate":([ 0-9]+).
+scale = gh
 

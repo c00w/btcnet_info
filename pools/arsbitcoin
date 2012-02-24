@@ -10,8 +10,9 @@ method = json
 source = https://www.arsbitcoin.com/api.php
 key = currentroundshares
 
-[mhashrate]
+[rate]
 method = json
 source = https://www.arsbitcoin.com/api.php
 key = hashrate
+scale = mh
 

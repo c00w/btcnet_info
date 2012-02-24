@@ -15,4 +15,5 @@ abc_user_apikey =
 method = re
 key = <span class="stat">([0-9]+) GH/s</span>
 strip = ''
+scale = gh
 

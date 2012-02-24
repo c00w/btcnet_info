@@ -10,8 +10,9 @@ method = json
 source = https://pool.schaetter.us/api.php
 key = shares
 
-[mhashrate]
+[rate]
 method = json
 source = https://pool.schaetter.us/api.php
 key = hashrate
+scale = mh
 

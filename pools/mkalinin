@@ -10,8 +10,9 @@ method = json
 source = http://pool.mkalinin.ru/api.php
 key = shares
 
-[mhashrate]
+[rate]
 method = json
 source = http://pool.mkalinin.ru/api.php
 key = hashrate
+scale = mh
 

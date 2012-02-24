@@ -10,10 +10,11 @@ method = re_rateduration
 source = http://coinotron.com/coinotron/AccountServlet?action=home
 strip = ''
 
-[ghashrate]
+[rate]
 method = re_rateduration
 source = http://coinotron.com/coinotron/AccountServlet?action=home
 key = ([0-9]+(?:\.[0-9]*)?) GH</td>
+scale = gh
 
 [duration_hour]
 method = re
