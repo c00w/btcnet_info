@@ -165,7 +165,43 @@ class Handler():
         if not exchange and Node.name == 'btc':
             return '1.0'
         return exchange
-    
+        
+        
+    def duration(self, Node, value, __):
+        def prefix_multiplier(prefix):
+            if prefix == 'day':
+                return 24*60*60
+            if prefix == 'hour':
+                return 60*60
+            if prefix == 'min':
+                return 60
+            if prefix == 'sec':
+                return 1
+            return 1
+            
+        if 'key' not in Node.dict:
+            raise ValueError("No key in node")
+        if 'items' not in Node.dict:
+            raise ValueError("No items in node")
+            
+        result = re.search(Node.dict['key'], value)
+        
+        if not result:
+            return
+            
+        times = Node.dict['items'].split(',')
+        
+        duration = 0
+        index = 0
+        for prefix in times:
+            index += 1
+            try:
+                duration += float(result.group(index)) * prefix_multiplier(prefix)
+            except TypeError:
+                logging.debug('Potential type error %s, %s' % (result.group(index), traceback.format_exc()))
+        return duration
+        
+        
 handler = Handler()
 
 def handle(Node, value, source):
