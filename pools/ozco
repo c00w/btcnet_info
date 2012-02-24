@@ -13,7 +13,7 @@ source = http://ozco.in/api.php
 key = pool,round_shares
 
 [duration]
-method = re
+method = duration
 source = http://ozco.in/api.php
 items = day,hour,min
 

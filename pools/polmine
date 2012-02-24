@@ -12,7 +12,7 @@ method = rateduration
 source = rate,duration
 
 [duration]
-method = re
+method = duration
 source = https://polmine.pl/?action=statistics
 items = day,hour,min
 

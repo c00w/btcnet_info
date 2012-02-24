@@ -19,7 +19,7 @@ key = ([0-9]+(?:\.[0-9]*)?) GH</td>
 scale = gh
 
 [duration]
-method = re
+method = duration
 source = http://coinotron.com/coinotron/AccountServlet?action=home
 items = hour,min
 

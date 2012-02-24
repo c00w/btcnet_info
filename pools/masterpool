@@ -19,7 +19,7 @@ key = hashrate
 scale = gh
 
 [duration]
-method = re
+method = duration
 source = duration_pre
 items = sec
 

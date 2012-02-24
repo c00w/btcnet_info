@@ -12,7 +12,7 @@ method = rateduration
 source = rate,duration
 
 [duration]
-method = re
+method = duration
 source = http://bitcoinpool.com/index.php?do=currentround
 items = day,hour,min
 

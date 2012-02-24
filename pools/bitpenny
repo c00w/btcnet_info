@@ -13,7 +13,7 @@ source = rate,duration
 key = ([0-9]+).[0-9]+ Mh/s &nbsp
 
 [duration]
-method = re
+method = duration
 source = http://www.bitpenny.com
 items = hour,min
 

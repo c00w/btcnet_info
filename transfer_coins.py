@@ -103,7 +103,7 @@ for item in parse.sections():
         elif 'api_key_duration_' in k:
             fields = k.split('_')[3:]
             config.add_section('duration')
-            config.set('duration', 'method', 're')
+            config.set('duration', 'method', 'duration')
             config.set('duration', 'source', pool_info['api_address'])
             config.set('duration', 'items' , ",".join(fields))
             if 'api_key_duration' in pool_info:

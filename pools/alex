@@ -13,7 +13,7 @@ source = https://pool.schaetter.us/api.php
 key = shares
 
 [duration]
-method = re
+method = duration
 source = https://pool.schaetter.us/api.php
 items = sec
 

@@ -20,7 +20,7 @@ key = Pool Hash Rate</td><td>([.0-9]+) Ghashes/s
 scale = gh
 
 [duration]
-method = re
+method = duration
 source = http://simplecoin.us/stats.php?pool_id=3
 items = hour,min
 

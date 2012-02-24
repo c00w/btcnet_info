@@ -19,7 +19,7 @@ key = ghashes_ps
 scale = gh
 
 [duration]
-method = re
+method = duration
 source = duration_pre
 items = hour,min
 

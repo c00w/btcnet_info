@@ -20,7 +20,7 @@ key = current\s+hash\s+rate\W+([0-9]+)
 scale = gh
 
 [duration]
-method = re
+method = duration
 source = http://kiwipool.me
 items = hour,min
 
