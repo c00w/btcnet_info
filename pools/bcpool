@@ -32,7 +32,7 @@ method = duration_day
 source = duration_minute
 
 [rate]
-method = re_rateduration
+method = re
 source = http://bitcoinpool.com/index.php?do=currentround
 key = Pool Speed: <d class=\"info\">([\.0-9]+) Gh/s
 scale = gh

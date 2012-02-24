@@ -10,7 +10,7 @@ method = rateduration
 source = rate,duration
 
 [rate]
-method = re_rateduration
+method = re
 source = http://www.a1bitcoinpool.com/stats.php
 key = Pool Hash Rate</td><td>([0-9.]+) Ghashes/s
 scale = gh

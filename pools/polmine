@@ -32,7 +32,7 @@ method = duration_day
 source = duration_minute
 
 [rate]
-method = re_rateduration
+method = re
 source = https://polmine.pl/?action=statistics
 key = <b> ([\.0-9]+)</b> Ghash
 scale = gh

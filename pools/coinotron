@@ -11,7 +11,7 @@ source = rate,duration
 strip = ''
 
 [rate]
-method = re_rateduration
+method = re
 source = http://coinotron.com/coinotron/AccountServlet?action=home
 key = ([0-9]+(?:\.[0-9]*)?) GH</td>
 scale = gh

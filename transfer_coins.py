@@ -60,6 +60,12 @@ for item in parse.sections():
         config.set('lp', 'address', pool_info['lp_address'])
         
     config.add_section('shares')
+    
+    if 're' in pool_info['api_method']:
+        method = 're'
+    else:
+        method = 'json'
+    
     for k,v in pool_info.items():
         if 'api' in k and 'duration' not in k and 'hashrate' not in k:
             k = k.replace('api_','')
@@ -69,25 +75,25 @@ for item in parse.sections():
             
         elif k == 'api_key_mhashrate':
             config.add_section('rate')
-            config.set('rate', 'method', pool_info['api_method'])
+            config.set('rate', 'method', method)
             config.set('rate', 'source', pool_info['api_address'])
             config.set('rate', 'key', v)
             config.set('rate', 'scale', 'mh')
         elif k == 'api_key_ghashrate':
             config.add_section('rate')
-            config.set('rate', 'method', pool_info['api_method'])
+            config.set('rate', 'method', method)
             config.set('rate', 'source', pool_info['api_address'])
             config.set('rate', 'key', v)
             config.set('rate', 'scale', 'gh')
         elif k == 'api_key_hashrate':
             config.add_section('rate')
-            config.set('rate', 'method', pool_info['api_method'])
+            config.set('rate', 'method', method)
             config.set('rate', 'source', pool_info['api_address'])
             config.set('rate', 'key', v)
             config.set('rate', 'scale', 'h')
         elif k == 'api_key_khashrate':
             config.add_section('rate')
-            config.set('rate', 'method', pool_info['api_method'])
+            config.set('rate', 'method', method)
             config.set('rate', 'source', pool_info['api_address'])
             config.set('rate', 'key', v)
             config.set('rate', 'scale', 'kh')
