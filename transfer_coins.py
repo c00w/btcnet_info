@@ -100,48 +100,19 @@ for item in parse.sections():
             config.set('rate', 'key', v)
             config.set('rate', 'scale', 'kh')
             
-        elif k == 'api_key_duration_hour_min':
-            config.add_section('duration_hour')
-            config.set('duration_hour', 'method', 're')
-            config.set('duration_hour', 'source', pool_info['api_address']) 
-            config.set('duration_hour', 'key', v)
-            config.set('duration_hour', 'group', 1)
-            
-            config.add_section('duration_minute')
-            config.set('duration_minute', 'method', 're')
-            config.set('duration_minute', 'source', pool_info['api_address']) 
-            config.set('duration_minute', 'key', v)
-            config.set('duration_minute', 'group', 2)
-            
+        elif 'api_key_duration_' in k:
+            fields = k.split('_')[3:]
             config.add_section('duration')
-            config.set('duration', 'method', 'duration')
-            config.set('duration', 'source', 'duration_hour')
-            config.set('duration', 'source', 'duration_minute')
-            
-        elif k == 'api_key_duration_day_hour_min':
-            config.add_section('duration_day')
-            config.set('duration_day', 'method', 're')
-            config.set('duration_day', 'source', pool_info['api_address']) 
-            config.set('duration_day', 'key', v)
-            config.set('duration_day', 'group', 1)
-        
-            config.add_section('duration_hour')
-            config.set('duration_hour', 'method', 're')
-            config.set('duration_hour', 'source', pool_info['api_address']) 
-            config.set('duration_hour', 'key', v)
-            config.set('duration_hour', 'group', 2)
-            
-            config.add_section('duration_minute')
-            config.set('duration_minute', 'method', 're')
-            config.set('duration_minute', 'source', pool_info['api_address']) 
-            config.set('duration_minute', 'key', v)
-            config.set('duration_minute', 'group', 3)
-            
-            config.add_section('duration')
-            config.set('duration', 'method', 'duration')
-            config.set('duration', 'method', 'duration_day')
-            config.set('duration', 'source', 'duration_hour')
-            config.set('duration', 'source', 'duration_minute')
+            config.set('duration', 'method', 're')
+            config.set('duration', 'source', pool_info['api_address'])
+            config.set('duration', 'items' , ",".join(fields))
+            if 'api_key_duration' in pool_info:
+                config.set('duration', 'source', 'duration_pre')
+                config.add_section('duration_pre')
+                config.set('duration_pre', 'source', pool_info['api_address'])
+                config.set('duration_pre', 'method', method)
+                config.set('duration_pre', 'key', pool_info['api_key_duration'])
+                
             
         elif 'duration' in k:
             print k
