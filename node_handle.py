@@ -204,7 +204,7 @@ class Handler():
             try:
                 duration += float(result.group(index)) * prefix_multiplier(prefix)
             except TypeError:
-                logging.info('Potential type error %s, %s' % (result.group(index), traceback.format_exc()))
+                logging.debug('Potential type error %s, %s' % (result.group(index), traceback.format_exc()))
         return duration
         
         
