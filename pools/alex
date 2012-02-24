@@ -16,6 +16,7 @@ key = shares
 method = duration
 source = https://pool.schaetter.us/api.php
 items = sec
+key = "roundduration":"([0-9]+)
 
 [rate]
 method = json

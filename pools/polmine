@@ -15,6 +15,7 @@ source = rate,duration
 method = duration
 source = https://polmine.pl/?action=statistics
 items = day,hour,min
+key = </b> <br/>([ 0-9]+)dni([ 0-9]+)godzin([ 0-9]+)minut
 
 [rate]
 method = re

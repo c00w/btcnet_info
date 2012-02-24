@@ -22,6 +22,7 @@ scale = gh
 method = duration
 source = duration_pre
 items = hour,min
+key = (\d+):(\d+):
 
 [duration_pre]
 source = http://mining.bitcoin.cz/stats/json/

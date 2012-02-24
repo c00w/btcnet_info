@@ -22,4 +22,5 @@ scale = gh
 method = duration
 source = http://coinotron.com/coinotron/AccountServlet?action=home
 items = hour,min
+key = (\d+) h ?(\d+)? ?m?
 

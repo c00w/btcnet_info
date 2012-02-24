@@ -15,6 +15,7 @@ source = rate,duration
 method = duration
 source = http://bitcoinpool.com/index.php?do=currentround
 items = day,hour,min
+key = <p class=\"title\">Round Duration: <d class=\"info\">(?:([0-9]+)d&nbsp;)?([0-9]+)h&nbsp;([0-9]+)m&nbsp;
 
 [rate]
 method = re

@@ -16,6 +16,7 @@ key = pool,round_shares
 method = duration
 source = http://ozco.in/api.php
 items = day,hour,min
+key = (\d+)d (\d+)h (\d+)m
 
 [rate]
 method = json

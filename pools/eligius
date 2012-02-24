@@ -23,4 +23,5 @@ scale = gh
 method = duration
 source = http://eligius.st/~artefact2/
 items = hour,min
+key = "instant_durationh_7">([,0-9]+)h</td><td class="ralign" id="instant_durationm_7">([,0-9]+)m
 

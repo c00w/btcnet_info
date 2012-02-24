@@ -23,4 +23,5 @@ scale = gh
 method = duration
 source = http://simplecoin.us/stats.php?pool_id=3
 items = hour,min
+key = Time Since Last Block</td><td><span class="\w+">([0-9]+) Hours ([0-9]+) Minutes
 

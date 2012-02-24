@@ -106,6 +106,7 @@ for item in parse.sections():
             config.set('duration', 'method', 'duration')
             config.set('duration', 'source', pool_info['api_address'])
             config.set('duration', 'items' , ",".join(fields))
+            config.set('duration', 'key', v)
             if 'api_key_duration' in pool_info:
                 config.set('duration', 'source', 'duration_pre')
                 config.add_section('duration_pre')

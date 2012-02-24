@@ -16,4 +16,5 @@ key = ([0-9]+).[0-9]+ Mh/s &nbsp
 method = duration
 source = http://www.bitpenny.com
 items = hour,min
+key = time since last block: ([0-9]+):([0-9]+):
 

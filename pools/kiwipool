@@ -23,4 +23,5 @@ scale = gh
 method = duration
 source = http://kiwipool.me
 items = hour,min
+key = ([0-9]+):([0-9]+):
 

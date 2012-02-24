@@ -23,4 +23,5 @@ scale = gh
 method = duration
 source = http://www.nmcbit.com/statistics
 items = hour,min
+key = BTC Current round duration:</th><td>([0-9]+):([0-9]+):
 
