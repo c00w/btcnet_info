@@ -13,3 +13,9 @@ source = http://www.btcpool24.com/stat.php
 strip = ' '
 key = <br/>Round Shares:([ 0-9]+)<br/><br/></span>
 
+[rate]
+method = re
+source = http://www.btcpool24.com/stat.php
+key = Current Pool Rate : ([0-9]+) MH/s
+scale = mh
+
