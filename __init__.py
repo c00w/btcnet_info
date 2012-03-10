@@ -20,6 +20,18 @@ def get_pools():
     x.fields describes existing fields
     """
     return local_api.get_pools()
+    
+def get_difficulty(coin):
+    """
+    Returns the difficulty of a coin
+    """
+    return local_api.get_difficulty(coin)
+    
+def get_exchange(coin):
+    """
+    Returns the exchange rate for the coin
+    """
+    
 
-__all__ = ['get_coins', 'get_pools']
+__all__ = ['get_coins', 'get_pools', 'get_difficulty']
 

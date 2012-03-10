@@ -22,3 +22,23 @@ class API():
         """
         return self.objects.pools
         
+    def get_difficulty(self, coin_name):
+        """
+        Returns the difficulty for the coin
+        """
+        for coin in self.objects.coins:
+            if coin.name == coin_name:
+                return coin.difficulty
+                
+        return None
+        
+    def get_exchange(self, coin_name):
+        """
+        Returns the difficulty for the coin
+        """
+        for coin in self.objects.coins:
+            if coin.name == coin_name:
+                return coin.exchange
+                
+        return None
+        

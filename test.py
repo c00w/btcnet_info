@@ -47,6 +47,15 @@ class TestStore(unittest.TestCase):
                 shares += 1
         print "Valid Coins w/ Difficulty %s/%s" % (shares, count)
         
+    def testApiDifficulty(self):
+        for coin in __init__.get_coins():
+            float(__init__.get_difficulty(coin.name))
+            
+    def testApiExchange(self):
+        for coin in __init__.get_coins():
+            if coin.exchange:
+                float(__init__.get_exchange(coin.name))
+        
 
 if __name__ == "__main__":
     unittest.main()  
