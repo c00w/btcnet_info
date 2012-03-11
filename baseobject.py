@@ -53,15 +53,19 @@ class Base_Object(object):
             gevent.sleep(60)
                         
     def write_thread(self):
+        mode = 'wb'
         while True:
-            fd = open(self.file_name, 'wb')
+            try:
+                fd = open(self.file_name, mode)
+            except IOError, e:
+                return
             with self.lock:
                 try:
                     fd.seek(0)
                     self.config.write(fd)
                 except IOError as e:
                     fd.close()
-                    fd = open(self.file_name, 'wb')
+                    fd = open(self.file_name, mode)
             time.sleep(60)
                     
     def __getattr__(self, name):
