@@ -7,7 +7,8 @@ import gevent
 class TestStore(unittest.TestCase):
     var = None
     
-    def setUp(self):
+    @classmethod
+    def setUpClass(self):
         if not self.var:
             gevent.sleep(5)
             self.var = True
