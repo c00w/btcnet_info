@@ -1,0 +1,13 @@
+[general]
+coin = btc
+name = gpumax
+payout_scheme = pps
+payout_mm = False
+
+[mine]
+address = gpumax.com:8332
+
+[shares]
+method = disable
+key = code
+
