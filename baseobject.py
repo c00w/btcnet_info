@@ -17,7 +17,8 @@ class Base_Object(object):
     def __init__(self, config_file, objects):
         
         self.config = ConfigParser.RawConfigParser()
-        self.config.read(config_file)
+        if not self.config.read(config_file):
+            raise LookupError("No such config file")
         self.namespace = node.Node_NameSpace()
         self.write_nodes = set()
         self.file_name = config_file
