@@ -6,7 +6,7 @@ payout_mm = True
 
 [mine]
 address = api2.bitcoin.cz:8332
-c: 300
+c = 300
 
 [shares]
 method = json

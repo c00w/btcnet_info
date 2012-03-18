@@ -39,6 +39,7 @@ def get_exchange(coin):
     """
     Returns the exchange rate for the coin
     """
+    return local_api.get_exchange(coin)
     
 
 __all__ = ['get_coins', 'get_pools', 'get_difficulty']
