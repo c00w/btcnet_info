@@ -72,11 +72,10 @@ class Base_Object(object):
         node = self.namespace.get_node(name)
         if node and 'value' in node.dict:
             return node.dict['value']
-        else:
+        elif '.' in name:
             node, index = name.split('.', 1)
             node = self.namespace.get_node(node)
             if node and index in node.dict:
                 return node.dict[index]
-            else:
-                return None
+        return None
     
