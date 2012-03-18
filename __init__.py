@@ -21,6 +21,14 @@ def get_pools():
     """
     return local_api.get_pools()
     
+def get_pool(name):
+    """
+    Returns a matching pool with the name
+    Otherwise returns []
+    """
+    
+    return filter(lambda x: x.name == name, local_api.get_pools())
+    
 def get_difficulty(coin):
     """
     Returns the difficulty of a coin
