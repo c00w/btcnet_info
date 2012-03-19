@@ -9,9 +9,8 @@ class TestStore(unittest.TestCase):
     
     @classmethod
     def setUpClass(self):
-        if not self.var:
-            gevent.sleep(5)
-            self.var = True
+        __init__.get_coins()
+        gevent.sleep(5)
         
     def testCoins(self):
         for item in __init__.get_coins():

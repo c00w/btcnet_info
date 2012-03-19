@@ -3,17 +3,22 @@ btcnet_info
 
 A package that gives you info on oodles of bitcoin pools
 """
-import api, os
 
-local_api = api.API()
 
+local_api = None
 __patched = False
 def __patch():
+    """
+    Extremely magical gevent deffering patch
+    """
     global __patched
     if not __patched:
         import gevent.monkey
         gevent.monkey.patch_all(thread = False, time=False)
         __patched = True
+        import api, os
+        global local_api
+        local_api = api.API()
 
 def get_coins():
     """
