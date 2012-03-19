@@ -1,6 +1,3 @@
-import gevent.monkey
-gevent.monkey.patch_all(thread = False, time=False)
-
 import os, os.path, gevent, pools, exchanges, coins, difficulty_sites, sys
 
 class Objects(object):
@@ -24,7 +21,6 @@ class Objects(object):
                 FD_DIR = os.path.dirname(os.path.abspath(__file__))
         except:
             FD_DIR = os.curdir
-        print FD_DIR
         
         #Parse config files and create objects
         for file_name in os.listdir(os.path.join(FD_DIR,'coins')):
@@ -51,8 +47,7 @@ class Objects(object):
                 self
             ))
             
-        gevent.sleep(2)
-        
+        gevent.sleep(0.1)
         
 if __name__ == "__main__":
     Objects()
