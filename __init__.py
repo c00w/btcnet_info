@@ -59,5 +59,5 @@ def get_exchange(coin):
     return local_api.get_exchange(coin)
     
 
-__all__ = ['get_coins', 'get_pools', 'get_difficulty']
+__all__ = ['get_coins', 'get_pools', 'get_difficulty', 'get_pool', 'get_exchange']
 
