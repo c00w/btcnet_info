@@ -15,5 +15,6 @@ source = rate,time:30
 source = http://mmpool.bitparking.com/pool
 method = re
 key = Pool Hash rate [(]MHash[/]second[)]</td><td>([0-9]+)
+strip = ''
 scale = gh
 
