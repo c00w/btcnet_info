@@ -6,18 +6,15 @@ A package that gives you info on oodles of bitcoin pools
 
 
 local_api = None
-__patched = False
 def __patch():
     """
     Extremely magical gevent deffering patch
     """
-    global __patched
-    if not __patched:
+    global local_api
+    if not local_api:
         import gevent.monkey
         gevent.monkey.patch_all(thread = False, time=False)
-        __patched = True
-        import api, os
-        global local_api
+        import api
         local_api = api.API()
 
 def get_coins():
