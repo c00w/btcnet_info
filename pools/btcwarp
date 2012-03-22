@@ -1,0 +1,20 @@
+[general]
+coin = btc
+name = btcwarp
+payout_scheme = pplns
+payout_mm = False
+
+[mine]
+address = 64.120.173.148:8999
+
+[shares]
+method = json
+source = http://www.btcwarp.com/api
+key = shares_this_round
+
+[rate]
+method = json
+source = http://www.btcwarp.com/api
+key = hashrate
+scale = mh
+

@@ -1,0 +1,20 @@
+[general]
+coin = btc
+name = bitminter
+payout_scheme = pplns
+payout_mm = False
+
+[mine]
+address = mint.bitminter.com:8332
+
+[shares]
+method = json
+source = http://bitminter.com/api/pool/round
+key = chains,BTC,accepted
+
+[rate]
+method = json
+source = http://bitminter.com/api/pool/round
+key = hash_rate
+scale = gh
+

@@ -1,0 +1,26 @@
+[general]
+coin = btc
+name = maxbtc
+payout_scheme = dgm
+payout_mm = False
+
+[mine]
+address = pool.maxbtc.com:8332
+
+[shares]
+method = re
+source = https://www.maxbtc.com/statistics/pool
+key = Shares</td>\W+<td class="dots">&nbsp;</td>\W+<td>\W+([,0-9]+)
+
+[rate]
+method = re
+source = https://www.maxbtc.com/statistics/pool
+key = <td>([,0-9.]+) MH/s
+scale = mh
+
+[duration]
+method = duration
+source = https://www.maxbtc.com/statistics/pool
+items = hour,min
+key = (\d+):(\d+):
+

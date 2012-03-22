@@ -1,0 +1,19 @@
+[general]
+coin = btc
+name = fiftybtc
+payout_scheme = pps
+payout_mm = False
+
+[mine]
+address = 50btc.com:8332
+
+[shares]
+method = rate
+source = rate,time:30
+
+[rate]
+source = https://50btc.com/
+method = re
+key = <span>([0-9.]+) Gh/sec
+scale = gh
+
