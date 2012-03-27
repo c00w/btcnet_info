@@ -36,10 +36,13 @@ def get_pools():
 def get_pool(name):
     """
     Returns a matching pool with the name
-    Otherwise returns []
+    Otherwise returns None
     """
     __patch()
-    return filter(lambda x: x.name == name, local_api.get_pools())
+    item = filter(lambda x: x.name == name, local_api.get_pools())
+    if item == []:
+        return None
+    return item[0]
     
 def get_difficulty(coin):
     """
