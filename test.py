@@ -20,6 +20,16 @@ class TestStore(unittest.TestCase):
         for item in __init__.get_pools():
             self.assertTrue(type(item) is pools.Pool )
             
+    def testMineAddress(self):
+        valid = 0
+        total = 0
+        for item in __init__.get_pools():
+            total += 1
+            if item.mine != None:
+                if item.mine.address != None:
+                    valid += 1
+        print 'Pools with addresses %s/%s' % (valid, total)
+            
     def testPolling(self):
         count = len(__init__.get_pools())
         shares = 0
