@@ -1,0 +1,13 @@
+[general]
+coin = btc
+name = project2
+payout_scheme = pps
+payout_mm = False
+
+[mine]
+address = 216.231.138.132:9332
+
+[shares]
+method = disable
+key = code
+
