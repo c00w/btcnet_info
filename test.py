@@ -10,7 +10,7 @@ class TestStore(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         __init__.get_coins()
-        gevent.sleep(5)
+        gevent.sleep(1)
         
     def testCoins(self):
         for item in __init__.get_coins():
@@ -25,9 +25,8 @@ class TestStore(unittest.TestCase):
         total = 0
         for item in __init__.get_pools():
             total += 1
-            if item.mine != None:
-                if item.mine.address != None:
-                    valid += 1
+            if item['mine.address'] != None:
+                valid += 1
         print 'Pools with addresses %s/%s' % (valid, total)
             
     def testPolling(self):
