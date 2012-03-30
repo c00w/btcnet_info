@@ -16,6 +16,13 @@ def __patch():
         gevent.monkey.patch_all(thread = False, time=False)
         import api
         local_api = api.API()
+        
+def add_pools(filenames):
+    """
+    Adds pools defined by their filenames
+    """
+    __patch()
+    local_api.add_pools(filenames)
 
 def get_coins():
     """

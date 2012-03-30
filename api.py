@@ -2,6 +2,7 @@
 Api Class which handles basic manipulation of objects
 """
 import objects
+import pools
 
 class API():
     """
@@ -9,6 +10,14 @@ class API():
     """
     def __init__(self):
         self.objects = objects.Objects()
+        
+    def add_pools(self, filenames):
+        """
+        Adds a set of pools
+        """
+        for file_path in filenames:
+            pool = pools.Pool(file_path, self.objects )
+            self.objects.pools.add(pool)
         
     def get_coins(self):
         """
