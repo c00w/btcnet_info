@@ -147,12 +147,14 @@ class Handler():
             raise ValueError("No coin in node")
             
         coin = Node.dict['coin']
-            
         diffs = []
         for site in Node.objects.difficulty_sites:
-            if getattr(site, coin, None):
-                diffs.append(getattr(site, coin))
-           
+            if site[coin]:
+                try:
+                    float(site[coin])
+                except:
+                    continue
+                diffs.append(site[coin])
         return _median(diffs)
         
     def exchange(self, Node, _, __):
@@ -215,16 +217,16 @@ def handle(Node, value, source):
     Returns a processed value.
     """
     if 'method' not in Node.dict:
-        return value
+        raise ValueError('No method in node')
     method = Node.dict['method']
     
     func = getattr(handler, method, None)
     if not func:
-        return value
+        raise ValueError('Not a valid function %s' % method)
         
     try:
         return func(Node, value, source)
     except:
         logging.debug(traceback.format_exc())
         logging.debug(Node)
-        return value
+        return None

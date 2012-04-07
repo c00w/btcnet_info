@@ -10,7 +10,7 @@ class TestStore(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         __init__.get_coins()
-        gevent.sleep(1)
+        gevent.sleep(40)
         
     def testCoins(self):
         for item in __init__.get_coins():
