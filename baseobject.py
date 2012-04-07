@@ -7,7 +7,7 @@ try:
 except ImportError:
     import configparser as ConfigParser
     
-import gevent, traceback, httplib2, socket, request_wrapper, logging
+import gevent, traceback, httplib2, socket, logging
 import node, copy, threading, time
 
 class Base_Object(object):
