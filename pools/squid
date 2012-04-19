@@ -1,11 +1,11 @@
 [general]
 coin = scc
 name = squid
-payout_scheme = prop
+payout_scheme = pplns
 payout_mm = False
 
 [mine]
-address = pool.squidnet.org:8341
+address = load.squidnet.org:12000
 
 [shares]
 method = disable
