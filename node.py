@@ -117,7 +117,7 @@ class Http_Node(Node):
         Http = httplib2.Http(disable_ssl_certificate_validation=True)
         while True:
             try:
-                headers, content = Http.request(self.name, headers={})#'Connection':'keep-alive'})
+                headers, content = Http.request(self.name, headers={'Connection':'close'})
                 if content == None:
                     continue
                 if len(content) == 0:
@@ -129,7 +129,7 @@ class Http_Node(Node):
                 logging.debug(traceback.format_exc())
                 logging.debug(self.name)
             
-            gevent.sleep(60)
+            gevent.sleep(120)
             
 class Timer_Node(Node):
     def __init__(self, addr, namespace):
