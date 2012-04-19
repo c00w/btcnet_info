@@ -117,7 +117,7 @@ class Http_Node(Node):
         Http = httplib2.Http(disable_ssl_certificate_validation=True)
         while True:
             try:
-                headers, content = Http.request(self.name, headers={'Connection':'close'})
+                headers, content = Http.request(self.name, headers={})#'Connection':'keep-alive'})
                 if content == None:
                     continue
                 if len(content) == 0:
