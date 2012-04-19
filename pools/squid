@@ -8,7 +8,5 @@ payout_mm = False
 address = pool.squidnet.org:8341
 
 [shares]
-method = json
-source = http://pool.squidnet.org/api
-key = shares_this_round
+method = disable
 
