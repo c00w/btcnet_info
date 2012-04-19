@@ -2,25 +2,25 @@
 coin = btc
 name = maxbtc
 payout_scheme = dgm
-payout_mm = False
+payout_mm = True
 
 [mine]
 address = pool.maxbtc.com:8332
 
 [shares]
-method = re
-source = https://www.maxbtc.com/statistics/pool
-key = Shares</td>\W+<td class="dots">&nbsp;</td>\W+<td>\W+([,0-9]+)
+method = json
+source = https://www.maxbtc.com/api/poolstats?key=fjgccZcsC0_ipZRw6IVAP5wYXoV-_e3cV_HSWzrP9Mg9
+key = poolstats,shares
 
 [rate]
-method = re
-source = https://www.maxbtc.com/statistics/pool
-key = <td>([,0-9.]+) MH/s
+method = json
+source = https://www.maxbtc.com/api/poolstats?key=fjgccZcsC0_ipZRw6IVAP5wYXoV-_e3cV_HSWzrP9Mg9
+key = poolstats,hashrate
 scale = mh
 
 [duration]
 method = duration
-source = https://www.maxbtc.com/statistics/pool
+source = https://www.maxbtc.com/api/poolstats?key=fjgccZcsC0_ipZRw6IVAP5wYXoV-_e3cV_HSWzrP9Mg9
 items = hour,min
 key = (\d+):(\d+):
 

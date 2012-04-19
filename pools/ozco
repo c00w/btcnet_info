@@ -10,17 +10,11 @@ address = us.ozco.in:8332
 [shares]
 method = json
 source = http://ozco.in/api.php
-key = pool,round_shares
-
-[duration]
-method = duration
-source = http://ozco.in/api.php
-items = day,hour,min
-key = (\d+)d (\d+)h (\d+)m
+key = round_shares
 
 [rate]
 method = json
 source = http://ozco.in/api.php
-key = pool,hashrate_raw
+key = hashrate
 scale = mh
 

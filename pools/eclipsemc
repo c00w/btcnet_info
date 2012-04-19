@@ -8,8 +8,8 @@ payout_mm = False
 address = pacrim.eclipsemc.com:8337
 
 [shares]
-method = json
-eclipsemc_apikey = 
-source = https://eclipsemc.com/api.php?key=bd0eded7e35b1b5fc48f8d10214d98&action=poolstats
+method = json_ec
+eclipsemc_apikey = bd0eded7e35b1b5fc48f8d10214d98
+source = https://eclipsemc.com/api.php?key=%(eclipsemc_apikey)s&action=poolstats
 key = round_shares
 
