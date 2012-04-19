@@ -25,6 +25,9 @@ class Handler():
         """
         return value
         
+    def json_ec(self, Node, value, _):
+        return self.json(Node, value, _)
+        
     def json(self, Node, value, _):
         """
         Handles json method of polling
