@@ -3,7 +3,7 @@ btcnet_info
 
 A package that gives you info on oodles of bitcoin pools
 """
-
+from version import __version__
 
 local_api = None
 def __patch():
@@ -66,5 +66,5 @@ def get_exchange(coin):
     return local_api.get_exchange(coin)
     
 
-__all__ = ['get_coins', 'get_pools', 'get_difficulty', 'get_pool', 'get_exchange']
+__all__ = ['get_coins', 'get_pools', 'get_difficulty', 'get_pool', 'get_exchange', '__version__']
 
