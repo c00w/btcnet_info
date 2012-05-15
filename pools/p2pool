@@ -7,8 +7,3 @@ payout_mm = False
 [mine]
 address = localhost:9332
 
-[shares]
-method = disable
-source = http://localhost:9332
-key = code
-
