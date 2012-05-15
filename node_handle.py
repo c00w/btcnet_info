@@ -230,6 +230,6 @@ def handle(Node, value, source):
     try:
         return func(Node, value, source)
     except:
-        logging.debug(traceback.format_exc())
-        logging.debug(Node)
+        string = "Node: %s\n" % Node
+        logging.debug(string + traceback.format_exc())
         return None
