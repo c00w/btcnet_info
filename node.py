@@ -55,7 +55,7 @@ class Node():
             
             source = self.namespace.get_node(item)
             #If this is a web address make a dummy node
-            if not source and 'http' in item[0:4]:
+            if not source and 'http' in item[0:4] and 'method' in self.dict:
                 Http_Node(item, self.namespace)
                 source = self.namespace.get_node(item)
                 
