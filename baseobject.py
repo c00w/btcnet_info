@@ -65,8 +65,9 @@ class Base_Object(object):
                     fd.seek(0)
                     self.config.write(fd)
                 except IOError as e:
+		    logging.debug(traceback.format_exc())    
+                finally:
                     fd.close()
-                    fd = open(self.file_name, mode)
             time.sleep(60)
                     
     def __getattr__(self, name):
