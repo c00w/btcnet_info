@@ -10,7 +10,7 @@ address = 50btc.com:8332
 [shares]
 method = rate
 source = rate,time:30
-last_called = 1344547341.89
+last_called = 1344552514.85
 value = 0.0
 
 [rate]

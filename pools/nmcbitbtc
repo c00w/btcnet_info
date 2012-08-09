@@ -12,19 +12,19 @@ method = re
 source = http://www.nmcbit.com/statistics
 strip = ','
 key = BTC\s+Current\s+round\s+duration:</th><td>[0-9]+:[0-9]+:[0-9]+\s+hours</td></tr><tr><th\W+align="right">Valid\s+shares\s+for\s+current\s+round:</th><td>([,0-9]+)
-value = 2138301
+value = 2505222
 
 [rate]
 method = re
 source = http://www.nmcbit.com/statistics
 key = ([,0-9.]+) Ghash/s
 scale = gh
-value = 12.59
+value = 375.27
 
 [duration]
 method = duration
 source = http://www.nmcbit.com/statistics
 items = hour,min
 key = BTC Current round duration:</th><td>([0-9]+):([0-9]+):
-value = 544920.0
+value = 550320.0
 

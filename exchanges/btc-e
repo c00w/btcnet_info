@@ -5,11 +5,11 @@ name = btc-e.com
 source = https://btc-e.com/sc_exchanger
 method = re
 key = Highest Bid Price<p><b><span id='max_price'>([0-9.]+)
-value = 11.16
+value = 10.803
 
 [geg]
 source = https://btc-e.com/exchange/gg_btc
 method = re
 key = Highest Bid Price<p><b><span id='max_price'>([.0-9]+)
-value = 11.16
+value = 10.803
 

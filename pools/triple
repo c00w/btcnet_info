@@ -11,5 +11,5 @@ address = eu1.triplemining.com:8344
 method = json
 source = http://api.triplemining.com/json/stats
 key = solved
-value = 5602718
+value = 5676910
 
