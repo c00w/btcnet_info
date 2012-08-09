@@ -10,7 +10,7 @@ class TestStore(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         __init__.get_coins()
-        for i in range(40):
+        for i in range(140):
             gevent.sleep(1)
             print i
         
@@ -55,6 +55,7 @@ class TestStore(unittest.TestCase):
         shares = 0
         for item in __init__.get_coins():
             if item.difficulty:
+                print "%s: %s" % (item.name, item.difficulty)
                 shares += 1
         print "Valid Coins w/ Difficulty %s/%s" % (shares, count)
         

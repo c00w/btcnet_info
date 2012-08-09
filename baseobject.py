@@ -39,13 +39,14 @@ class Base_Object(object):
                     setattr(self, item, values[item])
                     
         self.lock.release()
+        gevent.spawn(self.write_poll)
                     
     def write_poll(self):
         while True:
             while not self.lock.acquire(False):
                 gevent.sleep(0)
-            
-            for node in self.writes:
+           
+            for node in self.write_nodes:
                 section = node.name
                 for k,v in node.get_dict().items():
                     self.config.set(section, k,v)
@@ -57,16 +58,11 @@ class Base_Object(object):
         mode = 'wb'
         while True:
             try:
-                fd = open(self.file_name, mode)
+                with self.lock:
+                    with open(self.file_name, mode) as fd:
+                        self.config.write(fd)
             except IOError, e:
                 return
-            with self.lock:
-                try:
-                    fd.seek(0)
-                    self.config.write(fd)
-                except IOError as e:
-                    fd.close()
-                    fd = open(self.file_name, mode)
             time.sleep(60)
                     
     def __getattr__(self, name):
