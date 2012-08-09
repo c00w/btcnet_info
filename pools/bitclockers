@@ -13,10 +13,12 @@ user_address = http://bitclockers.com/api/%(bitclockers_user_apikey)s
 bitclockers_user_apikey = 965469e512aa0de5a37b83ccfd5e849e
 source = http://bitclockers.com/api
 key = roundshares
+value = 72336
 
 [rate]
 method = json
 source = http://bitclockers.com/api
 key = hashrate
 scale = gh
+value = 106
 

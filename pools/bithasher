@@ -11,16 +11,19 @@ address = bithasher.com:8332
 method = re
 source = http://bithasher.com
 key = Round Shares</td><td>([,0-9]+)
+value = 3769716
 
 [rate]
 method = re
 source = http://bithasher.com
 key = Hash Rate</td><td>([,0-9.]+)
 scale = gh
+value = 0.49
 
 [duration]
 method = duration
 source = http://bithasher.com
 items = hour,min
 key = Round Time</td><td>([0-9]+):([0-9]+):
+value = 3020340.0
 

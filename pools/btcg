@@ -10,6 +10,9 @@ address = btcguild.com:8332
 [shares]
 method = rate
 source = rate,time:30
+rate = 2000000000.0
+last_called = 1344547023.4
+value = 41.9119881023
 
 [rate]
 source = https://www.btcguild.com
@@ -18,4 +21,5 @@ method = re
 key = <td>([0-9])+
 strip = ''
 scale = gh
+value = 2
 

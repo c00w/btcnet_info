@@ -6,4 +6,5 @@ name = dotbit
 source = http://dot-bit.org/tools/namecoinCalculator.php
 method = re
 key = Current difficulty : ([0-9.]+)<br />
+value = 950949.83040234
 

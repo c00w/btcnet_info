@@ -12,16 +12,19 @@ method = re
 source = http://pool.bloodys.com/?action=statistics
 strip = ','
 key = ([0-9]+(,[0-9]+)*) Shares
+value = 2678420
 
 [rate]
 method = re
 source = http://pool.bloodys.com/?action=statistics
 key = ([,0-9.]+) Ghash/s
 scale = gh
+value = 0.78
 
 [duration]
 method = duration
 source = http://pool.bloodys.com/?action=statistics
 items = hour,min
 key = Current Round: ([0-9]+):([0-9]+) hours
+value = 24442140.0
 

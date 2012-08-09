@@ -10,6 +10,8 @@ address = pool.ABCPool.co:8332
 [shares]
 method = rate
 source = rate,time:30
+last_called = 1344547023.41
+value = 0.0
 
 [rate]
 source = http://www.abcpool.co/stats.php

@@ -6,4 +6,5 @@ name = namecoinpool
 source = http://namecoinpool.com/
 method = re
 key = Current difficulty:</td><td>([.0-9]+)</td>
+value = 950949.83040234
 

@@ -11,10 +11,12 @@ address = mtred.com:8337
 method = json
 source = https://mtred.com/api/stats
 key = roundshares
+value = 752531
 
 [rate]
 method = json
 source = https://mtred.com/api/stats
 key = hashrate
 scale = gh
+value = 51.783
 
