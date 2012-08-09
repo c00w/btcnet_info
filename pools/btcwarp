@@ -11,12 +11,12 @@ address = 64.120.173.148:8999
 method = json
 source = http://www.btcwarp.com/api
 key = shares_this_round
-value = 6781752
+value = 6786006
 
 [rate]
 method = json
 source = http://www.btcwarp.com/api
 key = hashrate
 scale = mh
-value = 60953
+value = 60373
 

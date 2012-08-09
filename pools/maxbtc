@@ -11,14 +11,14 @@ address = pool.maxbtc.com:8332
 method = json
 source = https://www.maxbtc.com/api/poolstats?key=fjgccZcsC0_ipZRw6IVAP5wYXoV-_e3cV_HSWzrP9Mg9
 key = poolstats,shares
-value = 391083
+value = 413846
 
 [rate]
 method = json
 source = https://www.maxbtc.com/api/poolstats?key=fjgccZcsC0_ipZRw6IVAP5wYXoV-_e3cV_HSWzrP9Mg9
 key = poolstats,hashrate
 scale = mh
-value = 325424.3
+value = 310956.0
 
 [duration]
 method = duration

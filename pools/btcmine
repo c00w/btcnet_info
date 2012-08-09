@@ -12,19 +12,19 @@ method = re
 source = http://btcmine.com/stats/
 strip = ''
 key = <td><span id="rs_round_shares">([0-9]+)</span></td>
-value = 1050537
+value = 1053027
 
 [rate]
 method = re
 source = http://btcmine.com/stats/
 key = <td><span id="rs_hashrate">([0-9.]+)
 scale = mh
-value = 56997.32
+value = 56910.28
 
 [duration]
 method = duration
 source = http://btcmine.com/stats/
 items = hour,min
 key = <td><span id="rs_roundtime">([0-9]+):([0-9]+):
-value = 79140.0
+value = 79440.0
 

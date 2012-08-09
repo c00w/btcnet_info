@@ -12,7 +12,7 @@ method = re
 source = http://www.btcpool24.com/stat.php
 strip = ' '
 key = <br/>Round Shares:([ 0-9]+)<br/><br/></span>
-value = 7392576
+value = 7392577
 
 [rate]
 method = re
