@@ -12,5 +12,5 @@ source = time:30
 coin = scc
 method = exchange
 source = time:30
-value = 10.803
+value = 11.245
 

@@ -11,8 +11,8 @@ address = btcguild.com:8332
 method = rate
 source = rate,time:30
 rate = 1000000000.0
-last_called = 1344552514.84
-value = 2578.10768084
+last_called = 1344620378.57
+value = 18378.8625523
 
 [rate]
 source = https://www.btcguild.com

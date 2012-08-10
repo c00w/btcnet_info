@@ -10,21 +10,21 @@ address = polmine.pl:8347
 [shares]
 method = rateduration
 source = rate,duration
-rate = 95100000000.0
-duration = 35580.0
-value = 112840.533257
+rate = 1.0927e+11
+duration = 6720.0
+value = 0
 
 [duration]
 method = duration
 source = https://polmine.pl/?action=statistics
 items = day,hour,min
 key = </b> <br/>([ 0-9]+)dni([ 0-9]+)godzin([ 0-9]+)minut
-value = 35580.0
+value = 6720.0
 
 [rate]
 method = re
 source = https://polmine.pl/?action=statistics
 key = <b> ([\.0-9]+)</b> Ghash
 scale = gh
-value = 95.10
+value = 109.27
 

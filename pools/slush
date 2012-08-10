@@ -11,25 +11,25 @@ address = api2.bitcoin.cz:8332
 method = json
 source = http://mining.bitcoin.cz/stats/json/
 key = shares
-value = 410864
+value = 373794
 
 [rate]
 method = json
 source = http://mining.bitcoin.cz/stats/json/
 key = ghashes_ps
 scale = gh
-value = 1749.503
+value = 1695.829
 
 [duration]
 method = duration
 source = duration_pre
 items = hour,min
 key = (\d+):(\d+):
-value = 840.0
+value = 660.0
 
 [duration_pre]
 source = http://mining.bitcoin.cz/stats/json/
 method = json
 key = round_duration
-value = 0:14:00
+value = 0:11:55
 

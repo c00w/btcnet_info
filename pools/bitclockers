@@ -1,7 +1,7 @@
 [general]
 coin = btc
 name = bitclockers
-payout_scheme = pps 
+payout_scheme = pps
 payout_mm = False
 
 [mine]
@@ -13,12 +13,12 @@ user_address = http://bitclockers.com/api/%(bitclockers_user_apikey)s
 bitclockers_user_apikey = 965469e512aa0de5a37b83ccfd5e849e
 source = http://bitclockers.com/api
 key = roundshares
-value = 279219
+value = 2112763
 
 [rate]
 method = json
 source = http://bitclockers.com/api
 key = hashrate
 scale = gh
-value = 204
+value = 279
 

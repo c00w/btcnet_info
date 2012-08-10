@@ -12,12 +12,12 @@ method = json
 source = https://mtred.com/api/stats
 strip = ','
 key = NMCroundshares
-value = 800168
+value = 855192
 
 [rate]
 method = json
 source = https://mtred.com/api/stats
 key = hashrate
 scale = gh
-value = 53.2862
+value = 116.952
 

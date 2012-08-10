@@ -11,12 +11,12 @@ address = mint.bitminter.com:8332
 method = json
 source = http://bitminter.com/api/pool/round
 key = chains,BTC,accepted
-value = 330021
+value = 178989
 
 [rate]
 method = json
 source = http://bitminter.com/api/pool/round
 key = hash_rate
 scale = gh
-value = 608.78
+value = 621.578
 

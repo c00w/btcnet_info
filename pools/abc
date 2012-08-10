@@ -10,7 +10,7 @@ address = pool.ABCPool.co:8332
 [shares]
 method = rate
 source = rate,time:30
-last_called = 1344552514.85
+last_called = 1344620378.57
 value = 0.0
 
 [rate]
