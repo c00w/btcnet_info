@@ -1,7 +1,7 @@
 [general]
 coin = btc
 name = bitclockers
-payout_scheme = prop
+payout_scheme = pps 
 payout_mm = False
 
 [mine]
