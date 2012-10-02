@@ -22,3 +22,9 @@ strip = ''
 scale = gh
 value = 3911
 
+[blocks]
+source = https://deepbit.net/stats
+method = re
+group = all
+key = <a href='https://blockexplorer.com/block/([0-9a-zA-Z]+)'>
+

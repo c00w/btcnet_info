@@ -71,9 +71,13 @@ class Handler():
             #raise ValueError('%s: No matching re %s, %s' 
             #        % (Node.name, len(resp), Node))
             return
-            
-        group = int(Node.dict['group']) if 'group' in Node.dict else 1
-        result = result.group(group)
+           
+        if Node.dict.get('group', None) == 'all':
+            result = re.finditer( Node.dict['key'], str(resp))
+            result = json.dumps(list(x.group(1) for x in result))
+        else:
+            group = int(Node.dict['group']) if 'group' in Node.dict else 1
+            result = result.group(group)
         
         if 'strip' in Node.dict and type(result) is str:
             result = result.replace(Node.dict['strip'][1:-1], '')

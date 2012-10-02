@@ -28,7 +28,7 @@ class Pool(baseobject.Base_Object):
         Updates a couple of statistics. Has special handling for duration
         """
         
-        for item in ['api', 'ghash', 'duration','shares']: 
+        for item in ['api', 'ghash', 'duration', 'shares', 'blocks']: 
             if item not in self.config.sections():
                 continue
             value = self.wrapper.handle(dict(self.config.items(item)))

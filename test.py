@@ -3,6 +3,7 @@ import __init__
 import coins
 import pools
 import gevent
+import json
 
 class TestStore(unittest.TestCase):
     var = None
@@ -12,7 +13,6 @@ class TestStore(unittest.TestCase):
         __init__.get_coins()
         for i in range(40):
             gevent.sleep(1)
-            print i
         
     def testCoins(self):
         for item in __init__.get_coins():
@@ -68,6 +68,10 @@ class TestStore(unittest.TestCase):
             if coin.exchange:
                 float(__init__.get_exchange(coin.name))
         
-
+    def testBlockInfo(self):
+        pool = __init__.get_pool('deepbit')
+        print pool.blocks
+        assert pool.blocks != None
+        assert len(json.loads(pool.blocks))
 if __name__ == "__main__":
     unittest.main()  
