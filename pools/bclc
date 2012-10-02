@@ -10,14 +10,14 @@ address = pool.bitlc.net:80
 [shares]
 method = rate
 source = rate,time:30
-rate = 4.1815085766e+20
-last_called = 1344620378.57
-value = 1.26126437687e+15
+rate = 6.8037054155e+19
+last_called = 1349183137.39
+value = 4.45476521729e+17
 
 [rate]
 source = https://www.bitlc.net/stats.json
 method = re
 key = "hash_rate":([ 0-9]+).
 scale = gh
-value = 418150857660
+value = 68037054155
 

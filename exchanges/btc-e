@@ -11,5 +11,5 @@ value = 11.245
 source = https://btc-e.com/exchange/gg_btc
 method = re
 key = Highest Bid Price<p><b><span id='max_price'>([.0-9]+)
-value = 11.245
+value = 12.172
 

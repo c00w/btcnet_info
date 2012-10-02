@@ -10,9 +10,9 @@ address = pit.deepbit.net:8332
 [shares]
 method = rate
 source = rate,time:30
-last_called = 1344620378.57
-value = 65842.9805291
-rate = 3.142e+12
+last_called = 1349183137.39
+value = 3337985888.09
+rate = 3.911e+12
 
 [rate]
 source = http://deepbit.net/
@@ -20,5 +20,5 @@ method = re
 key = [rate:&nbsp;]+([0-9]+)+&nbsp;Gh/s
 strip = ''
 scale = gh
-value = 3142
+value = 3911
 

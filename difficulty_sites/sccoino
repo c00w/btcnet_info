@@ -5,5 +5,11 @@ name = sccoino
 [scc]
 source = http://coinotron.com/coinotron/AccountServlet?action=home
 method = re
-key = <td style="text-align: left;">SC</td>\r\n<td style="text-align: right;">\s+[.0-9]+ [GM]H</td>\r\n<td style="text-align: right;">[0-9]+</td>\n\n<td style="text-align: right;">[\shm0-9]+</td>\r\n<td style="text-align: center;">[\s.0-9-]+</td>\r\n<td style="text-align: right;">\s+([0-9]+)</td>
+key = <td style="text-align: left;">SC</td>
+	<td style="text-align: right;">\s+[.0-9]+ [GM]H</td>
+	<td style="text-align: right;">[0-9]+</td>
+	
+	<td style="text-align: right;">[\shm0-9]+</td>
+	<td style="text-align: center;">[\s.0-9-]+</td>
+	<td style="text-align: right;">\s+([0-9]+)</td>
 

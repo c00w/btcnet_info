@@ -10,21 +10,21 @@ address = bitpenny.dyndns.biz:8338
 [shares]
 method = rateduration
 source = rate,duration
-duration = 1267380.0
-rate = 3035000000.0
-value = 47952.6584968
+duration = 2530200.0
+rate = 2576000000.0
+value = 892360.392027
 
 [rate]
 method = re
 source = http://www.bitpenny.com
 key = ([0-9]+).[0-9]+ Mh/s &nbsp
 scale = mh
-value = 3035
+value = 2576
 
 [duration]
 method = duration
 source = http://www.bitpenny.com
 items = hour,min
 key = time since last block: ([0-9]+):([0-9]+):
-value = 1267380.0
+value = 2530200.0
 

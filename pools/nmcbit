@@ -12,12 +12,12 @@ method = re
 source = http://www.nmcbit.com/statistics
 strip = ','
 key = Valid\s+shares\s+for\s+current\s+round:</th><td>([,0-9]+)</td>
-value = 2362120
+value = 2929978
 
 [rate]
 method = re
 source = http://www.nmcbit.com/statistics
 key = ([,0-9.]+) Ghash/s
 scale = gh
-value = 13.79
+value = 8.05
 

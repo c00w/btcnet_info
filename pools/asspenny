@@ -12,7 +12,7 @@ method = json
 asspenny_user_apikey = xxxxxx
 source = http://asspennypool.com/api.php?api_key=c6e13ae35ce385c6b82718efe60a22d5a12235ba4ec4f3651e5987643d0a1d6e
 key = shares
-value = 663181
+value = 2320580
 
 [rate]
 method = json
