@@ -12,14 +12,14 @@ method = re
 source = http://btcmine.com/stats/
 strip = ''
 key = <td><span id="rs_round_shares">([0-9]+)</span></td>
-value = 5507752
+value = 6237633
 
 [rate]
 method = re
 source = http://btcmine.com/stats/
 key = <td><span id="rs_hashrate">([0-9.]+)
 scale = mh
-value = 65761.82
+value = 74561.83
 
 [duration]
 method = duration

@@ -19,12 +19,12 @@ method = re
 source = http://eligius.st/~artefact2/
 key = ([0-9.]+) GH/s
 scale = gh
-value = 226.03
+value = 219.70
 
 [duration]
 method = duration
 source = http://eligius.st/~artefact2/
 items = hour,min
 key = "instant_durationh_7">([,0-9]+)h</td><td class="ralign" id="instant_durationm_7">([,0-9]+)m
-value = 3252480.0
+value = 4166580.0
 

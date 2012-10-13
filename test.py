@@ -11,8 +11,9 @@ class TestStore(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         __init__.get_coins()
-        for i in range(40):
+        for i in range(120):
             gevent.sleep(1)
+            print i
         
     def testCoins(self):
         for item in __init__.get_coins():
@@ -73,5 +74,8 @@ class TestStore(unittest.TestCase):
         print pool.blocks
         assert pool.blocks != None
         assert len(json.loads(pool.blocks))
+
+    def testprintSlushShares(self):
+        print __init__.get_pool('slush').shares
 if __name__ == "__main__":
     unittest.main()  
