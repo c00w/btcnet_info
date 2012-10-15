@@ -5,7 +5,7 @@ payout_scheme = smpps
 payout_mm = True
 
 [mine]
-address = ra.mining.eligius.st:8337
+address = mining.eligius.st:8337
 
 [shares]
 method = re
