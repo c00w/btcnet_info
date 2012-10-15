@@ -75,6 +75,11 @@ class TestStore(unittest.TestCase):
         assert pool.blocks != None
         assert len(json.loads(pool.blocks))
 
+    def testSetInfo(self):
+        __init__.get_pool('deepbit').namespace.get_node('shares').set_value(0)
+        assert __init__.get_pool('deepbit').shares == 0
+
+
     def testprintSlushShares(self):
         print __init__.get_pool('slush').shares
 if __name__ == "__main__":

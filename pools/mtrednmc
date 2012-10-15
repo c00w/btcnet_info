@@ -19,5 +19,5 @@ method = json
 source = https://mtred.com/api/stats
 key = hashrate
 scale = gh
-value = 925.5511
+value = 1008.5872
 

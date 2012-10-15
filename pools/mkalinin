@@ -11,12 +11,12 @@ address = pool.mkalinin.ru:8344
 method = json
 source = http://pool.mkalinin.ru/api.php
 key = shares
-value = 3144942
+value = 4277021
 
 [rate]
 method = json
 source = http://pool.mkalinin.ru/api.php
 key = hashrate
 scale = mh
-value = 21264
+value = 18556
 

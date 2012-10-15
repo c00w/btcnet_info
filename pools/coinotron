@@ -11,21 +11,21 @@ address = coinotron.com:8322
 method = rateduration
 source = rate,duration
 strip = ''
-value = 4164758.13836
-rate = 62500000000.0
-duration = 313200.0
+value = 3509921.95308
+rate = 49800000000.0
+duration = 554400.0
 
 [rate]
 method = re
 source = http://coinotron.com/coinotron/AccountServlet?action=home
 key = ([0-9]+(?:\.[0-9]*)?) GH</td>
 scale = gh
-value = 62.5
+value = 49.8
 
 [duration]
 method = duration
 source = http://coinotron.com/coinotron/AccountServlet?action=home
 items = hour,min
 key = (\d+):?(\d+)? ?m?h
-value = 313200.0
+value = 554400.0
 

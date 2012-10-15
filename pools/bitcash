@@ -12,12 +12,12 @@ method = re
 source = http://bitcash.cz/pool/actual.php?s=
 strip = ','
 key = <td bgcolor="#fafafa" align="center"><font face="verdana, arial, helvetica" size="2" class="nf">([0-9]+(,[0-9]+)*)</font>
-value = 1820442
+value = 2679030
 
 [rate]
 method = re
 source = http://bitcash.cz/pool/actual.php?s=
 key = Bitcash: <b>([0-9.]+) Mhash/sec
 scale = gh
-value = 9.002
+value = 16.661
 

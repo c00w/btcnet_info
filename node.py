@@ -96,6 +96,10 @@ class Node():
         self.dict['value'] = output
         if old != output:
             self._trigger()
+
+    def set_value(self, value):
+        self.dict['value'] = value
+        self._trigger()
             
     def __repr__(self):
         return '<Node %s, %s, %s>' % (self.name, self.dict, self.hooks)
