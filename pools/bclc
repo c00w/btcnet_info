@@ -7,7 +7,7 @@ payout_mm = False
 [mine]
 address = pool.bitlc.net:80
 
-[shares]
+[shares_old]
 method = rate
 source = rate,time:30
 rate = 6.415726703e+19
