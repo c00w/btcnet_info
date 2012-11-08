@@ -7,7 +7,7 @@ payout_mm = True
 [mine]
 address = btcguild.com:8332
 
-[shares]
+[shares_old]
 method = rate
 source = rate,time:30
 rate = 0.0

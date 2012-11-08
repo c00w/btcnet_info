@@ -7,7 +7,7 @@ payout_mm = True
 [mine]
 address = mmpool.bitparking.com:15098
 
-[shares]
+[shares_old]
 method = rate
 source = rate,time:30
 rate = 1.90138e+14

@@ -7,7 +7,7 @@ payout_mm = False
 [mine]
 address = pool.ABCPool.co:8332
 
-[shares]
+[shares_old]
 method = rate
 source = rate,time:30
 last_called = 1350338073.47
