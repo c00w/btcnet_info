@@ -11,5 +11,5 @@ address = lp1.itzod.ru:8344
 method = json
 source = https://pool.itzod.ru/api.php
 key = total_shares_count
-value = 712601
+value = 601740
 

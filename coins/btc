@@ -4,7 +4,7 @@ name = btc
 
 [difficulty]
 coin = btc
-value = 3054627.5269486
+value = 3304356.5
 method = difficulty
 source = time:30
 

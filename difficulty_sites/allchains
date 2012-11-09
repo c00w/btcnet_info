@@ -26,5 +26,5 @@ value = 1271400.97660704
 source = http://allchains.info/calc.html
 method = re
 key = id='btc_diff' maxlength='[0-9]+' size='[0-9]+' value="([.0-9]+)"
-value = 3054627.5
+value = 3304356.5
 

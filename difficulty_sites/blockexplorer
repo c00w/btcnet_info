@@ -5,5 +5,5 @@ name = blockexplorer
 [btc]
 source = http://blockexplorer.com/q/getdifficulty
 method = direct
-value = 3054627.5269486
+value = 3304356.3929903
 

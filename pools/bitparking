@@ -10,9 +10,9 @@ address = mmpool.bitparking.com:15098
 [shares_old]
 method = rate
 source = rate,time:30
-rate = 1.90138e+14
-last_called = 1350338073.48
-value = 2.09069297575e+11
+rate = 1.37758e+14
+last_called = 1352401134.69
+value = 3.00399456872e+11
 
 [rate]
 source = http://mmpool.bitparking.com/pool
@@ -20,5 +20,5 @@ method = re
 key = Pool Hash rate [(]MHash[/]second[)]</td><td>([0-9]+)
 strip = ''
 scale = gh
-value = 190138
+value = 137758
 
