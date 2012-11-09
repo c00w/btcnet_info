@@ -1,0 +1,9 @@
+[general]
+coin = btc
+name = eligius
+payout_scheme = pps
+payout_mm = True
+
+[mine]
+address = HashPower.com:80 
+
