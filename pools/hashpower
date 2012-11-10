@@ -1,6 +1,6 @@
 [general]
 coin = btc
-name = eligius
+name = hashpower
 payout_scheme = pps
 payout_mm = True
 
