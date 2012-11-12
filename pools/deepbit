@@ -11,8 +11,8 @@ address = pit.deepbit.net:8332
 method = rate
 source = rate,time:30
 last_called = 1352401104.69
-value = 6076802567.61
-rate = 3.239e+12
+value = 3e6
+rate = 0
 
 [rate]
 source = http://deepbit.net/
