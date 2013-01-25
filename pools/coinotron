@@ -12,20 +12,20 @@ method = rateduration
 source = rate,duration
 strip = ''
 value = 0
-rate = 53200000000.0
-duration = 403200.0
+rate = 77200000000.0
+duration = 19260.0
 
 [rate]
 method = re
 source = http://coinotron.com/coinotron/AccountServlet?action=home
 key = ([0-9]+(?:\.[0-9]*)?) GH</td>
 scale = gh
-value = 53.2
+value = 77.2
 
 [duration]
 method = duration
 source = http://coinotron.com/coinotron/AccountServlet?action=home
 items = hour,min
 key = (\d+):?(\d+)? ?m?h
-value = 403200.0
+value = 19260.0
 

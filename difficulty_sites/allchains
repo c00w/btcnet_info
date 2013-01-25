@@ -20,11 +20,11 @@ key = id='ixc_diff' maxlength='[0-9]+' size='[0-9]+' value="([0-9.]+)"/></td>
 source = http://allchains.info/calc.html
 method = re
 key = id='nmc_diff' maxlength='[0-9]+' size='[0-9]+' value="([.0-9]+)"
-value = 1271400.97660704
+value = 897134.501090519
 
 [btc]
 source = http://allchains.info/calc.html
 method = re
 key = id='btc_diff' maxlength='[0-9]+' size='[0-9]+' value="([.0-9]+)"
-value = 3304356.5
+value = 2968775.25
 

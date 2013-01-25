@@ -11,12 +11,12 @@ address = us.ozco.in:8332
 method = json
 source = http://ozco.in/api.php
 key = round_shares
-value = 30228
+value = 195707
 
 [rate]
 method = json
 source = http://ozco.in/api.php
 key = hashrate
 scale = mh
-value = 1136456
+value = 1488477
 

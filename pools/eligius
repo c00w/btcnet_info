@@ -19,7 +19,7 @@ method = re
 source = http://eligius.st/~artefact2/
 key = ([0-9.]+) GH/s
 scale = gh
-value = 186.33
+value = 211.36
 
 [duration]
 method = duration

@@ -4,7 +4,7 @@ name = nmc
 
 [difficulty]
 coin = nmc
-value = 1271400.97660704
+value = 897134.50109052
 method = difficulty
 source = time:30
 
@@ -12,5 +12,5 @@ source = time:30
 coin = nmc
 method = exchange
 source = time:30
-value = 0.00427886
+value = 0.00277005
 

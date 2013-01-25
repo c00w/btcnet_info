@@ -12,7 +12,7 @@ method = rateduration
 source = rate,duration
 duration = 3020340.0
 rate = 1947000000.0
-value = 860122.698359
+value = 0
 
 [rate]
 method = re

@@ -5,5 +5,5 @@ payout_scheme = pps
 payout_mm = True
 
 [mine]
-address = HashPower.com:80 
+address = HashPower.com:80
 
