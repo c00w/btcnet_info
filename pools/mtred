@@ -5,7 +5,7 @@ payout_scheme = pps
 payout_mm = True
 
 [mine]
-address = mtred.com:8337
+address = mine.mtred.com:8337
 
 [shares]
 method = json
